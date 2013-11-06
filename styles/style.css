@@ -1,0 +1,267 @@
+@import url(http://fonts.googleapis.com/css?family=IM+Fell+French+Canon:400,400italic);
+@import url(http://fonts.googleapis.com/css?family=IM+Fell+Double+Pica+SC);
+
+body {
+	margin: 0;
+	font-family: 'IM Fell French Canon', serif;
+	height: 100%;
+	width: 100%;
+	//cursor: url('../Assets/MC-cursor.png'), auto;
+}
+
+body.mouseDown {
+	//cursor: url('../Assets/MC-cursor-down.png'), auto;
+}
+
+p {
+	font-size: 1.8em;
+	line-height: 1.3em;
+}
+
+#mc-intro p {
+	font-size: 2.2em;
+}
+
+.textdiv p {
+	font-size: 1.3em;
+}
+
+.textdiv h1 {
+	font-size: 2.3em;
+	text-align: center;
+	line-height: 1.1em;
+	font-family: 'IM Fell Double Pica SC', serif;
+}
+
+.hide {
+	display: none;
+}
+
+.textdiv {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+#wrapper {
+	width: 3000px;
+	height: 1500px;
+	background-image: url('../Assets/bg-day.jpg');
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+#mc-title {
+	width: 522px;
+	height: 164px;
+	background-image: url('../Assets/mc-title.png');
+	position: absolute;
+	top: 85px;
+	left: 25px;
+	transform: rotate(-7deg);
+	-webkit-transform: rotate(-7deg);
+	-moz-transform: rotate(-7deg);
+}
+
+#mc-intro {
+	width: 420px;
+	position: absolute;
+	top: 230px;
+	left: 120px;
+	transform: rotate(-7deg);
+	-webkit-transform: rotate(-7deg);
+	-moz-transform: rotate(-7deg);
+}
+
+#clock {
+	width: 181px;
+	height: 489px;
+	background-image: url('../Assets/clock-face.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 590px;
+	top: -10px;
+	animation: swing 5s infinate ease-in-out;
+	-moz-animation: 5s ease 0s normal none infinite swing;
+  	-webkit-animation:swing 5s infinite ease-in-out;
+  	transform-origin: center top;
+  	-moz-transform-origin: center top;
+  	-webkit-transform-origin: center top;
+}
+
+@keyframes swing{
+    0%{transform:rotate(-7deg)}
+    50%{transform:rotate(7deg)}
+    100%{transform:rotate(-7deg)}
+}
+
+@-webkit-keyframes swing{
+    0%{-webkit-transform:rotate(-7deg)}
+    50%{-webkit-transform:rotate(7deg)}
+    100%{-webkit-transform:rotate(-7deg)}
+}
+
+@-moz-keyframes swing{
+    0%{-moz-transform:rotate(-7deg)}
+    50%{-moz-transform:rotate(7deg)}
+    100%{-moz-transform:rotate(-7deg)}
+}
+
+#handipad {
+	width: 280px;
+	height: 579px;
+	background-image: url('../Assets/hand-ipad.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	left: -200px;
+	top: 700px;
+	animation: handipad 13s infinate ease-in-out;
+	-moz-animation: 13s ease 0s normal none infinite handipad;
+  	-webkit-animation:handipad 13s infinite ease-in-out;
+  	transform-origin: bottom;
+  	-moz-transform-origin: bottom;
+  	-webkit-transform-origin: bottom;
+}
+
+@keyframes handipad{
+    0%{transform:rotate(40deg) translate(0px,50px)}
+    50%{transform:rotate(50deg) translate(10px,20px)}
+    100%{transform:rotate(40deg) translate(0px,50px)}
+}
+
+@-webkit-keyframes handipad{
+    0%{-webkit-transform:rotate(40deg) translate(0px,50px)}
+    50%{-webkit-transform:rotate(50deg) translate(10px,10px)}
+    100%{-webkit-transform:rotate(40deg) translate(0px,50px)}
+}
+
+@-moz-keyframes handipad{
+    0%{-moz-transform:rotate(40deg) translate(0px,50px)}
+    50%{-moz-transform:rotate(50deg) translate(10px,10px)}
+    100%{-moz-transform:rotate(40deg) translate(0px,50px)}
+}
+
+#friends {
+	width: 254px;
+	height: 237px;
+	padding: 40px 30px 0 60px;
+	text-align: center;
+	font-style: italic;
+	font-size: 1.2em;
+	background-image: url('../Assets/friends-bg.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 770px;
+	left: 430px;
+	transform: rotate(-7deg);
+	-webkit-transform: rotate(-7deg);
+	-moz-transform: rotate(-7deg);
+}
+
+#mc-app {
+	width: 406px;
+	height: 483px;
+	padding: 25px 70px 0 85px;
+	background-image: url('../Assets/mc-app-bg.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 1608px;
+	top: 944px;
+	transform: rotate(-2deg);
+	-webkit-transform: rotate(-2deg);
+	-moz-transform: rotate(-2deg);
+}
+
+#weather-app {
+	width: 457px;
+	height: 547px;
+	padding: 40px 80px 0 95px;
+	background-image: url('../Assets/weather-app-bg.png');
+	position: absolute;
+	left: 2506px;
+	top: 900px;
+	transform: rotate(-4deg);
+	-webkit-transform: rotate(-4deg);
+	-moz-transform: rotate(-4deg);
+}
+
+#julie {
+	width: 415px;
+	height: 276px;
+	background-image: url('../Assets/julie-bg.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 2216px;
+	top: 126px;
+}
+
+#credits {
+	width: 464px;
+	height: 358px;
+	padding: 15px 30px 15px 30px;
+	background-image: url('../Assets/credits-bg.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 2404px;
+	top: 500px;
+}
+
+#frame1 {
+	width: 220px;
+	height: 150px;
+	background-image: url('../Assets/frame-1.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 1250px;
+	top: 217px;
+}
+
+#frame2 {
+	width: 157px;
+	height: 143px;
+	background-image: url('../Assets/frame-2.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 1398px;
+	top: 370px;
+}
+
+
+#frame3 {
+	width: 176px;
+	height: 149px;
+	background-image: url('../Assets/frame-3.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 1506px;
+	top: 216px;
+}
+
+#frame4 {
+	width: 220px;
+	height: 132px;
+	background-image: url('../Assets/frame-4.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 1452px;
+	top: 56px;
+}
+
+#gallery {
+	width: 507px;
+	height: 424px;
+	position: absolute;
+	left: 1702px;
+	top: 420px;
+}
+
+#galleryframe {
+	width: 507px;
+	height: 424px;
+	background-image: url('../Assets/gallery-frame.png');
+	background-repeat: no-repeat;
+}
