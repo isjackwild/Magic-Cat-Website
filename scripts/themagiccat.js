@@ -178,6 +178,15 @@ $(document).ready(function() {
 		});
 
 
+		var sheetsTimer = 0;
+		$("#bell-xmas").bind('mousedown touchstart',function(event){
+			$("#bell-xmas").addClass('touch');
+			clearTimeout(sheetsTimer);
+			sheetsTimer = setTimeout(function() {
+        		$("#bell-xmas").removeClass('touch');
+    		}, 6000)
+		});
+
 		var BDC_scroll = {
 			_mousedown: false,
 
