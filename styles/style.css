@@ -7,6 +7,7 @@ body {
 	font-family: 'IM Fell French Canon', serif;
 	height: 100%;
 	width: 100%;
+	overflow: hidden;
 	cursor: url('../assets/mouse-up.png'), auto;
 }
 
