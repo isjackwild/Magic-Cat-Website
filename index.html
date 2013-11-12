@@ -5,6 +5,9 @@
 
     <script type="text/javascript" src="scripts/vendor/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="scripts/vendor/jquery.scrollview.js"></script>
+    <script type="text/javascript" src="scripts/vendor/buzz.min.js"></script>
+    <script type="text/javascript" src="scripts/vendor/modernizr.custom.35981.js"></script>
+    <script type="text/javascript" src="scripts/vendor/responsiveslides.min.js"></script>
     <script type="text/javascript" src="scripts/themagiccat.js"></script>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +17,17 @@
   </head>
 <body>
 
-  <!--comment-->
 
-
-<div id="wrapper" class="textdiv">
+<div id="wrapper">
 
   <div id="mc-title"></div>
+  <div id="teddy"></div>
+
+  <ul class="rslides">
+    <li><img src="images/dog1.jpg" alt=""></li>
+    <li><img src="images/dog2.jpg" alt=""></li>
+    <li><img src="images/dog3.jpg" alt=""></li>
+  </ul>
 
   <div id="mc-intro" class="textdiv">
       <p>
@@ -27,7 +35,11 @@
       </p>
   </div>
 
-  <div id="clock"></div>
+  <div id="clock">
+      <div id="min"></div>
+      <div id="hour"></div>
+  </div>
+
 
   <div id="handipad"></div>
 
@@ -38,20 +50,14 @@
   </div>
 
   <div id="mc-app" class="textdiv">
-      <h1>
-        Magic Cat Universe
-      </h1>
       <p>
         Come, follow The Magic Cat and Teddy on their feel good trip around the crazy universe of The Magic Cat! Tap your way through all the different animated scenes and enjoy sweet audio and visual treats along the way.
       </p>
   </div>
 
   <div id="weather-app" class="textdiv">
-    <h1>
-        Magic Cat Weather Report
-      </h1>
       <p>
-        Dress well for any weather with The Magic Cat. Whatever the weather, The Magic Cat will help you dress well. With a special children’s version of Vivaldis’ Four Seasons and Illustrations changing with the seasons, you’ll always be sure to discover something new.
+        Whatever the weather, The Magic Cat will help you dress. With a special version of Vivaldis’ Four Seasons and Illustrations changing with the seasons, you’ll always discover something new.
       </p>
   </div>
 
@@ -70,22 +76,58 @@
       </p>
   </div>
 
-  <div id="frame1">
-  </div>  
-
-  <div id="frame2">
-  </div> 
-
-  <div id="frame3">
-  </div> 
-
-  <div id="frame4">
-  </div> 
+  <div id="wallpaper"></div> 
+  <div id="frame1" class="frame"></div>  
+  <div id="frame2" class="frame"></div> 
+  <div id="frame3" class="frame"></div> 
+  <div id="frame4" class="frame"></div> 
 
   <div id="gallery">
     <div id="galleryframe">
     </div>      
-  </div>  
+  </div>
+
+
+  <div id = "mc-day" class="day"></div>
+  <div id = "note-1" class="note"></div>
+  <div id = "note-2" class="day note"></div>
+  <div id = "note-3" class="note"></div>
+  <div id = "note-4" class="day note"></div>
+  <div id = "note-5" class="note"></div>
+  <div id = "note-6" class="day note"></div>
+  <div id = "note-7" class="note"></div>
+  <div id = "note-8" class="day note"></div>
+  <div id = "note-9" class="note"></div>
+  <div id = "umbrella-day" class="day"></div>
+  <div id = "cloud-day" class="day"></div>
+  <div id = "sun-day" class="day"></div>
+  <div id = "sheets-day" class="day"></div>
+  <div id = "butterfly-arc-day" class="day">
+    <div id = "butterfly-day" class="day"></div>
+  </div>
+  <div id = "phone-day" class="day"></div>
+  <div id = "statue-day" class="day">
+    <img src="../assets/statue-burp-mouth-day.png" id="burp">
+  </div>
+  <div id = "bird-day" class="day"></div>
+  <div id = "fish-day" class="day">
+    <img src="../assets/fish-body-day.png" id="fish">
+  </div>
+
+
+
+  <div id = "mc-xmas" class="xmas"></div>
+  <div id = "merry-xmas" class="xmas"></div>
+  <div id = "tree-xmas" class="xmas"></div>
+  <div id = "santa-xmas" class="xmas"></div>
+  <div id = "snowman-xmas" class="xmas"></div>
+  <div id = "tea-xmas" class="xmas"></div>
+  <div id = "bell-xmas" class="xmas"></div>
+  <div id = "lamp-xmas" class="xmas">
+    <img src="../assets/lamp-xmas.png" id="lamp">
+  </div>
+
+
 
 </div>
 
