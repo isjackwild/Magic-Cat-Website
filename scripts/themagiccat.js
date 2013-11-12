@@ -195,6 +195,9 @@ $(document).ready(function() {
 			_xtarget: 0,
 			_ytarget: 0,
 
+			_x: 0,
+			_y: 0,
+
 			init: function()
 			{
 				//prevent spacebar
@@ -207,66 +210,67 @@ $(document).ready(function() {
 					}
 				});
 
+				console.log(UTIL)
+				console.log(RenderQue)
+
+				RenderQue.add(this)
+
 				$(document).bind("mousedown touchstart", UTILS.bind(this, this.onMouseDown));
 				$(document).bind("mouseup touchend", UTILS.bind(this, this.onMouseUp));
 				
 				$(document).mouseleave(UTILS.bind(this, this.onMouseUp));
-				$("body").css("overflow", "hidden")
 
 				//set fixed position
 				setTimeout(function(){$(document).scrollLeft(0).scrollTop(0); }, 10)
 			},
+			render: function()
+			{
+				this._x += (this._xtarget - this._x) * 0.3;
+				this._y += (this._ytarget - this._y) * 0.3;
+
+				this.setXY(this._x, this._y);
+			},
 			onMouseDown: function(event)
 			{
-				console.log("onMouseDown")
 				event.preventDefault();
 				this._mousedown = true;
-				this._startX = this._xtarget + UTILS.getPositionFromMouseTouchEvent(event).x
-				this._startY = this._ytarget + UTILS.getPositionFromMouseTouchEvent(event).y
-
-				console.log("this._startX:", this._startX, this._startY)
+				this._startX = UTILS.getPositionFromMouseTouchEvent(event).x - this._x
+				this._startY = UTILS.getPositionFromMouseTouchEvent(event).y - this._y
 
 				$(window).bind("mousemove touchmove", UTILS.bind(this, this.onMouseMove));
 			},
 			onMouseUp: function(event)
 			{
-				console.log("onMouseUp")
 				this._mousedown = false;
 				$(window).unbind("mousemove touchmove");
 			},
 			onMouseMove: function(event)
 			{
-				console.log("onMouseMove")
 				event.preventDefault();
-				var scrollx = $(document).scrollLeft();
-				var scrolly = $(document).scrollTop();
 
-				var x = UTILS.getPositionFromMouseTouchEvent(event).x - scrollx
-				var y = UTILS.getPositionFromMouseTouchEvent(event).y - scrolly
+				var x = UTILS.getPositionFromMouseTouchEvent(event).x - this._x
+				var y = UTILS.getPositionFromMouseTouchEvent(event).y - this._y
 
 				x = this._startX - UTILS.getPositionFromMouseTouchEvent(event).x
 				y = this._startY - UTILS.getPositionFromMouseTouchEvent(event).y
 
-				this._xtarget = scrollx + x;
-				this._ytarget = scrolly + y;
+				this._xtarget = x;
+				this._ytarget = y;
 
 				var workingWidth= $(window).width() - 3000;
 				var workingHeight= $(window).height() - 1500;
-				//$(document).scrollLeft(this._xtarget).scrollTop(this._ytarget);
-				x = this._xtarget * -1
-				y = this._ytarget * -1
 
-				if(x > 0)
-					x = 0
-				if(x < workingWidth)
-					x = workingWidth
-				if(y > 0)
-					y = 0
-				if(y < workingHeight)
-					y = workingHeight
+				this._xtarget = this._xtarget * -1
+				this._ytarget = this._ytarget * -1
 
-				this.setXY(x, y);
-				
+				if(this._xtarget > 0)
+					this._xtarget = 0
+				if(this._xtarget < workingWidth)
+					this._xtarget = workingWidth
+				if(this._ytarget > 0)
+					this._ytarget = 0
+				if(this._ytarget < workingHeight)
+					this._ytarget = workingHeight
 			},
 			setXY: function(x, y)
 			{
@@ -287,16 +291,15 @@ $(document).ready(function() {
 			}
 		}
 
+		//start window scroll.
 		BDC_scroll.init();
+
+		//start slides
+		$(".rslides").responsiveSlides();
 	});
 
 
-$(function() {
-    $(".rslides").responsiveSlides();
-  });
-
 // SOUNDS
-
 var burp = new buzz.sound('../sounds/burp', {formats: ['wav']});
 var teddy = new buzz.sound('../sounds/teddy', {formats: ['wav']});
 var ring = new buzz.sound('../sounds/ring', {formats: ['wav']});
