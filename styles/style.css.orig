@@ -7,8 +7,8 @@ body {
 	font-family: 'IM Fell French Canon', serif;
 	height: 100%;
 	width: 100%;
-	cursor: url('../assets/mouse-up.png'), auto;
 	overflow: hidden;
+	cursor: url('../assets/mouse-up.png'), auto;
 }
 
 body.mouseDown {
@@ -259,7 +259,7 @@ p {
 	position: absolute;
 	z-index: 1;
 	left: 1500px;
-	top: 865px;
+	top: 890px;
 	transform: rotate(-2deg);
 	-webkit-transform: rotate(-2deg);
 	-moz-transform: rotate(-2deg);
@@ -277,24 +277,6 @@ p {
 	transform: rotate(-4deg);
 	-webkit-transform: rotate(-4deg);
 	-moz-transform: rotate(-4deg);
-}
-
-#download-mc {
-	width: 200px;
-	position: absolute;
-	left: 1730px;
-	top: 1305px;
-}
-
-#download-weather {
-	width: 200px;
-	position: absolute;
-	left: 2650px;
-	top: 1290px;
-}
-
-.app-store{
-	margin-bottom: 20px;
 }
 
 #julie {
@@ -317,7 +299,7 @@ p {
 	position: absolute;
 	z-index: 3;
 	left: 2404px;
-	top: 480px;
+	top: 500px;
 }
 
 .frame {
@@ -943,7 +925,7 @@ p {
 	position: absolute;
 	z-index: 4;
 	left: 2658px;
-	top: 310px;
+	top: 330px;
 }
 
 #phone-day.touch {
@@ -1198,7 +1180,7 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	left: 2630px;
-	top: 355px;
+	top: 375px;
 	z-index: 3;
 }
 
@@ -1243,6 +1225,7 @@ p {
 #lamp-xmas.touch {
 	background-image: url('../assets/lamp-off-xmas.png');
 }
+<<<<<<< HEAD
 
 #candle-outer {
 	width: 104px;
@@ -1250,18 +1233,21 @@ p {
 	position: absolute;
 	top: 15px;
 	left: 1800px;
+	//background-color: red;
 	z-index: 4;
+	background-color: red;
 }
 
 #candle-main {
 	width: 104px;
-	height: 310px;
+	height: 300px;
 	background-image: url('../assets/candle-main.png');
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	position: absolute;
 	bottom: 0;
-	z-index: 0; 
+	z-index: 0;
+	background-color: blue; 
 }
 
 #candle-top {
@@ -1271,6 +1257,7 @@ p {
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	z-index: 1;
-	position: absolute;
-	bottom: 300px;
+	background-color: pink;
 }
+=======
+>>>>>>> 28cb695b8bfe6764f923dcfc76913142802f8247

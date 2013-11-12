@@ -225,8 +225,8 @@ $(document).ready(function() {
 			},
 			render: function()
 			{
-				this._x += (this._xtarget - this._x) * 0.3;
-				this._y += (this._ytarget - this._y) * 0.3;
+				this._x += (this._xtarget - this._x) * 0.2;
+				this._y += (this._ytarget - this._y) * 0.2;
 
 				this.setXY(this._x, this._y);
 			},
