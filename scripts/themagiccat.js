@@ -172,7 +172,7 @@ function positionTeddy() {
 			$("#bravo").addClass('touch');
 			setTimeout(function() {
         		$("#bravo").removeClass('touch');
-    		}, 2000)
+    		}, 3000)
 		});
 
 
