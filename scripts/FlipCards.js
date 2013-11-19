@@ -3,7 +3,7 @@ var CardsEngine =
 {
 	//constants
 	NUM_CARDS: 10,
-	NUM_PAIR_BEFORE_SUCCESS: 2,
+	NUM_PAIR_BEFORE_SUCCESS: 1,
 
 	numPairs: 0,
 
