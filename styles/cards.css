@@ -50,74 +50,113 @@
 
 #cards .card-pos0
 {
-	left:1820px;
+	left:1770px;
 	top:70px;
 /*	background-color: green;
 */}
 
 #cards .card-pos1
 {
-	left:2030px;
+	left:1980px;
 	top:190px;
 /*	background-color: lightgreen;
 */}
 
 #cards .card-pos2
 {
-	left:2140px;
+	left:2090px;
 	top:390px;
 /*	background-color: darkgreen;
 */}
 
 #cards .card-pos3
 {
-	left:2060px;
+	left:2010px;
 	top:600px;
 /*	background-color: pink;
 */}
 
 #cards .card-pos4
 {
-	left: 1850px;
+	left: 1800px;
 	top: 700px;
 /*	background-color: orange;
 */}
 
 #cards .card-pos5
 {
-	left:1610px;
+	left:1560px;
 	top:700px;
 /*	background-color: blue;
 */}
 
 #cards .card-pos6
 {
-	left:1390px;
+	left:1340px;
 	top:618px;
 /*	background-color: lightblue;
 */}
 
 #cards .card-pos7
 {
-	left:1290px;
+	left:1240px;
 	top:410px;
 /*	background-color: red;
 */}
 
 #cards .card-pos8
 {
-	left:1390px;
+	left:1340px;
 	top:210px;
 /*	background-color: yellow;
 */}
 
 #cards .card-pos9
 {
-	left:1580px;
+	left:1530px;
 	top:70px;
 /*	background-color: black;
 */}
 
 #card1 {
 	background-image: 
+}
+
+#present {
+	//background-color: red;
+	height: 360px;
+	width: 317px;
+	position: absolute;
+	left: 1550px;
+	top: 200px;
+}
+
+#present-l {
+	background-image: url("../assets/present-xmas-l.png");
+	background-size: cover;
+	height: 360px;
+	width: 151px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	transition: transform 1.5s;
+}
+
+#present-r {
+	background-image: url("../assets/present-xmas-r.png");
+	background-size: cover;
+	height: 360px;
+	width: 232px;
+	position: absolute;
+	left: 85px;
+	top: 0px;
+	transition: transform 2.5s;
+}
+
+#present-r.touch {
+	transform: translate(120px,0);
+}
+
+#present-l.touch {
+	transform: translate(-120px,0);
 }

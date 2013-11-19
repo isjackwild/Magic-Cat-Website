@@ -46,6 +46,7 @@ var CardsEngine =
 			{
 				this._cardFlipped = null;
 				this.numPairs++;
+
 				this.checkSuccess();
 			}else
 			{
@@ -62,8 +63,9 @@ var CardsEngine =
 		if(this.numPairs == this.NUM_PAIR_BEFORE_SUCCESS)
 		{
 			console.log("GREAT SUCCESS! Now let's reset the cards");
-			$("body").addClass("openpresent")
-			this.reset();
+			$("#present-l").addClass("touch");
+			$("#present-r").addClass("touch");
+			//this.reset();
 		}
 	},
 	reset: function()
@@ -86,6 +88,7 @@ function Card(el, posClass, index)
 	this._index = index;
 	this._flipCallback = null;
 	this.partnerCard = null;
+	this._flipTimer = 0;
 
 	//used for when cards have been flipped in a successfull maner
 	this._disabled = false;
@@ -96,6 +99,7 @@ function Card(el, posClass, index)
 
 Card.prototype.check = function(matchupCard)
 {
+	clearTimeout(this._flipTimer);
 	success = this.partnerCard == matchupCard;
 	if(success)
 	{
@@ -103,8 +107,12 @@ Card.prototype.check = function(matchupCard)
 		this.partnerCard.disable();
 	}else
 	{
-		matchupCard.flip("back");
-		this.flip("back");
+		that = this;
+		this._flipTimer = setTimeout(function()
+		{
+			matchupCard.flip("back");
+			that.flip("back");
+		}, 1000)
 	}
 
 	return success;

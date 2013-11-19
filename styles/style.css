@@ -458,7 +458,7 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
-	left: 2256px;
+	left: 2226px;
 	top: 90px;
 	transition: transform 0.5s;
 }
@@ -1313,7 +1313,7 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
-	left: 580px;
+	left: 670px;
 	top: 35px;
 	transition: transform 3s;
 }
@@ -1355,6 +1355,7 @@ p {
 	left: 1030px;
 	top: 70px;
 	transform: rotate(-15deg);
+	display: none;
 }
 
 #snowman-xmas {
