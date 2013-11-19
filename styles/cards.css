@@ -1,0 +1,84 @@
+#cards
+{
+
+}
+
+#cards .card
+{
+	position:absolute;
+	z-index: 666;
+	color: #ffffff;
+	width: 30px;
+	height: 100px;
+	background: rgba(255, 255, 255, 0.5)
+}
+
+#cards .card.disabled
+{
+	color: #ff00ff !important;
+}
+
+#cards .card.selected
+{
+	color: #00ff00;
+}
+
+#cards .card-pos0
+{
+	left:10px;
+	top:100px;
+}
+
+#cards .card-pos1
+{
+	left:50px;
+	top:10px;
+}
+
+#cards .card-pos2
+{
+	left:100px;
+	top:10px;
+}
+
+#cards .card-pos3
+{
+	left:150px;
+	top:10px;
+}
+
+#cards .card-pos4
+{
+	left:200px;
+	top:10px;
+}
+
+#cards .card-pos5
+{
+	left:250px;
+	top:10px;
+}
+
+#cards .card-pos6
+{
+	left:300px;
+	top:10px;
+}
+
+#cards .card-pos7
+{
+	left:350px;
+	top:10px;
+}
+
+#cards .card-pos8
+{
+	left:400px;
+	top:10px;
+}
+
+#cards .card-pos9
+{
+	left:450px;
+	top:10px;
+}
