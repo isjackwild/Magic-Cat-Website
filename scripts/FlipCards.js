@@ -3,7 +3,7 @@ var CardsEngine =
 {
 	//constants
 	NUM_CARDS: 10,
-	NUM_PAIR_BEFORE_SUCCESS: 3,
+	NUM_PAIR_BEFORE_SUCCESS: 2,
 
 	numPairs: 0,
 
@@ -13,8 +13,6 @@ var CardsEngine =
 
 	init: function()
 	{
-		$("#wrapper, #loading-l, #loading-r, #bravo").hide();
-
 		this._cards = [];
 		this._positions = [];
 
@@ -33,7 +31,6 @@ var CardsEngine =
 			if(i % 2 == 1 && i > 0)
 			{
 				//partner up cards
-				console.log(i-1, i);
 				this._cards[i-1].kiss(this._cards[i]);
 				this._cards[i].kiss(this._cards[i-1]);
 			}
@@ -43,7 +40,6 @@ var CardsEngine =
 	},
 	onCardFlip: function(card)
 	{
-		console.log("onCardFlip");
 		if(this._cardFlipped)
 		{
 			if(this._cardFlipped.check(card))
@@ -53,7 +49,6 @@ var CardsEngine =
 				this.checkSuccess();
 			}else
 			{
-
 				console.log("flip cards back to their starting position");
 				this._cardFlipped = null;
 			}
@@ -67,6 +62,7 @@ var CardsEngine =
 		if(this.numPairs == this.NUM_PAIR_BEFORE_SUCCESS)
 		{
 			console.log("GREAT SUCCESS! Now let's reset the cards");
+			$("body").addClass("openpresent")
 			this.reset();
 		}
 	},
@@ -81,6 +77,8 @@ var CardsEngine =
 };
 
 
+
+
 // A card
 function Card(el, posClass, index)
 {
@@ -92,7 +90,7 @@ function Card(el, posClass, index)
 	//used for when cards have been flipped in a successfull maner
 	this._disabled = false;
 
-	$(this._el).addClass(posClass);
+	$(this._el).addClass(String(posClass));
 	$(this._el).click(UTILS.bind(this, this.onCardClick));
 }
 
@@ -144,7 +142,6 @@ Card.prototype.onCardClick = function(event)
 {
 	if(this._disabled) return;
 
-	console.log("CLICK");
 	this.flip("front");
 
 	this._flipCallback(this);
