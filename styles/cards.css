@@ -6,11 +6,17 @@
 #cards .card
 {
 	position:absolute;
+	color: #ffffff;
 }
 
 #cards .card.disabled
 {
-	color: #ff00ff;
+	color: #ff00ff !important;
+}
+
+#cards .card.selected
+{
+	color: #00ff00;
 }
 
 #cards #card0

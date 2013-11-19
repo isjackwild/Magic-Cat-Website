@@ -15,7 +15,6 @@ var CardsEngine =
 	{
 		$("#wrapper, #loading-l, #loading-r, #bravo").hide();
 
-		console.log("------- CARDS ENGINE INIT");
 		this._cards = [];
 		this._positions = [];
 
@@ -44,6 +43,7 @@ var CardsEngine =
 	},
 	onCardFlip: function(card)
 	{
+		console.log("onCardFlip");
 		if(this._cardFlipped)
 		{
 			if(this._cardFlipped.check(card))
@@ -53,11 +53,14 @@ var CardsEngine =
 				this.checkSuccess();
 			}else
 			{
-				console.log("flip cards back to their starting position");
-			}
-		}
 
-		this._cardFlipped = card;
+				console.log("flip cards back to their starting position");
+				this._cardFlipped = null;
+			}
+		}else
+		{
+			this._cardFlipped = card;
+		}
 	},
 	checkSuccess: function()
 	{
@@ -95,31 +98,42 @@ function Card(el, posClass, index)
 
 Card.prototype.check = function(matchupCard)
 {
-	if(this.partnerCard == matchupCard)
+	success = this.partnerCard == matchupCard;
+	if(success)
 	{
-		this.disable()
-		this.partnerCard.disable()
-		console.log("??")
-		return true;
+		this.disable();
+		this.partnerCard.disable();
+	}else
+	{
+		matchupCard.flip("back");
+		this.flip("back");
 	}
 
-	return false;
+	return success;
 };
 
 Card.prototype.reset = function()
 {
 	//reset card
 	this._disabled = false;
-	$(this._el).removeClass("disabled")
-}
+	$(this._el).removeClass("disabled");
+	this.flip("back");
+};
+
+Card.prototype.flip = function(state)
+{
+	if(state == "front")
+		$(this._el).addClass("selected");
+	else
+		$(this._el).removeClass("selected");
+};
 
 Card.prototype.disable = function()
 {
-	//diable card, so it cannot be clicked again, or turned.
+	//diable card, so it cannot be clicked again, or flipped.
 	this._disabled = true;
 	$(this._el).addClass("disabled");
-	console.log($(this._el));
-}
+};
 
 Card.prototype.addCardOnFlip = function(callback)
 {
@@ -130,7 +144,9 @@ Card.prototype.onCardClick = function(event)
 {
 	if(this._disabled) return;
 
-	console.log(this._index );
+	console.log("CLICK");
+	this.flip("front");
+
 	this._flipCallback(this);
 };
 
