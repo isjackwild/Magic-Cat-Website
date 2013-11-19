@@ -57,7 +57,18 @@ $(document).ready(function() {
 		clockTime();
 	}, 60000)
 
-	if (month == 10 || month == 11){
+	
+	if (month >= 1 && month < 10) {
+		$(".xmas").addClass("hide");
+
+		if (hours > 19) {
+			$(".day").addClass("hide");
+			$(".note").addClass("hide");
+		} else {
+			$(".night").addClass("hide");
+		}
+
+	} else if (month == 10 || month == 11){
 
 		console.log("It's November");
 		var candleHeight;

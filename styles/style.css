@@ -1283,7 +1283,7 @@ p {
 	position: absolute;
 	z-index: 0;
 	left: 845px;
-	top: 235px;
+	top: 250px;
 	animation-play-state: paused;
 	animation: star 2s infinate linear;
 	-moz-animation: 2s linear 0s normal none infinite star;
@@ -1345,10 +1345,10 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
-	left: 710px;
-	top: 25px;
+	left: 830px;
+	top: 20px;
 	opacity: 0;
-	transform: rotate(-15deg);
+	//transform: rotate(-15deg);
 	transition: opacity 2.5s;
 }
 
