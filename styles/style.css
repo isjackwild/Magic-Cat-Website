@@ -110,7 +110,7 @@ p {
 	height: 100%;
 	width: 100%;
 	//background-color: lightblue;
-	background-image: url("../assets/bravo-bg.jpg");
+	background-image: url("../assets/bravo-bg2.jpg");
 	background-size: cover;
 	position: absolute;
 	top: 0;
@@ -118,7 +118,7 @@ p {
 	pointer-events: none;
 	z-index: 7;
 	opacity: 0;
-	transition: opacity 0.25s;
+	transition: opacity 0.35s;
 }
 
 #bravo.touch {
@@ -136,7 +136,13 @@ p {
 	overflow: hidden;
 	z-index: 9;
 	background-image: url("../assets/bravo-sprite.png");
+	transition: transform 0.5s;
 	animation: bravo 0.9s steps(2, end) infinite;
+	transform: scale(0.4);
+}
+
+#bravo-sprite.touch {
+	transform: scale(1);
 }
 
 @keyframes bravo{
@@ -155,6 +161,13 @@ p {
 	margin-top: -230px;
 	margin-left: -290px;
 	z-index: 8;
+	transform-origin: 40% 50%;
+	transition: transform 1.2s;
+	transform: scale(0.5) rotate(0deg);
+}
+
+#bravo-star.touch {
+	transform: scale(1) rotate(1100deg);
 }
 
 #mc-intro p {
@@ -207,7 +220,7 @@ p {
 	background-size: cover;
 	opacity: 0;
 	pointer-events: none;
-	transition: opacity 0.1s;
+	transition: opacity 0.15s;
 	z-index: 20;
 	//display: none;
 }

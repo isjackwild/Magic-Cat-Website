@@ -170,8 +170,12 @@ function positionTeddy() {
 			event.preventDefault();
 			positionTeddy(); 
 			$("#bravo").addClass('touch');
+			$("#bravo-star").addClass('touch');
+			$("#bravo-sprite").addClass('touch');
 			setTimeout(function() {
         		$("#bravo").removeClass('touch');
+        		$("#bravo-star").removeClass('touch');
+        		$("#bravo-sprite").removeClass('touch');
     		}, 3000)
 		});
 
