@@ -257,6 +257,7 @@ function positionTeddy() {
 		$("#santa-xmas").bind('mousedown touchend',function(event){
 			event.preventDefault();
 			$("#santa-xmas").addClass('touch');
+			$("#merry-xmas").addClass('touch');
 			clearTimeout(santaTimer);
 			santaTimer = setTimeout(function() {
         		$("#santa-xmas").removeClass('touch');

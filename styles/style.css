@@ -1306,7 +1306,7 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
-	left: 610px;
+	left: 750px;
 	top: 20px;
 	transition: transform 3s;
 }
@@ -1345,10 +1345,15 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
-	left: 990px;
-	top: 90px;
-	//transform: rotate(-15deg);
-	display: none;
+	left: 710px;
+	top: 25px;
+	opacity: 0;
+	transform: rotate(-15deg);
+	transition: opacity 2.5s;
+}
+
+#merry-xmas.touch {
+	opacity: 1;
 }
 
 #snowman-xmas {
