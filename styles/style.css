@@ -9,6 +9,7 @@ body {
 	width: 100%;
 	cursor: url('../assets/mouse-up.png'), auto;
 	overflow: hidden;
+	background-color: #434343;
 }
 
 body.mouseDown {
@@ -57,6 +58,124 @@ p {
 
 /*CONSTANTS*/
 
+#loading-l {
+	width: 52%;
+	height: 101%;
+	//background-color: lightblue;
+	background-image: url('../assets/loading-l.png');
+	background-position: right bottom;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	transition: transform 2s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	transform-origin: right top;
+	font-size: 50px;
+	text-align: center;
+	//display: none;
+}
+
+#loading-r {
+	width: 50%;
+	height: 102%;
+	//background-color: blue;
+	background-image: url('../assets/loading-r.png');
+	background-position: left bottom;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: 9;
+	transition: transform 2s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	transform-origin: left top;
+	font-size: 50px;
+	text-align: center;
+	//display: none;
+}
+
+#loading-r.touch {
+	transform: translate(100%,0) rotate(-10deg);
+}
+
+#loading-l.touch {
+	transform: translate(-100%,0) rotate(10deg);
+}
+
+#loading.touch {
+	opacity: 0;
+}
+
+#bravo {
+	height: 100%;
+	width: 100%;
+	//background-color: lightblue;
+	background-image: url("../assets/bravo-bg.jpg");
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	z-index: 7;
+	//opacity: 0;
+	transition: opacity 0.2s;
+}
+
+#bravo.touch {
+	opacity: 1;
+}
+
+#bravo-sprite-outer {
+	height: 481px;
+	width: 270px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -240px;
+	margin-left: -135px;
+	overflow: hidden;
+	z-index: 9;
+	background-color: red;
+}
+
+#bravo-sprite-inner {
+	height: 481px;
+	width: 540px;
+	background-image: url("../assets/bravo-sprite.png");
+	background-size: cover;
+	animation: bravo 8s infinate ease-in-out;
+	-moz-animation: 8s ease 0s normal none infinite bravo;
+  	-webkit-animation:bravo 8s infinite ease-in-out;
+}
+
+@keyframes bravo{
+    0%{transform:translate(0,0)}
+    100%{transform:translate(-270px,0)}
+}
+
+@-webkit-keyframes bravo{
+    0%{-webkit-transform:translate(0,0)}
+    100%{-webkit-transform:translate(-270px,0)}
+}
+
+@-moz-keyframes bravo{
+    0%{-moz-transform:translate(0,0)}
+    100%{-moz-transform:translate(-270px,0)}
+}
+
+#bravo-star {
+	width: 580px;
+	height: 494px;
+	background-image: url("../assets/bravo-star.png");
+	background-size: cover;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -250px;
+	margin-left: -290px;
+	z-index: 8;
+}
+
 #mc-intro p {
 	font-size: 2.2em;
 }
@@ -90,7 +209,30 @@ p {
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
-	//position: relative;
+	position: relative;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+#wrapper.touch {
+	opacity: 1;
+}
+
+#starburst {
+	position: fixed;
+	width: 118px;
+	height: 100px;
+	background-image: url('../assets/starburst.png');
+	background-size: cover;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.1s;
+	z-index: 20;
+	//display: none;
+}
+
+#starburst.touch {
+	opacity: 1;
 }
 
 #mc-title {
@@ -198,7 +340,7 @@ p {
 	position: absolute;
 	z-index: 1;
 	left: -200px;
-	top: 680px;
+	top: 710px;
 	animation: handipad 13s infinate ease-in-out;
 	-moz-animation: 13s ease 0s normal none infinite handipad;
   	-webkit-animation:handipad 13s infinite ease-in-out;
@@ -226,8 +368,8 @@ p {
 }
 
 #friends {
-	width: 254px;
-	height: 237px;
+	width: 219px;
+	height: 383px;
 	padding: 40px 30px 0 60px;
 	text-align: center;
 	font-style: italic;
@@ -237,16 +379,17 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 1;
-	top: 730px;
+	top: 680px;
 	left: 380px;
 	z-index: 2;
+	transition: transform 0.3s;
 	transform: rotate(-7deg);
 	-webkit-transform: rotate(-7deg);
 	-moz-transform: rotate(-7deg);
 }
 
 #friends:hover {
-	background-image: url('../assets/friends-bg-hover.png');
+	transform: scale(1.1);
 }
 
 #mc-app {
@@ -273,7 +416,7 @@ p {
 	position: absolute;
 	z-index: 1;
 	left: 2420px;
-	top: 870px;
+	top: 920px;
 	transform: rotate(-4deg);
 	-webkit-transform: rotate(-4deg);
 	-moz-transform: rotate(-4deg);
@@ -290,22 +433,43 @@ p {
 	width: 200px;
 	position: absolute;
 	left: 2650px;
-	top: 1290px;
+	top: 1385px;
 }
 
 .app-store{
 	margin-bottom: 20px;
 }
 
+#download-mc img {
+	transition: transform 0.5s;
+}
+
+#download-weather img {
+	transition: transform 0.5s;
+}
+
+#download-mc img:hover{
+	transform: scale(1.05);
+}
+
+#download-weather img:hover{
+	transform: scale(1.07);
+}
+
 #julie {
-	width: 415px;
-	height: 276px;
+	width: 390px;
+	height: 260px;
 	background-image: url('../assets/julie-bg.png');
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
 	left: 2216px;
 	top: 126px;
+	transition: transform 0.5s;
+}
+
+#julie:hover {
+	transform: scale(1.04);
 }
 
 #credits {
@@ -317,7 +481,13 @@ p {
 	position: absolute;
 	z-index: 3;
 	left: 2404px;
-	top: 480px;
+	top: 500px;
+}
+
+#credits-title {
+	position: relative;
+	left: 70px;
+	top: 25px;
 }
 
 .frame {
@@ -1103,13 +1273,38 @@ p {
 
 #tree-xmas {
 	width: 803px;
-	height: 1261px;
+	height: 1186px;
 	background-image: url('../assets/tree-xmas.png');
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
 	left: 480px;
+	top: 300px;
+}
+
+
+#tree-star-xmas {
+	width: 161px;
+	height: 156px;
+	background-image: url('../assets/tree-star-xmas.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	z-index: 0;
+	left: 845px;
 	top: 235px;
+	animation-play-state: paused;
+	animation: star 2s infinate linear;
+	-moz-animation: 2s linear 0s normal none infinite star;
+  	-webkit-animation: star 2s infinite linear;
+}
+
+#tree-star-xmas.touch {
+	animation-play-state: running;
+}
+
+@keyframes star {
+	0% {transform: rotate(0deg)}
+	100% {transform: rotate(360deg)}
 }
 
 #santa-xmas {
@@ -1121,17 +1316,11 @@ p {
 	z-index: 0;
 	left: 770px;
 	top: 15px;
+	transition: transform 3s;
 }
 
 #santa-xmas.touch {
-	animation: santa 3s ease-in-out;
-	-moz-animation: 3s ease 0s normal none santa;
-  	-webkit-animation: santa 3s ease-in-out;
-}
-
-@keyframes santa {
-	0%{transform: translate(0px,0px)}
-	100%{transform: translate(600px,-300px)}
+	transform: translate(600px,-300px);
 }
 
 #mc-xmas {
@@ -1146,9 +1335,9 @@ p {
 	transform-origin: bottom;
 	-moz-transform-origin: bottom;
 	-webkit-transform-origin: bottom;
-	animation: mc-xmas 2.5s infinate linear;
-	-moz-animation: 2.5s linear 0s normal none infinite mc-xmas;
-  	-webkit-animation: mc-xmas 2.5s infinite linear;
+	animation: mc-xmas 2.5s infinate cubic-bezier(0.220, 0.000, 0.715, 0.995);
+	-moz-animation: 2.5s cubic-bezier(0.220, 0.000, 0.715, 0.995) 0s normal none infinite mc-xmas;
+  	-webkit-animation: mc-xmas 2.5s infinite cubic-bezier(0.220, 0.000, 0.715, 0.995);
 }
 
 @keyframes mc-xmas {
@@ -1166,6 +1355,7 @@ p {
 	z-index: 0;
 	left: 1100px;
 	top: 490px;
+	transform: rotate(10deg);
 }
 
 #snowman-xmas {
@@ -1208,7 +1398,7 @@ p {
 	background-image: url('../assets/bell-xmas.png');
 	background-repeat: no-repeat;
 	position: absolute;
-	left: 2780px;
+	left: 2810px;
 	top: 15px;
 	z-index: 0;
 	transform: rotate(8deg);
@@ -1248,8 +1438,8 @@ p {
 	width: 104px;
 	height: 477px;
 	position: absolute;
-	top: 15px;
-	left: 1800px;
+	top: 95px;
+	left: 2688px;
 	z-index: 4;
 }
 
@@ -1273,4 +1463,5 @@ p {
 	z-index: 1;
 	position: absolute;
 	bottom: 300px;
+	//display: none;
 }

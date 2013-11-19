@@ -18,21 +18,25 @@
   </head>
 <body>
 
+<div id = "loading-l"></div>
+<div id = "loading-r"></div>
 
+<div id="bravo">
+  <div id = "bravo-sprite-outer">
+    <div id="bravo-sprite-inner"></div>
+  </div>
+  <div id = "bravo-star"></div>
+</div>
+
+<div id="starburst"></div>
 <div id="wrapper">
 
   <div id="mc-title"></div>
   <div id="teddy"></div>
 
-  <ul class="rslides">
-    <li><img src="images/dog1.jpg" alt=""></li>
-    <li><img src="images/dog2.jpg" alt=""></li>
-    <li><img src="images/dog3.jpg" alt=""></li>
-  </ul>
-
   <div id="mc-intro" class="textdiv">
       <p>
-        med Den Magiske Kat og Teddy. Gå på opdagelse i alle de spændene og rigt illustrerede verdener. Lille Teddy kan ikke finde sin kludedukke. Den er svær at finde, for den h ar nemlig gemt sig rigtig godt, se om du kan hjælpe Den Magiske Kat og Teddy med at finde kludedukken. 
+        med Den Magiske Kat og Teddy. Gå på opdagelse i alle de spændene og rigt illustrerede verdener. Lille Teddy kan ikke finde sin kludedukke. Den er svær at finde, for den h ar nemlig gemt sig rigtig godt, se om du kan hjælpe Den Magiske Kat og Teddy med at finde kludedukken.
       </p>
   </div>
 
@@ -44,11 +48,9 @@
 
   <div id="handipad"></div>
 
-  <div id="friends" class="textdiv">
-      <p>
-        Make friends with <br>The Magic Cat!
-      </p>
-  </div>
+  <a href="https://www.facebook.com/denmagiskekat" alt="The Magic Cat on Facebook" target="blank">
+      <div id="friends" class="textdiv"></div>
+  </a>
 
   <div id="mc-app" class="textdiv">
       <p>
@@ -64,31 +66,32 @@
 
   <div id="download-mc">
     <div class="app-store">
-      <img src="assets/app-store.png" alt="App Store">
+      <a href="https://itunes.apple.com/app/magic-cat/id518982604?ls=1%26mt=8" alt="The Magic Cat on iTunes" target="blank">
+        <img src="assets/app-store.png" alt="App Store">
+      </a>
     </div>
 
     <div class="google-play">
-      <img src="assets/google-play.png" alt="Google Play">
+      <a href="https://play.google.com/store/apps/details?id=air.DenMagiskeKat" alt="The Magic Cat on Google Play" target="blank">
+        <img src="assets/google-play.png" alt="Google Play">
+      </a>
     </div>
   </div>
 
   <div id="download-weather">
     <div class="app-store">
-      <img src="assets/app-store.png" alt="App Store">
-    </div>
-
-    <div class="google-play">
-      <img src="assets/google-play.png" alt="Google Play">
+      <a href="https://itunes.apple.com/sl/app/magic-cat-weather-report/id655126693?mt=8" alt="Magic Weather on iTunes" target="blank">
+        <img src="assets/app-store.png" alt="App Store">
+      </a>
     </div>
   </div>
 
-  <div id="julie">
-  </div>
+  <a href="http://www.juliemichelsen.dk" alt="Julie Michelsen" target="blank">
+    <div id="julie"></div>
+  </a>
 
   <div id="credits" class="textdiv">
-    <h1>
-        Credits
-      </h1>
+    <img id="credits-title" src="assets/credits.png" alt="Credits">
       <p>
         kjaflkjs
         aslfjsal;fjk
@@ -103,10 +106,15 @@
   <div id="frame3" class="frame"></div> 
   <div id="frame4" class="frame"></div> 
 
-  <div id="gallery">
-    <div id="galleryframe">
-    </div>      
+  <div id="gallery" class="hide">
+    <div id="galleryframe"></div>     
   </div>
+
+  <ul class="rslides hide">
+    <li><img src="images/dog1.jpg" alt=""></li>
+    <li><img src="images/dog2.jpg" alt=""></li>
+    <li><img src="images/dog3.jpg" alt=""></li>
+  </ul> 
 
 
   <div id = "mc-day" class="day"></div>
@@ -140,9 +148,9 @@
   <div id = "mc-xmas" class="xmas"></div>
   <div id = "merry-xmas" class="xmas"></div>
   <div id = "tree-xmas" class="xmas"></div>
+  <div id = "tree-star-xmas" class="xmas"></div>
   <div id = "santa-xmas" class="xmas"></div>
   <div id = "snowman-xmas" class="xmas"></div>
-  <div id = "tea-xmas" class="xmas"></div>
   <div id = "bell-xmas" class="xmas"></div>
   <div id = "lamp-xmas" class="xmas">
     <img src="../assets/lamp-xmas.png" id="lamp">
