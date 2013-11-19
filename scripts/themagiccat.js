@@ -74,10 +74,16 @@ $(document).ready(function() {
 				$("#candle-top").css({
 					'bottom': candleHeight+40
 				});
+				$("#candle-flame").css({
+					'bottom': candleHeight+84
+				});
 			} else if (day > 24) {
 				$("#candle-main").height(40);
 				$("#candle-top").css({
 					'bottom': 78
+				});
+				$("#candle-flame").css({
+					'bottom': 125
 				});
 			}
 		}

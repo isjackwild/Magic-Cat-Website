@@ -1306,8 +1306,8 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
-	left: 670px;
-	top: 35px;
+	left: 610px;
+	top: 20px;
 	transition: transform 3s;
 }
 
@@ -1345,9 +1345,9 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
-	left: 1030px;
-	top: 70px;
-	transform: rotate(-15deg);
+	left: 990px;
+	top: 90px;
+	//transform: rotate(-15deg);
 	display: none;
 }
 
@@ -1432,7 +1432,7 @@ p {
 	height: 522px;
 	position: absolute;
 	top: 45px;
-	left: 2608px;
+	left: 2588px;
 	z-index: 4;
 	//background-color: blue;
 }
@@ -1459,7 +1459,6 @@ p {
 	position: absolute;
 	bottom: 300px;
 	left: 105px;
-	//display: none;
 }
 
 #candle-bottom {
@@ -1479,7 +1478,7 @@ p {
 	background-image: url('../assets/candle-flame.png');
 	z-index: 4;
 	position: absolute;
-	bottom: 214px;
+	//bottom: 214px;
 	left: 128px;
 	animation: flame 0.7s steps(4, end) infinite;
 }

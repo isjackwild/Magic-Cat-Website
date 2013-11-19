@@ -65,6 +65,7 @@ var CardsEngine =
 			console.log("GREAT SUCCESS! Now let's reset the cards");
 			$("#present-l").addClass("touch");
 			$("#present-r").addClass("touch");
+			$("#instructions").replaceWith("<p>The Magic Cat gave you a wallpaper! Check back on Sunday for the next present!</p>");
 			//this.reset();
 		}
 	},
