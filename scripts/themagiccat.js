@@ -30,7 +30,7 @@ $(document).ready(function() {
 	var mins = date.getMinutes();
 	var hours = date.getHours();
 	var month = date.getMonth();
-	var day = 1;
+	var day = date.getDate();
 
 	var minHand = (mins / 60)*360;
 	var hourHand = (hours / 12)*360;
@@ -62,18 +62,22 @@ $(document).ready(function() {
 		console.log("It's November");
 		var candleHeight;
 
+		$(".not-xmas").addClass("hide");
+		$(".day").addClass("hide");
+		$(".night").addClass("hide");
+
 		for (var i=1; i <= 24; i++){
 			if (day == i){
-				candleHeight = 403-(13*i);
+				candleHeight = 403-(14.5*i);
 				console.log("Candle Height = "+ candleHeight);
 				$("#candle-main").height(candleHeight);
 				$("#candle-top").css({
-					'bottom': candleHeight-12
+					'bottom': candleHeight+40
 				});
 			} else if (day > 24) {
-				$("#candle-main").height(403);
+				$("#candle-main").height(40);
 				$("#candle-top").css({
-					'bottom': 393
+					'bottom': 78
 				});
 			}
 		}

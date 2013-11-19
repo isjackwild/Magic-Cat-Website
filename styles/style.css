@@ -21,6 +21,9 @@ p {
 	line-height: 1.2em;
 }
 
+.hide {
+	display: none;
+}
 
 .rslides {
   position: absolute;
@@ -274,7 +277,6 @@ p {
 	z-index: 1;
 	left: 560px;
 	top: -40px;
-	display: none;
 	animation: swing 8s infinate ease-in-out;
 	-moz-animation: 8s ease 0s normal none infinite swing;
   	-webkit-animation:swing 8s infinite ease-in-out;
@@ -488,10 +490,6 @@ p {
 .frame {
 	z-index: 0;
 	position: absolute;
-}
-
-#wallpapers {
-	display: none;
 }
 
 #wallpaper {
@@ -1112,7 +1110,7 @@ p {
 	position: absolute;
 	z-index: 4;
 	left: 2658px;
-	top: 310px;
+	top: 330px;
 }
 
 #phone-day.touch {
@@ -1264,11 +1262,6 @@ p {
 #fish.touch {
 	opacity: 0;
 }
-
-.day {
-	display: none;
-}
-
 
 #tree-xmas {
 	width: 803px;
@@ -1435,33 +1428,65 @@ p {
 }
 
 #candle-outer {
-	width: 104px;
-	height: 477px;
+	width: 289px;
+	height: 522px;
 	position: absolute;
-	top: 95px;
-	left: 2688px;
+	top: 45px;
+	left: 2608px;
 	z-index: 4;
+	//background-color: blue;
 }
 
 #candle-main {
-	width: 104px;
-	height: 310px;
+	width: 76px;
+	height: 423px;
 	background-image: url('../assets/candle-main.png');
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	position: absolute;
-	bottom: 0;
+	bottom: 70px;
+	left: 105px;
 	z-index: 0; 
 }
 
 #candle-top {
-	width: 104px;
-	height: 80px;
+	width: 76px;
+	height: 59px;
 	background-image: url('../assets/candle-top.png');
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	z-index: 1;
 	position: absolute;
 	bottom: 300px;
+	left: 105px;
 	//display: none;
+}
+
+#candle-bottom {
+	width: 289px;
+	height: 183px;
+	background-image: url('../assets/candle-bottom.png');
+	background-repeat: no-repeat;
+	z-index: 5;
+	position: absolute;
+	bottom: -5px;
+	//background-color: red;
+}
+
+#candle-flame {
+	width: 30px;
+	height: 47px;
+	background-image: url('../assets/candle-flame.png');
+	z-index: 4;
+	position: absolute;
+	bottom: 214px;
+	left: 128px;
+	animation: flame 0.7s steps(4, end) infinite;
+}
+
+
+@keyframes flame{
+    from {background-position: 0px;}
+    to {background-position: -120px; }
+}
 }
