@@ -387,6 +387,8 @@ function positionTeddy() {
 // SCROLL INITIATE.
 		BDC_scroll.init();
 
+		CardsEngine.init();
+
 // SLIDESHOW INITIATE
 		$(".rslides").responsiveSlides();
 }); //end doc.ready

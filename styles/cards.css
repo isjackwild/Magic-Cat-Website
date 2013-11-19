@@ -1,0 +1,74 @@
+#cards
+{
+
+}
+
+#cards .card
+{
+	position:absolute;
+}
+
+#cards .card.disabled
+{
+	color: #ff00ff;
+}
+
+#cards #card0
+{
+	left:10px;
+	top:10px;
+}
+
+#cards #card1
+{
+	left:50px;
+	top:10px;
+}
+
+#cards #card2
+{
+	left:100px;
+	top:10px;
+}
+
+#cards #card3
+{
+	left:150px;
+	top:10px;
+}
+
+#cards #card4
+{
+	left:200px;
+	top:10px;
+}
+
+#cards #card5
+{
+	left:250px;
+	top:10px;
+}
+
+#cards #card6
+{
+	left:300px;
+	top:10px;
+}
+
+#cards #card7
+{
+	left:350px;
+	top:10px;
+}
+
+#cards #card8
+{
+	left:400px;
+	top:10px;
+}
+
+#cards #card9
+{
+	left:450px;
+	top:10px;
+}
