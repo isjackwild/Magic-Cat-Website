@@ -34,8 +34,8 @@ $(document).ready(function() {
 
 	var date = new Date();
 	var mins = date.getMinutes();
-	var hours = 19;
-	var month = 10;
+	var hours = date.getHours();
+	var month = 11;
 	var day = date.getDate();
 
 	var minHand = (mins / 60)*360;
@@ -70,8 +70,10 @@ $(document).ready(function() {
 		if (hours < 8 || hours > 18) {
 			$(".day").addClass("hide");
 			$(".note").addClass("hide");
+			$("#wrapper").addClass("night");
 		} else {
 			$(".night").addClass("hide");
+			$("#wrapper").addClass("day");
 		}
 
 	} else if (month == 11 || month == 12){
@@ -79,6 +81,7 @@ $(document).ready(function() {
 		console.log("It's November");
 		var candleHeight;
 
+		$("#wrapper").addClass("xmas");
 		$(".not-xmas").addClass("hide");
 		$(".day").addClass("hide");
 		$(".night").addClass("hide");
@@ -271,6 +274,33 @@ function positionTeddy() {
 			moonTimer = setTimeout(function() {
         		$("#moon-night").removeClass('touch');
     		}, 1600)
+		});
+
+		$("#mc-hat-night").bind('mouseenter touchstart', function(event){
+			event.preventDefault();
+			$("#mc-hat-night").addClass('touch');
+			//$("#stars-small").removeClass('hide');
+		});
+
+		$("#mc-hat-night").bind('mouseleave touchend',function(event){
+			event.preventDefault();
+			$("#mc-hat-night").removeClass('touch');
+			//$("#stars-small").addClass('hide');
+		});
+
+		$("#lamps-night").bind('mousedown touchstart', function(event){
+			event.preventDefault();
+			$("#light-off-night").toggleClass('touch');
+			$("#lamps-night").toggleClass('touch');
+		});
+
+		var teaTimer = 0;
+		$("#tea-pot-night").bind('mousedown touchstart',function(event){
+			$("#tea-pot-night").addClass('touch');
+			clearTimeout(teaTimer);
+			teaTimer = setTimeout(function() {
+        		$("#tea-pot-night").removeClass('touch');
+    		}, 5000)
 		});
 
 

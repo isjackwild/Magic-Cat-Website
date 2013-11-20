@@ -33,39 +33,6 @@ p {
 	-o-touch-callout: none !important;
 }
 
-
-#wrapper {
-	width: 3000px;
-	height: 1500px;
-	background-size: cover;
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
-	position: relative;
-	opacity: 0;
-	transition: opacity 1s;
-	-webkit-transition: opacity 1s;
-	-moz-transition: opacity 1s;
-	-ms-transition: opacity 1s;
-	-o-transition: opacity 1s;
-}
-
-#wrapper.touch {
-	opacity: 1;
-}
-
-#wrapper.xmas{
-	background-image: url('../assets/bg-xmas.jpg');
-}
-
-#wrapper.day{
-	background-image: url('../assets/bg-day.jpg');
-}
-
-#wrapper.night{
-	background-image: url('../assets/bg-night.jpg');
-}
-
 .rslides {
   position: absolute;
   top: 480px;
@@ -324,6 +291,27 @@ p {
 	-o-box-sizing: border-box;
 }
 
+#wrapper {
+	width: 3000px;
+	height: 1500px;
+	background-image: url('../assets/bg-night.jpg');
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	opacity: 0;
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-ms-transition: opacity 1s;
+	-o-transition: opacity 1s;
+}
+
+#wrapper.touch {
+	opacity: 1;
+}
+
 #starburst {
 	position: fixed;
 	width: 118px;
@@ -438,28 +426,27 @@ p {
 }
 
 #min{
-	width: 10px;
-	height: 68px;
+	width: 18px;
+	height: 77px;
 	background-image: url("../assets/clock-min.png");
-	background-repeat: no-repeat;
 	position: absolute;
-	left: 90px;
-	top: 335px;
+	left: 86px;
+	top: 325px;
 	z-index: 10;
-	transform-origin: center bottom;
-  	-moz-transform-origin: center bottom;
-  	-webkit-transform-origin: center bottom;
-  	-ms-transform-origin: center bottom;
-  	-o-transform-origin: center bottom;
+	transform-origin: center 95%;
+  	-moz-transform-origin: center 95%;
+  	-webkit-transform-origin: center 95%;
+  	-ms-transform-origin: center 95%;
+  	-o-transform-origin: center 95%;
 }
 
 #hour{
-	width: 16px;
-	height: 58px;
+	width: 18px;
+	height: 77px;
 	background-image: url("../assets/clock-hour.png");
 	position: absolute;
 	left: 86px;
-	top: 345px;
+	top: 325px;
 	z-index: 10;
 	transform-origin: center bottom;
   	-moz-transform-origin: center bottom;
@@ -475,7 +462,7 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	left: 86px;
-	top: 394px;
+	top: 395px;
 	z-index: 11;
 }
 
