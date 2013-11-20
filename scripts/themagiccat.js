@@ -1,12 +1,18 @@
-$(document).on('mousemove', function(e){
-    $('#starburst').css({
-       left:  e.pageX - 90,
-       top:   e.pageY - 60,
+function moveStars(event)
+{
+	$('#starburst').css({
+       left:  UTILS.getPositionFromMouseTouchEvent(event).x - 90,
+       top:   UTILS.getPositionFromMouseTouchEvent(event).y - 60,
     });
+}
+
+$(document).on('mousemove touchmove', function(event){
+    moveStars(event);
 });
 
 $(document).bind('mousedown touchstart',function(event){
 			$("#starburst").addClass('touch');
+			moveStars(event);
 		});
 $(document).bind('mouseup touchend',function(event){
 			$("#starburst").removeClass('touch');
@@ -28,8 +34,8 @@ $(document).ready(function() {
 
 	var date = new Date();
 	var mins = date.getMinutes();
-	var hours = date.getHours();
-	var month = date.getMonth();
+	var hours = 19;
+	var month = 10;
 	var day = date.getDate();
 
 	var minHand = (mins / 60)*360;
@@ -58,17 +64,17 @@ $(document).ready(function() {
 	}, 60000)
 
 	
-	if (month >= 1 && month < 10) {
+	if (month >= 1 && month <= 10) {
 		$(".xmas").addClass("hide");
 
-		if (hours > 19) {
+		if (hours < 8 || hours > 18) {
 			$(".day").addClass("hide");
 			$(".note").addClass("hide");
 		} else {
 			$(".night").addClass("hide");
 		}
 
-	} else if (month == 10 || month == 11){
+	} else if (month == 11 || month == 12){
 
 		console.log("It's November");
 		var candleHeight;
@@ -143,7 +149,6 @@ var positionArray = [
     , new Position(2840, 600, -90)
     , new Position(2930, 1400, -190) 
 	, new Position(-10, 1260, -110) 
-	, new Position(2200, 600, -90) 
    	, new Position(500, 920, 10) 
 ];
 
@@ -257,6 +262,17 @@ function positionTeddy() {
     		}, 13500)
 		});
 
+//NIGHT INTERACTION
+		
+		var moonTimer = 0;
+		$("#moon-night").bind('mousedown touchstart',function(event){
+			$("#moon-night").addClass('touch');
+			clearTimeout(moonTimer);
+			moonTimer = setTimeout(function() {
+        		$("#moon-night").removeClass('touch');
+    		}, 1600)
+		});
+
 
 
 // XMAS INTERACTION
@@ -335,21 +351,22 @@ function positionTeddy() {
 			render: function()
 			{
 				//easing & where to add bounce
-					// this._x += (this._xtarget - this._x) * 0.2;
+					this._x += (this._xtarget - this._x) * 0.2;
 					this._y += (this._ytarget - this._y) * 0.12;
 					
 
-				if (this._x < -2000) {
-					this._x -= (this._x) * 0.12;
-				} else {
-					this._x += (this._xtarget - this._x) * 0.12;
-				}
+				// if (this._x < -2000) {
+				// 	this._x -= (this._x) * 0.12;
+				// } else {
+				// 	this._x += (this._xtarget - this._x) * 0.12;
+				// }
 
 				this.setXY(this._x, this._y);
 			},
 			onMouseDown: function(event)
 			{
-				event.preventDefault();
+				if(!$(event.target).hasClass("ignore-prevent-default"))
+					event.preventDefault();
 				this._mousedown = true;
 				this._startX = UTILS.getPositionFromMouseTouchEvent(event).x - this._x
 				this._startY = UTILS.getPositionFromMouseTouchEvent(event).y - this._y
@@ -364,7 +381,8 @@ function positionTeddy() {
 			},
 			onMouseMove: function(event)
 			{
-				event.preventDefault();
+				if(!$(event.target).hasClass("ignore-prevent-default"))
+					event.preventDefault();
 
 				var x = UTILS.getPositionFromMouseTouchEvent(event).x - this._x
 				var y = UTILS.getPositionFromMouseTouchEvent(event).y - this._y
@@ -374,6 +392,11 @@ function positionTeddy() {
 
 				this._xtarget = x;
 				this._ytarget = y;
+
+				// $('#starburst').css({
+    //    				left:  -x + 90,
+    //    				top:   -y + 60,
+    // 			});
 
 				var workingWidth= $(window).width() - 3000;
 				var workingHeight= $(window).height() - 1500;
