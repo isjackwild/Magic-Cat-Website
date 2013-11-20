@@ -25,6 +25,13 @@ p {
 	display: none;
 }
 
+* {
+	-webkit-touch-callout: none !important;
+	touch-callout: none !important;
+	-moz-touch-callout: none !important;
+	-ms-touch-callout: none !important;
+}
+
 .rslides {
   position: absolute;
   top: 480px;
@@ -38,6 +45,8 @@ p {
 
 .rslides li {
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
   position: absolute;
   display: none;
   width: 100%;
@@ -64,7 +73,6 @@ p {
 #loading-l {
 	width: 52%;
 	height: 101%;
-	//background-color: lightblue;
 	background-image: url('../assets/loading-l.png');
 	background-position: right bottom;
 	background-size: cover;
@@ -73,7 +81,13 @@ p {
 	left: 0;
 	z-index: 10;
 	transition: transform 2s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-webkit-transition: -webkit-transform 2s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-moz-transition: -moz-transform 2s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-ms-transition: -ms-transform 2s cubic-bezier(0.230, 0.000, 0.560, 1.000);
 	transform-origin: right top;
+	-webkit-transform-origin: right top;
+	-moz-transform-origin: right top;
+	-ms-transform-origin: right top;
 	font-size: 50px;
 	text-align: center;
 	//display: none;
@@ -91,7 +105,13 @@ p {
 	left: 50%;
 	z-index: 9;
 	transition: transform 2s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-webkit-transition: -webkit-transform 2s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-moz-transition: -moz-transform 2s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-ms-transition: -ms-transform 2s cubic-bezier(0.230, 0.000, 0.560, 1.000);
 	transform-origin: left top;
+	-webkit-transform-origin: left top;
+	-moz-transform-origin: left top;
+	-ms-transform-origin: left top;
 	font-size: 50px;
 	text-align: center;
 	//display: none;
@@ -99,10 +119,16 @@ p {
 
 #loading-r.touch {
 	transform: translate(100%,0) rotate(-10deg);
+	-webkit-transform: translate(100%,0) rotate(-10deg);
+	-moz-transform: translate(100%,0) rotate(-10deg);
+	-ms-transform: translate(100%,0) rotate(-10deg);
 }
 
 #loading-l.touch {
 	transform: translate(-100%,0) rotate(10deg);
+	-webkit-transform: translate(-100%,0) rotate(10deg);
+	-moz-transform: translate(-100%,0) rotate(10deg);
+	-ms-transform: translate(-100%,0) rotate(10deg);
 }
 
 #loading.touch {
@@ -122,6 +148,9 @@ p {
 	z-index: 7;
 	opacity: 0;
 	transition: opacity 0.35s;
+	-webkit-transition: opacity 0.35s;
+	-moz-transition: opacity 0.35s;
+	-ms-transition: opacity 0.35s;
 }
 
 #bravo.touch {
@@ -140,15 +169,42 @@ p {
 	z-index: 9;
 	background-image: url("../assets/bravo-sprite.png");
 	transition: transform 0.5s;
+	-webkit-transition: -webkit-transform 0.5s;
+	-moz-transition: -moz-transform 0.5s;
+	-ms-transition: -ms-transform 0.5s;
 	animation: bravo 0.9s steps(2, end) infinite;
+	-webkit-animation: bravo 0.9s steps(2, end) infinite;
+	-moz-animation: bravo 0.9s steps(2, end) infinite;
+	-ms-animation: bravo 0.9s steps(2, end) infinite;
 	transform: scale(0.4);
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	-ms-transform: scale(0.4);
 }
 
 #bravo-sprite.touch {
 	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
 }
 
 @keyframes bravo{
+    from {background-position: 0px;}
+    to {background-position: -570px; }
+}
+
+@-webkit-keyframes bravo{
+    from {background-position: 0px;}
+    to {background-position: -570px; }
+}
+
+@-moz-keyframes bravo{
+    from {background-position: 0px;}
+    to {background-position: -570px; }
+}
+
+@-ms-keyframes bravo{
     from {background-position: 0px;}
     to {background-position: -570px; }
 }
@@ -165,12 +221,24 @@ p {
 	margin-left: -290px;
 	z-index: 8;
 	transform-origin: 40% 50%;
+	-webkit-transform-origin: 40% 50%;
+	-moz-transform-origin: 40% 50%;
+	-ms-transform-origin: 40% 50%;
 	transition: transform 1.2s;
+	-webkit-transition: -webkit-transform 1.2s;
+	-moz-transition: -moz-transform 1.2s;
+	-ms-transition: -ms-transform 1.2s;
 	transform: scale(0.5) rotate(0deg);
+	-webkit-transform: scale(0.5) rotate(0deg);
+	-moz-transform: scale(0.5) rotate(0deg);
+	-ms-transform: scale(0.5) rotate(0deg);
 }
 
 #bravo-star.touch {
 	transform: scale(1) rotate(1100deg);
+	-webkit-transform: scale(1) rotate(1100deg);
+	-moz-transform: scale(1) rotate(1100deg);
+	-ms-transform: scale(1) rotate(1100deg);
 }
 
 #mc-intro p {
@@ -196,6 +264,7 @@ p {
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
 }
 
 #wrapper {
@@ -209,6 +278,9 @@ p {
 	position: relative;
 	opacity: 0;
 	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-ms-transition: opacity 1s;
 }
 
 #wrapper.touch {
@@ -224,8 +296,10 @@ p {
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 0.15s;
+	-webkit-transition: opacity 0.15s;
+	-moz-transition: opacity 0.15s;
+	-ms-transition: opacity 0.15s;
 	z-index: 20;
-	//display: none;
 }
 
 #starburst.touch {
@@ -243,6 +317,7 @@ p {
 	transform: rotate(-7deg);
 	-webkit-transform: rotate(-7deg);
 	-moz-transform: rotate(-7deg);
+	-ms-transform: rotate(-7deg);
 }
 
 #teddy {
@@ -256,6 +331,7 @@ p {
 	transform: rotate(-20deg);
 	-webkit-transform: rotate(-20deg);
 	-moz-transform: rotate(-20deg);
+	-ms-transform: rotate(-20deg);
 }
 
 #mc-intro {
@@ -266,6 +342,7 @@ p {
 	transform: rotate(-5deg);
 	-webkit-transform: rotate(-5deg);
 	-moz-transform: rotate(-5deg);
+	-ms-transform: rotate(-5deg);
 }
 
 #clock {
@@ -280,9 +357,11 @@ p {
 	animation: swing 8s infinate ease-in-out;
 	-moz-animation: 8s ease 0s normal none infinite swing;
   	-webkit-animation:swing 8s infinite ease-in-out;
+  	-ms-animation:swing 8s infinite ease-in-out;
   	transform-origin: center top;
   	-moz-transform-origin: center top;
   	-webkit-transform-origin: center top;
+  	-ms-transform-origin: center top;
 }
 
 @keyframes swing{
@@ -303,6 +382,12 @@ p {
     100%{-moz-transform:rotate(-7deg)}
 }
 
+@-ms-keyframes swing{
+    0%{-ms-transform:rotate(-7deg)}
+    50%{-ms-transform:rotate(7deg)}
+    100%{-ms-transform:rotate(-7deg)}
+}
+
 #min{
 	width: 7px;
 	height: 60px;
@@ -314,6 +399,7 @@ p {
 	transform-origin: center 98%;
   	-moz-transform-origin: center 98%;
   	-webkit-transform-origin: center 98%;
+  	-ms-transform-origin: center 98%;
 }
 
 #hour{
@@ -327,6 +413,7 @@ p {
 	transform-origin: center 94%;
   	-moz-transform-origin: center 94%;
   	-webkit-transform-origin: center 94%;
+  	-ms-transform-origin: center 94%;
 }
 
 #handipad {
@@ -364,6 +451,12 @@ p {
     100%{-moz-transform:rotate(40deg) translate(20px,90px)}
 }
 
+@-ms-keyframes handipad{
+    0%{-ms-transform:rotate(40deg) translate(20px,90px)}
+    50%{-ms-transform:rotate(50deg) translate(0px,10px)}
+    100%{-ms-transform:rotate(40deg) translate(20px,90px)}
+}
+
 #friends {
 	width: 219px;
 	height: 383px;
@@ -380,13 +473,20 @@ p {
 	left: 380px;
 	z-index: 2;
 	transition: transform 0.3s;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	-ms-transition: -ms-transform 0.3s;
 	transform: rotate(-7deg);
 	-webkit-transform: rotate(-7deg);
 	-moz-transform: rotate(-7deg);
+	-ms-transform: rotate(-7deg);
 }
 
 #friends:hover {
 	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
 }
 
 #mc-app {
@@ -403,6 +503,7 @@ p {
 	transform: rotate(-2deg);
 	-webkit-transform: rotate(-2deg);
 	-moz-transform: rotate(-2deg);
+	-ms-transform: rotate(-2deg);
 }
 
 #weather-app {
@@ -439,18 +540,30 @@ p {
 
 #download-mc img {
 	transition: transform 0.5s;
+	-webkit-transition: -webkit-transform 0.5s;
+	-moz-transition: -moz-transform 0.5s;
+	-ms-transition: -ms-transform 0.5s;
 }
 
 #download-weather img {
 	transition: transform 0.5s;
+	-webkit-transition: -webkit-transform 0.5s;
+	-moz-transition: -moz-transform 0.5s;
+	-ms-transition: -ms-transform 0.5s;
 }
 
 #download-mc img:hover{
 	transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-ms-transform: scale(1.05);
 }
 
 #download-weather img:hover{
 	transform: scale(1.07);
+	-webkit-transform: scale(1.07);
+	-moz-transform: scale(1.07);
+	-ms-transform: scale(1.07);
 }
 
 #julie {
@@ -463,10 +576,16 @@ p {
 	left: 2226px;
 	top: 90px;
 	transition: transform 0.5s;
+	-webkit-transition: -webkit-transform 0.5s;
+	-moz-transition: -moz-transform 0.5s;
+	-ms-transition: -ms-transform 0.5s;
 }
 
 #julie:hover {
 	transform: scale(1.04);
+	-webkit-transform: scale(1.04);
+	-moz-transform: scale(1.04);
+	-ms-transform: scale(1.04);
 }
 
 #credits {
@@ -502,6 +621,9 @@ p {
 	left: 1110px;
 	top: 110px;
 	transform: rotate(-25deg);
+	-webkit-transform: rotate(-25deg);
+	-moz-transform: rotate(-25deg);
+	-ms-transform: rotate(-25deg);
 }
 
 #frame1 {
@@ -588,6 +710,7 @@ p {
 	animation: note-1 10s infinite linear;
 	-webkit-animation: note-1 10s infinite linear;
 	-moz-animation: 10s linear-1 0s normal none infinite note;
+	-ms-animation: 10s linear-1 0s normal none infinite note;
 }
 
 @keyframes note-1{
@@ -608,6 +731,12 @@ p {
     100%{-moz-transform:translate(250px, -330px); opacity: 0;}
 }
 
+@-ms-keyframes note-1{
+    0%{-ms-transform:translate(0,0); opacity 1;}
+    80%{opacity: 1;}
+    100%{-ms-transform:translate(250px, -330px); opacity: 0;}
+}
+
 #note-2 {
 	background-image: url('../assets/note-2.png');
 	width: 33px;
@@ -617,7 +746,8 @@ p {
 	left: 1350px;
 	top: 950px;
 	animation: note-2 10s infinite 7s linear;
-	-webkit-animation: 10s linear-2 0s normal none infinite 7s note;
+	-moz-animation: 10s linear-2 0s normal none infinite 7s note;
+	-ms-animation: 10s linear-2 0s normal none infinite 7s note;
 }
 
 @keyframes note-2{
@@ -638,6 +768,12 @@ p {
     100%{-moz-transform:translate(90px, -370px); opacity: 0;}
 }
 
+@-ms-keyframes note-2{
+    0%{-ms-transform:translate(0,0); opacity 1;}
+    80%{opacity: 1;}
+    100%{-ms-transform:translate(90px, -370px); opacity: 0;}
+}
+
 #note-3 {
 	background-image: url('../assets/note-3.png');
 	width: 47px;
@@ -649,6 +785,7 @@ p {
 	animation: note-3 9s infinite 5s linear;
 	-webkit-animation: note-3 9s infinite 5s linear;
 	-moz-animation: 9s linear 0s normal none infinite 5s note-3;
+	-ms-animation: 9s linear 0s normal none infinite 5s note-3;
 }
 
 @keyframes note-3{
@@ -669,6 +806,12 @@ p {
     100%{-moz-transform:translate(100px, -320px); opacity: 0;}
 }
 
+@-ms-keyframes note-3{
+    0%{-ms-transform:translate(0,0); opacity 1;}
+    80%{opacity: 1;}
+    100%{-ms-transform:translate(100px, -320px); opacity: 0;}
+}
+
 #note-4 {
 	background-image: url('../assets/note-4.png');
 	width: 31px;
@@ -680,6 +823,7 @@ p {
 	animation: note-4 10s infinite 2s linear;
 	-webkit-animation: note-4 10s infinite 2s linear;
 	-moz-animation: 10s linear 0s normal none infinite 2s note-4;
+	-ms-animation: 10s linear 0s normal none infinite 2s note-4;
 }
 
 @keyframes note-4{
@@ -700,6 +844,12 @@ p {
     100%{-moz-transform:translate(-100px, -360px); opacity: 0;}
 }
 
+@-ms-keyframes note-4{
+    0%{-ms-transform:translate(0,0); opacity 1;}
+    80%{opacity: 1;}
+    100%{-ms-transform:translate(-100px, -360px); opacity: 0;}
+}
+
 #note-5 {
 	background-image: url('../assets/note-5.png');
 	width: 34px;
@@ -711,6 +861,7 @@ p {
 	animation: note-5 7s infinite 8s linear;
 	-webkit-animation: note-5 7s infinite 8s linear;
 	-moz-animation: 7s linear 0s normal none infinite 8s note-5;
+	-ms-animation: 7s linear 0s normal none infinite 8s note-5;
 }
 
 @keyframes note-5{
@@ -731,6 +882,12 @@ p {
     100%{-moz-transform:translate(-10px, -400px); opacity: 0;}
 }
 
+@-ms-keyframes note-5{
+    0%{-ms-transform:translate(0,0); opacity 1;}
+    80%{opacity: 1;}
+    100%{-ms-transform:translate(-10px, -400px); opacity: 0;}
+}
+
 #note-6 {
 	background-image: url('../assets/note-5.png');
 	width: 38px;
@@ -742,6 +899,7 @@ p {
 	animation: note-6 8s infinite 3s linear;
 	-webkit-animation: note-6 8s infinite 3s linear;
 	-moz-animation: 8s linear 0s normal none infinite 3s note-6;
+	-ms-animation: 8s linear 0s normal none infinite 3s note-6;
 }
 
 @keyframes note-6{
@@ -762,6 +920,12 @@ p {
     100%{-moz-transform:translate(-200px, -200px); opacity: 0;}
 }
 
+@-ms-keyframes note-6{
+    0%{-ms-transform:translate(0,0); opacity 1;}
+    80%{opacity: 1;}
+    100%{-ms-transform:translate(-200px, -200px); opacity: 0;}
+}
+
 #note-7 {
 	background-image: url('../assets/note-7.png');
 	width: 26px;
@@ -773,7 +937,7 @@ p {
 	animation: note-7 12s infinite 1s linear;
 	-webkit-animation: note-7 12s infinite 1s linear;
 	-moz-animation: 12s linear 0s normal none infinite 1s note-7;
-	//background-color: red;
+	-ms-animation: 12s linear 0s normal none infinite 1s note-7;
 }
 
 @keyframes note-7{
@@ -794,6 +958,12 @@ p {
     100%{-moz-transform:translate(-30px, -380px); opacity: 0;}
 }
 
+@-ms-keyframes note-7{
+    0%{-ms-transform:translate(0,0); opacity 1;}
+    80%{opacity: 1;}
+    100%{-ms-transform:translate(-30px, -380px); opacity: 0;}
+}
+
 #note-8 {
 	background-image: url('../assets/note-8.png');
 	width: 31px;
@@ -805,7 +975,7 @@ p {
 	animation: note-8 13s infinite 5s linear;
 	-webkit-animation: note-8 13s infinite 5s linear;
 	-moz-animation: 13s linear 0s normal none infinite 5s note-8;
-	//background-color: red;
+	-ms-animation: 13s linear 0s normal none infinite 5s note-8;
 }
 
 @keyframes note-8{
@@ -826,6 +996,12 @@ p {
     100%{-moz-transform:translate(-50px, -400px); opacity: 0;}
 }
 
+@-ms-keyframes note-8{
+    0%{-ms-transform:translate(0,0); opacity 1;}
+    80%{opacity: 1;}
+    100%{-ms-transform:translate(-50px, -400px); opacity: 0;}
+}
+
 #note-9 {
 	background-image: url('../assets/note-9.png');
 	width: 27px;
@@ -837,7 +1013,7 @@ p {
 	animation: note-9 9s infinite 0s linear;
 	-webkit-animation: note-9 9s infinite 0s linear;
 	-moz-animation: 9s linear 0s normal none infinite 0s note-9;
-	//background-color: red;
+	-ms-animation: 9s linear 0s normal none infinite 0s note-9;
 }
 
 @keyframes note-9{
@@ -858,6 +1034,12 @@ p {
     100%{-moz-transform:translate(220px, -400px); opacity: 0;}
 }
 
+@-ms-keyframes note-9{
+    0%{-ms-transform:translate(0,0); opacity 1;}
+    80%{opacity: 1;}
+    100%{-ms-transform:translate(220px, -400px); opacity: 0;}
+}
+
 
 #umbrella-day {
 	width: 699px;
@@ -871,9 +1053,11 @@ p {
 	animation: umbrella 10s infinate ease;
 	-moz-animation: 10s ease-in-out 0s normal none infinite umbrella;
   	-webkit-animation: umbrella 10s infinite ease;
+  	-ms-animation: umbrella 10s infinite ease;
   	transform-origin: center 95%;
   	-moz-transform-origin: center 95%;
   	-webkit-transform-origin: center 95%;
+  	-ms-transform-origin: center 95%;
 }
 
 @keyframes umbrella{
@@ -897,7 +1081,12 @@ p {
     100%{-moz-transform:rotate(0deg)}
 }
 
-
+@-ms-keyframes umbrella{
+    0%{-ms-transform:rotate(0deg)}
+    80%{-ms-transform:rotate(0deg)}
+    90%{-ms-transform:rotate(20deg)}
+    100%{-ms-transform:rotate(0deg)}
+}
 
 
 #cloud-day {
@@ -912,6 +1101,7 @@ p {
 	animation: cloud 25s infinate linear;
 	-moz-animation: 25s linear 0s normal none infinite cloud;
   	-webkit-animation: cloud 25s infinite linear;
+  	-ms-animation: cloud 25s infinite linear;
 }
 
 @-webkit-keyframes cloud{
@@ -930,6 +1120,14 @@ p {
     100%{-moz-transform:translate(0,0)}
 }
 
+@-ms-keyframes cloud{
+    0%{-ms-transform:translate(0,0)}
+    25%{-ms-transform:translate(60px,20px)}
+    50%{-ms-transform:translate(120px,10px)}
+    75%{-ms-transform:translate(60px,20px)}
+    100%{-ms-transform:translate(0,0)}
+}
+
 
 #sun-day {
 	width: 349px;
@@ -943,6 +1141,7 @@ p {
 	animation: sun 95s infinate linear;
 	-moz-animation: 95s linear 0s normal none infinite sun;
   	-webkit-animation: sun 95s infinite linear;
+  	-ms-animation: sun 95s infinite linear;
 }
 
 @keyframes sun{
@@ -960,6 +1159,11 @@ p {
     100%{-moz-transform:rotate(360deg)}
 }
 
+@-ms-keyframes sun{
+    0%{-ms-transform:rotate(0deg)}
+    100%{-ms-transform:rotate(360deg)}
+}
+
 #sheets-day {
 	width: 1029px;
 	height: 162px;
@@ -971,12 +1175,15 @@ p {
 	top: 30px;
 	transform: rotate(15deg);
 	-webkit-transform: rotate(15deg);
+	-moz-transform: rotate(15deg);
+	-ms-transform: rotate(15deg);
 }
 
 #sheets-day.touch {
 	animation: sheets 12s 1 ease-in-out;
 	-moz-animation: 12s ease 0s normal none 1 sheets;
   	-webkit-animation: sheets 12s 1 ease-in-out;
+  	-ms-animation: sheets 12s 1 ease-in-out;
 }
 
 
@@ -1009,18 +1216,36 @@ p {
     90%{-webkit-transform: translate(-5px,2px) rotate(14deg)}
     100%{-webkit-transform: translate(0,0) rotate(15deg)}
 }
-/*
-@-webkit-keyframes sheets{
-    0%{-webkit-transform: translate(0,0) rotate(17deg)}
-    50%{-webkit-transform: translate(10px,5px) rotate(15deg)}
-    100%{-webkit-transform: translate(0,0) rotate(17deg)}
-}
 
 @-moz-keyframes sheets{
-    0%{-moz-transform: translate(0,0) rotate(17deg)}
-    50%{-moz-transform: translate(10px,5px) rotate(15deg)}
-    100%{-moz-transform: translate(0,0) rotate(17deg)}
-}*/
+    0%{-moz-transform: translate(0,0) rotate(15deg)}
+    2%{-moz-transform: translate(33px,15px) rotate(20deg)}
+    10%{-moz-transform: translate(-33px,0) rotate(10deg)}
+    20%{-moz-transform: translate(24px,13px) rotate(19deg)}
+    30%{-moz-transform: translate(-24px,0) rotate(11deg)}
+    40%{-moz-transform: translate(14px,10px) rotate(18deg)}
+    50%{-moz-transform: translate(-14px,0) rotate(12deg)}
+    60%{-moz-transform: translate(10px,7px) rotate(17deg)}
+    70%{-moz-transform: translate(-10px,0) rotate(13deg)}
+    80%{-moz-transform: translate(5px,5px) rotate(16deg)}
+    90%{-moz-transform: translate(-5px,2px) rotate(14deg)}
+    100%{-moz-transform: translate(0,0) rotate(15deg)}
+}
+
+@-ms-keyframes sheets{
+    0%{-ms-transform: translate(0,0) rotate(15deg)}
+    2%{-ms-transform: translate(33px,15px) rotate(20deg)}
+    10%{-ms-transform: translate(-33px,0) rotate(10deg)}
+    20%{-ms-transform: translate(24px,13px) rotate(19deg)}
+    30%{-ms-transform: translate(-24px,0) rotate(11deg)}
+    40%{-ms-transform: translate(14px,10px) rotate(18deg)}
+    50%{-ms-transform: translate(-14px,0) rotate(12deg)}
+    60%{-ms-transform: translate(10px,7px) rotate(17deg)}
+    70%{-ms-transform: translate(-10px,0) rotate(13deg)}
+    80%{-ms-transform: translate(5px,5px) rotate(16deg)}
+    90%{-ms-transform: translate(-5px,2px) rotate(14deg)}
+    100%{-ms-transform: translate(0,0) rotate(15deg)}
+}
 
 #butterfly-day {
 	width: 71px;
@@ -1032,15 +1257,8 @@ p {
 	animation: butterfly 15s infinate linear;
 	-moz-animation: 15s linear 0s normal none infinite butterfly;
   	-webkit-animation: butterfly 15s infinite linear;
+  	-ms-animation: butterfly 15s infinite linear;
 }
-
-/*@keyframes butterfly{
-    0%{transform: rotate(0deg)}
-    44%{transform: rotate(-180deg)}
-    50%{transform: rotate(-360deg)}
-    95%{transform: rotate(-180deg)}
-    100%{transform: rotate(0deg)}
-}*/
 
 @keyframes butterfly{
     0%{transform: rotate(-180deg)}
@@ -1066,6 +1284,14 @@ p {
     100%{-moz-transform: rotate(-180deg) translate(-40px,0)}
 }
 
+@-ms-keyframes butterfly{
+    0%{-ms-transform: rotate(-180deg) translate(-40px,0)}
+    45%{-ms-transform: rotate(-180deg) translate(20px,20px)}
+    50%{-ms-transform: rotate(-360deg) translate(-40px,0)}
+    95%{-ms-transform: rotate(-360deg) translate(20px,20px)}
+    100%{-ms-transform: rotate(-180deg) translate(-40px,0)}
+}
+
 #butterfly-arc-day {
 	width: 250px;
 	height: 68px;
@@ -1077,9 +1303,11 @@ p {
 	transform-origin: right;
 	-moz-transform-origin: right;
 	-webkit-transform-origin: right;
+	-ms-transform-origin: right;
 	animation: butterfly-arc 15s infinate linear;
 	-moz-animation: 15s linear 0s normal none infinite butterfly-arc;
   	-webkit-animation: butterfly-arc 15s infinite linear;
+  	-ms-animation: butterfly-arc 15s infinite linear;
 }
 
 @keyframes butterfly-arc{
@@ -1100,7 +1328,11 @@ p {
     100%{-moz-transform: rotate(150deg)}
 }
 
-
+@-ms-keyframes butterfly-arc{
+    0%{-ms-transform:rotate(150deg)}
+    50%{-ms-transform:rotate(30deg)}
+    100%{-ms-transform: rotate(150deg)}
+}
 
 #phone-day {
 	width: 219px;
@@ -1117,9 +1349,11 @@ p {
 	transform-origin: centre 92%;
 	-moz-transform-origin: centre 92%;
 	-webkit-transform-origin: centre 92%;
+	-ms-transform-origin: centre 92%;
 	animation: ring 2.5s infinate linear;
 	-moz-animation: 2.5s linear 0s normal none infinite ring;
   	-webkit-animation: ring 2.5s infinite linear;
+  	-ms-animation: ring 2.5s infinite linear;
 }
 
 @keyframes ring{
@@ -1197,8 +1431,29 @@ p {
     100%{-moz-transform:rotate(0deg)}
 }
 
-* {
-	-webkit-touch-callout: none !important;
+@-ms-keyframes ring{
+    0%{-ms-transform:rotate(-5deg)}
+    2%{-ms-transform:rotate(5deg)}
+    4%{-ms-transform:rotate(-5deg)}
+    6%{-ms-transform:rotate(5deg)}
+    8%{-ms-transform:rotate(-5deg)}
+    10%{-ms-transform:rotate(5deg)}
+    12%{-ms-transform:rotate(-5deg)}
+    14%{-ms-transform:rotate(5deg)}
+    16%{-ms-transform:rotate(-5deg)}
+    18%{-ms-transform:rotate(5deg)}
+    20%{-ms-transform:rotate(-5deg)}
+    22%{-ms-transform:rotate(5deg)}
+    24%{-ms-transform:rotate(-5deg)}
+    26%{-ms-transform:rotate(5deg)}
+    28%{-ms-transform:rotate(-5deg)}
+    30%{-ms-transform:rotate(5deg)}
+    32%{-ms-transform:rotate(-5deg)}
+    34%{-ms-transform:rotate(5deg)}
+    36%{-ms-transform:rotate(-5deg)}
+    38%{-ms-transform:rotate(5deg)}
+    40%{-ms-transform:rotate(0deg)}
+    100%{-ms-transform:rotate(0deg)}
 }
 
 #statue-day {
@@ -1234,6 +1489,8 @@ p {
 #bird-day.touch {
 	animation: bird 0.6s ease-in-out;
 	-webkit-animation: bird 0.6s ease-in-out;
+	-moz-animation: bird 0.6s ease-in-out;
+	-ms-animation: bird 0.6s ease-in-out;
 }
 
 @keyframes bird {
@@ -1246,6 +1503,18 @@ p {
 	0%{-webkit-transform: translate(0,0)}
 	50%{-webkit-transform: translate(0,-50px)}
 	100%{-webkit-transform: translate(0,0)}
+}
+
+@-moz-keyframes bird {
+	0%{-moz-transform: translate(0,0)}
+	50%{-moz-transform: translate(0,-50px)}
+	100%{-moz-transform: translate(0,0)}
+}
+
+@-ms-keyframes bird {
+	0%{-ms-transform: translate(0,0)}
+	50%{-ms-transform: translate(0,-50px)}
+	100%{-ms-transform: translate(0,0)}
 }
 
 #fish-day {
@@ -1284,19 +1553,41 @@ p {
 	z-index: 0;
 	left: 845px;
 	top: 250px;
-	animation-play-state: paused;
 	animation: star 2s infinate linear;
 	-moz-animation: 2s linear 0s normal none infinite star;
   	-webkit-animation: star 2s infinite linear;
+  	-ms-animation: star 2s infinite linear;
+  	animation-play-state: paused;
+	-webkit-animation-play-state: paused;
+	-moz-animation-play-state: paused;
+	-ms-animation-play-state: paused;
 }
 
 #tree-star-xmas.touch {
 	animation-play-state: running;
+	-webkit-animation-play-state: running;
+	-moz-animation-play-state: running;
+	-ms-animation-play-state: running;
 }
 
 @keyframes star {
 	0% {transform: rotate(0deg)}
 	100% {transform: rotate(360deg)}
+}
+
+@-webkit-keyframes star {
+	0% {-webkit-transform: rotate(0deg)}
+	100% {-webkit-transform: rotate(360deg)}
+}
+
+@-moz-keyframes star {
+	0% {-moz-transform: rotate(0deg)}
+	100% {-moz-transform: rotate(360deg)}
+}
+
+@-ms-keyframes star {
+	0% {-ms-transform: rotate(0deg)}
+	100% {-ms-transform: rotate(360deg)}
 }
 
 #santa-xmas {
@@ -1309,10 +1600,16 @@ p {
 	left: 750px;
 	top: 20px;
 	transition: transform 3s;
+	-webkit-transition: -webkit-transform 3s;
+	-moz-transition: -moz-transform 3s;
+	-ms-transition: -ms-transform 3s;
 }
 
 #santa-xmas.touch {
 	transform: translate(600px,-300px);
+	-webkit-transform: translate(600px,-300px);
+	-moz-transform: translate(600px,-300px);
+	-ms-transform: translate(600px,-300px);
 }
 
 #mc-xmas {
@@ -1327,15 +1624,35 @@ p {
 	transform-origin: bottom;
 	-moz-transform-origin: bottom;
 	-webkit-transform-origin: bottom;
+	-ms-transform-origin: bottom;
 	animation: mc-xmas 2.5s infinate cubic-bezier(0.220, 0.000, 0.715, 0.995);
 	-moz-animation: 2.5s cubic-bezier(0.220, 0.000, 0.715, 0.995) 0s normal none infinite mc-xmas;
   	-webkit-animation: mc-xmas 2.5s infinite cubic-bezier(0.220, 0.000, 0.715, 0.995);
+  	-ms-animation: mc-xmas 2.5s infinite cubic-bezier(0.220, 0.000, 0.715, 0.995);
 }
 
 @keyframes mc-xmas {
 	0%{transform: rotate(-3deg)}
 	50%{transform: rotate(3deg)}
 	100%{transform: rotate(-3deg)}
+}
+
+@-webkit-keyframes mc-xmas {
+	0%{-webkit-transform: rotate(-3deg)}
+	50%{-webkit-transform: rotate(3deg)}
+	100%{-webkit-transform: rotate(-3deg)}
+}
+
+@-moz-keyframes mc-xmas {
+	0%{-moz-transform: rotate(-3deg)}
+	50%{-moz-transform: rotate(3deg)}
+	100%{-moz-transform: rotate(-3deg)}
+}
+
+@-ms-keyframes mc-xmas {
+	0%{-ms-transform: rotate(-3deg)}
+	50%{-ms-transform: rotate(3deg)}
+	100%{-ms-transform: rotate(-3deg)}
 }
 
 #merry-xmas {
@@ -1345,11 +1662,13 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
-	left: 830px;
+	left: 870px;
 	top: 20px;
 	opacity: 0;
-	//transform: rotate(-15deg);
 	transition: opacity 2.5s;
+	-webkit-transition: opacity 2.5s;
+	-moz-transition: opacity 2.5s;
+	-ms-transition: opacity 2.5s;
 }
 
 #merry-xmas.touch {
@@ -1362,21 +1681,35 @@ p {
 	background-image: url('../assets/snowman-xmas.png');
 	background-repeat: no-repeat;
 	position: absolute;
-	left: 2120px;
+	left: 2110px;
 	top: 850px;
 	z-index: 1;
 	animation: snowman 11s infinate ease-in-out;
 	-moz-animation: 11s ease 0s normal none infinite snowman;
   	-webkit-animation: snowman 11s infinite ease-in-out;
+  	-ms-animation: snowman 11s infinite ease-in-out;
   	transform-origin: bottom;
   	-moz-transform-origin: bottom;
   	-webkit-transform-origin: bottom;
+  	-ms-transform-origin: bottom;
 }
 
 @keyframes snowman {
 	0% {transform: rotate(-5deg)}
 	50% {transform: rotate(5deg)}
 	100% {transform: rotate(-5deg);}
+}
+
+@-webkit-keyframes snowman {
+	0% {-webkit-transform: rotate(-5deg)}
+	50% {-webkit-transform: rotate(5deg)}
+	100% {-webkit-transform: rotate(-5deg);}
+}
+
+@-moz-keyframes snowman {
+	0% {-moz-transform: rotate(-5deg)}
+	50% {-moz-transform: rotate(5deg)}
+	100% {-moz-transform: rotate(-5deg);}
 }
 
 #tea-xmas {
@@ -1400,21 +1733,44 @@ p {
 	top: 15px;
 	z-index: 0;
 	transform: rotate(8deg);
+	-webkit-transform: rotate(8deg);
+	-moz-transform: rotate(8deg);
+	-ms-transform: rotate(8deg);
   	transform-origin: 65% 20%;
   	-moz-transform-origin: 65% 20%;
   	-webkit-transform-origin: 65% 20%;
+  	-ms-transform-origin: 65% 20%;
 }
 
 #bell-xmas.touch {
 	animation: bell 2s infinate ease-in-out;
 	-moz-animation: 2s ease 0s normal none infinite bell;
   	-webkit-animation: bell 2s infinite ease-in-out;
+  	-ms-animation: bell 2s infinite ease-in-out;
 }
 
 @keyframes bell {
 	0%{transform: rotate(8deg)}
 	50%{transform: rotate(-8deg)}
 	100%{transform: rotate(8deg)}
+}
+
+@-webkit-keyframes bell {
+	0%{-webkit-transform: rotate(8deg)}
+	50%{-webkit-transform: rotate(-8deg)}
+	100%{-webkit-transform: rotate(8deg)}
+}
+
+@-moz-keyframes bell {
+	0%{-moz-transform: rotate(8deg)}
+	50%{-moz-transform: rotate(-8deg)}
+	100%{-moz-transform: rotate(8deg)}
+}
+
+@-ms-keyframes bell {
+	0%{-ms-transform: rotate(8deg)}
+	50%{-ms-transform: rotate(-8deg)}
+	100%{-ms-transform: rotate(8deg)}
 }
 
 #lamp-xmas {
@@ -1439,7 +1795,6 @@ p {
 	top: 45px;
 	left: 2588px;
 	z-index: 4;
-	//background-color: blue;
 }
 
 #candle-main {
@@ -1474,7 +1829,6 @@ p {
 	z-index: 5;
 	position: absolute;
 	bottom: -5px;
-	//background-color: red;
 }
 
 #candle-flame {
@@ -1483,9 +1837,11 @@ p {
 	background-image: url('../assets/candle-flame.png');
 	z-index: 4;
 	position: absolute;
-	//bottom: 214px;
 	left: 128px;
 	animation: flame 0.7s steps(4, end) infinite;
+	-webkit-animation: flame 0.7s steps(4, end) infinite;
+	-moz-animation: flame 0.7s steps(4, end) infinite;
+	-ms-animation: flame 0.7s steps(4, end) infinite;
 }
 
 
@@ -1493,4 +1849,18 @@ p {
     from {background-position: 0px;}
     to {background-position: -120px; }
 }
+
+@-webkit-keyframes flame{
+    from {background-position: 0px;}
+    to {background-position: -120px; }
+}
+
+@-moz-keyframes flame{
+    from {background-position: 0px;}
+    to {background-position: -120px; }
+}
+
+@-ms-keyframes flame{
+    from {background-position: 0px;}
+    to {background-position: -120px; }
 }

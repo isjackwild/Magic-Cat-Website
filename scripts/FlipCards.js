@@ -95,7 +95,8 @@ function Card(el, posClass, index)
 	this._disabled = false;
 
 	$(this._el).addClass(String(posClass));
-	$(this._el).click(UTILS.bind(this, this.onCardClick));
+	//added bind to work on touch
+	$(this._el).bind("mousedown touchstart",(UTILS.bind(this, this.onCardClick)));
 }
 
 Card.prototype.check = function(matchupCard)

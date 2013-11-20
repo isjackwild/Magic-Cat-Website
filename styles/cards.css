@@ -13,7 +13,9 @@
 
 .front, .back {
 	backface-visibility: hidden;
-
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -27,6 +29,9 @@
 /* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
 }
 
 
@@ -38,8 +43,17 @@
 	width: 100px;
 	height: 100px;
 	perspective: 600;
+	-webkit-perspective: 600;
+	-moz-perspective: 600;
+	-ms-perspective: 600;
 	transition: 0.6s;
+	-webkit-transition: 0.6s;
+	-moz-transition: 0.6s;
+	-ms-transition: 0.6s;
 	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
 }
 
 
@@ -52,84 +66,73 @@
 {
 	color: #00ff00;
 	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
 }
 
 #cards .card-pos0
 {
 	left:770px;
 	top:70px;
-/*	background-color: green;
-*/}
+}
 
 #cards .card-pos1
 {
 	left:980px;
 	top:190px;
-/*	background-color: lightgreen;
-*/}
+}
 
 #cards .card-pos2
 {
 	left:1090px;
 	top:390px;
-/*	background-color: darkgreen;
-*/}
+}
 
 #cards .card-pos3
 {
 	left:1010px;
 	top:600px;
-/*	background-color: pink;
-*/}
+}
 
 #cards .card-pos4
 {
 	left: 800px;
 	top: 700px;
-/*	background-color: orange;
-*/}
+}
 
 #cards .card-pos5
 {
 	left:560px;
 	top:700px;
-/*	background-color: blue;
-*/}
+}
 
 #cards .card-pos6
 {
 	left:340px;
 	top:618px;
-/*	background-color: lightblue;
-*/}
+}
 
 #cards .card-pos7
 {
 	left:240px;
 	top:410px;
-/*	background-color: red;
-*/}
+}
 
 #cards .card-pos8
 {
 	left:340px;
 	top:210px;
-/*	background-color: yellow;
-*/}
+}
 
 #cards .card-pos9
 {
 	left:530px;
 	top:70px;
-/*	background-color: black;
-*/}
-
-#card1 {
-	background-image: 
 }
 
+
 #present {
-	//background-color: red;
 	height: 360px;
 	width: 317px;
 	position: absolute;
@@ -146,6 +149,9 @@
 	left: 0px;
 	top: 0px;
 	transition: transform 1.5s;
+	-webkit-transition: -webkit-transform 1.5s;
+	-moz-transition: -moz-transform 1.5s;
+	-ms-transition: -ms-transform 1.5s;
 }
 
 #present-r {
@@ -157,14 +163,23 @@
 	left: 85px;
 	top: 0px;
 	transition: transform 2.5s;
+	-webkit-transition: -webkit-transform 2.5s;
+	-moz-transition: -moz-transform 2.5s;
+	-ms-transition: -ms-transform 2.5s;
 }
 
 #present-r.touch {
 	transform: translate(140px,0);
+	-webkit-transform: translate(140px,0);
+	-moz-transform: translate(140px,0);
+	-ms-transform: translate(140px,0);
 }
 
 #present-l.touch {
 	transform: translate(-120px,0);
+	-webkit-transform: translate(-120px,0);
+	-moz-transform: translate(-120px,0);
+	-ms-transform: translate(-120px,0);
 }
 
 #memory-instructions {

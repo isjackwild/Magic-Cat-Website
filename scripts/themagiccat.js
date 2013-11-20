@@ -79,7 +79,7 @@ $(document).ready(function() {
 
 		for (var i=1; i <= 24; i++){
 			if (day == i){
-				candleHeight = 403-(14.5*i);
+				candleHeight = 403-(14.58*i);
 				console.log("Candle Height = "+ candleHeight);
 				$("#candle-main").height(candleHeight);
 				$("#candle-top").css({
