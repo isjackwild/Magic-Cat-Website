@@ -39,7 +39,7 @@
 #cards .card
 {
 	position:absolute;
-	z-index: 666;
+	z-index: 5;
 	width: 100px;
 	height: 100px;
 	perspective: 600;
@@ -56,11 +56,11 @@
 	-moz-transform-style: preserve-3d;
 	-ms-transform-style: preserve-3d;
 	-o-transform-style: preserve-3d;
-	animation: cardwobble 0.5s infinate ease-in-out;
+/*	animation: cardwobble 0.5s infinate ease-in-out;
 	-moz-animation: 0.5s ease 0s normal none infinite cardwobble;
   	-webkit-animation: cardwobble 0.5s infinite ease-in-out;
   	-ms-animation: cardwobble 0.5s infinite ease-in-out;
-  	-o-animation: cardwobble 0.5s infinite ease-in-out;
+  	-o-animation: cardwobble 0.5s infinite ease-in-out;*/
 }
 
 @keyframes cardwobble{
@@ -301,7 +301,7 @@
 	position: absolute;
 	left: 460px;
 	top: 135px;
-	z-index: 3;
+	z-index: 7;
 	transform: scale(0) rotate(0deg);
 	-webkit-transform: scale(0) rotate(0deg);
 	-moz-transform: scale(0) rotate(0deg);

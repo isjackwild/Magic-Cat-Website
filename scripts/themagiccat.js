@@ -35,7 +35,7 @@ $(document).ready(function() {
 	var date = new Date();
 	var mins = date.getMinutes();
 	var hours = 19;
-	var month = 8;
+	var month = 10;
 	var day = date.getDate();
 
 	var minHand = (mins / 60)*360;
