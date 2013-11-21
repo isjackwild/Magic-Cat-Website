@@ -16,6 +16,7 @@
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -32,6 +33,7 @@
 	-webkit-transform: rotateY(180deg);
 	-moz-transform: rotateY(180deg);
 	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
 }
 
 
@@ -50,15 +52,17 @@
 	-webkit-transition: 0.6s;
 	-moz-transition: 0.6s;
 	-ms-transition: 0.6s;
+	-o-transition: 0.6s;
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
 	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
 	animation: cardwobble 0.5s infinate ease-in-out;
 	-moz-animation: 0.5s ease 0s normal none infinite cardwobble;
-  	-webkit-animation:cardwobble 0.5s infinite ease-in-out;
-  	-ms-animation:cardwobble 0.5s infinite ease-in-out;
-  	-o-animation:cardwobble 0.5s infinite ease-in-out;
+  	-webkit-animation: cardwobble 0.5s infinite ease-in-out;
+  	-ms-animation: cardwobble 0.5s infinite ease-in-out;
+  	-o-animation: cardwobble 0.5s infinite ease-in-out;
 }
 
 @keyframes cardwobble{
@@ -67,11 +71,38 @@
     100%{transform:rotate(-1.5deg)}
 }
 
+@-webkit-keyframes cardwobble{
+    0%{-webkit-transform:rotate(-1.5deg)}
+    50%{-webkit-transform:rotate(1.5deg)}
+    100%{-webkit-transform:rotate(-1.5deg)}
+}
+
+@-moz-keyframes cardwobble{
+    0%{-moz-transform:rotate(-1.5deg)}
+    50%{-moz-transform:rotate(1.5deg)}
+    100%{-moz-transform:rotate(-1.5deg)}
+}
+
+@-ms-keyframes cardwobble{
+    0%{-ms-transform:rotate(-1.5deg)}
+    50%{-ms-transform:rotate(1.5deg)}
+    100%{-ms-transform:rotate(-1.5deg)}
+}
+
+@-o-keyframes cardwobble{
+    0%{-o-transform:rotate(-1.5deg)}
+    50%{-o-transform:rotate(1.5deg)}
+    100%{-o-transform:rotate(-1.5deg)}
+}
 
 #cards .card.disabled
 {
 	color: #ff00ff !important;
 	animation: none;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-ms-animation: none;
+	-o-animation: none;
 }
 
 #cards .card.selected
@@ -82,76 +113,117 @@
 	-webkit-transform: rotateY(180deg);
 	-moz-transform: rotateY(180deg);
 	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
 }
 
 #cards .card-pos0
 {
 	left:770px;
 	top:70px;
-	animation-delay:-0.6s
+	animation-delay:-0.6s;
+	-webkit-animation-delay:-0.6s;
+	-moz-animation-delay:-0.6s;
+	-ms-animation-delay:-0.6s;
+	-o-animation-delay:-0.6s;
 }
 
 #cards .card-pos1
 {
 	left:980px;
 	top:190px;
-	animation-delay:-2.2s
+	animation-delay:-0.1s;
+	-webkit-animation-delay:-0.1s;
+	-moz-animation-delay:-0.1s;
+	-ms-animation-delay:-0.1s;
+	-o-animation-delay:-0.1s;
 }
 
 #cards .card-pos2
 {
 	left:1090px;
 	top:390px;
-	animation-delay:-1.1s
+	animation-delay:-0s;
+	-webkit-animation-delay:-0s;
+	-moz-animation-delay:-0s;
+	-ms-animation-delay:-0s;
+	-o-animation-delay:-0s;
 }
 
 #cards .card-pos3
 {
 	left:1010px;
 	top:600px;
-	animation-delay:-0.7s
+	animation-delay:-0.4s;
+	-webkit-animation-delay:-0.4s;
+	-moz-animation-delay:-0.4s;
+	-ms-animation-delay:-0.4s;
+	-o-animation-delay:-0.4s;
 }
 
 #cards .card-pos4
 {
 	left: 800px;
 	top: 700px;
-	animation-delay:-0.9s
+	animation-delay:-0.2s;
+	-webkit-animation-delay:-0.2s;
+	-moz-animation-delay:-0.2s;
+	-ms-animation-delay:-0.2s;
+	-o-animation-delay:-0.2s;
 }
 
 #cards .card-pos5
 {
 	left:560px;
 	top:700px;
-	animation-delay:-0.4s
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s;
+	-moz-animation-delay:-0.5s;
+	-ms-animation-delay:-0.5s;
+	-o-animation-delay:-0.5s;
 }
 
 #cards .card-pos6
 {
 	left:340px;
 	top:618px;
-	animation-delay:-2.4s
+	animation-delay:-0.3s;
+	-webkit-animation-delay:-0.3s;
+	-moz-animation-delay:-0.3s;
+	-ms-animation-delay:-0.3s;
+	-o-animation-delay:-0.3s;
 }
 
 #cards .card-pos7
 {
 	left:240px;
 	top:410px;
-	animation-delay:-0.9s
+	animation-delay:-0.1s;
+	-webkit-animation-delay:-0.1s;
+	-moz-animation-delay:-0.1s;
+	-ms-animation-delay:-0.1s;
+	-o-animation-delay:-0.1s;
 }
 
 #cards .card-pos8
 {
 	left:340px;
 	top:210px;
-	animation-delay:-0.7s
+	animation-delay:-0.4s;
+	-webkit-animation-delay:-0.4s;
+	-moz-animation-delay:-0.4s;
+	-ms-animation-delay:-0.4s;
+	-o-animation-delay:-0.4s;
 }
 
 #cards .card-pos9
 {
 	left:530px;
 	top:70px;
-	animation-delay:-0.0s
+	animation-delay:-0.2s;
+	-webkit-animation-delay:-0.2s;
+	-moz-animation-delay:-0.2s;
+	-ms-animation-delay:-0.2s;
+	-o-animation-delay:-0.2s;
 }
 
 
@@ -171,10 +243,16 @@
 	position: absolute;
 	left: 0px;
 	top: 0px;
+	transform-origin: centre bottom;
+	-webkit-transform-origin: centre bottom;
+	-moz-transform-origin: centre bottom;
+	-ms-transform-origin: centre bottom;
+	-o-transform-origin: centre bottom;
 	transition: transform 1.5s;
 	-webkit-transition: -webkit-transform 1.5s;
 	-moz-transition: -moz-transform 1.5s;
 	-ms-transition: -ms-transform 1.5s;
+	-o-transition: -o-transform 1.5s;
 }
 
 #present-r {
@@ -185,31 +263,39 @@
 	position: absolute;
 	left: 85px;
 	top: 0px;
+	transform-origin: centre bottom;
+	-webkit-transform-origin: centre bottom;
+	-moz-transform-origin: centre bottom;
+	-ms-transform-origin: centre bottom;
+	-o-transform-origin: centre bottom;
 	transition: transform 2.5s;
 	-webkit-transition: -webkit-transform 2.5s;
 	-moz-transition: -moz-transform 2.5s;
 	-ms-transition: -ms-transform 2.5s;
+	-o-transition: -o-transform 2.5s;
 }
 
 #present-r.touch {
-	transform: translate(140px,0);
-	-webkit-transform: translate(140px,0);
-	-moz-transform: translate(140px,0);
-	-ms-transform: translate(140px,0);
+	transform: translate(150px,20px) rotate(4deg);
+	-webkit-transform: translate(150px,0) rotate(4deg);
+	-moz-transform: translate(150px,20px) rotate(4deg);
+	-ms-transform: translate(150px,0) rotate(4deg);
+	-o-transform: translate(150px,0) rotate(4deg);
 }
 
 #present-l.touch {
-	transform: translate(-120px,0);
-	-webkit-transform: translate(-120px,0);
-	-moz-transform: translate(-120px,0);
-	-ms-transform: translate(-120px,0);
+	transform: translate(-140px,-20px) rotate(-4deg);
+	-webkit-transform: translate(-140px,0) rotate(-4deg);
+	-moz-transform: translate(-140px,20px) rotate(-4deg);
+	-ms-transform: translate(-140px,0) rotate(-4deg);
+	-o-transform: translate(-140px,0) rotate(-4deg);
 }
 
 #memory-instructions {
 	width: 500px;
 	text-align: center;
 	position: absolute;
-	top: 550px;
+	top: 560px;
 	left: 472px;
 }
 

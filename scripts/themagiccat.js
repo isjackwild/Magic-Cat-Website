@@ -34,7 +34,7 @@ $(document).ready(function() {
 
 	var date = new Date();
 	var mins = date.getMinutes();
-	var hours = date.getHours();
+	var hours = 20
 	var month = 11;
 	var day = date.getDate();
 
@@ -303,6 +303,19 @@ function positionTeddy() {
     		}, 5000)
 		});
 
+		var teddyPjTimer = 0;
+		$("#teddy-pj-night").bind('mousedown touchstart',function(event){
+			$("#teddy-pj-night").addClass('touch');
+			$("#teddy-eye-r-night").addClass('touch');
+			$("#teddy-eye-l-night").addClass('touch');
+			clearTimeout(teddyPjTimer);
+			teddyPjTimer = setTimeout(function() {
+        		$("#teddy-pj-night").removeClass('touch');
+        		$("#teddy-eye-r-night").removeClass('touch');
+				$("#teddy-eye-l-night").removeClass('touch');
+    		}, 3000)
+		});
+
 
 
 // XMAS INTERACTION
@@ -329,12 +342,22 @@ function positionTeddy() {
 			$("#tree-star-xmas").removeClass('touch');
 		});
 
+		var mcEyesTimer = 0;
+		$("#mc-xmas").bind('mousedown touchstart',function(event){
+			$("#mc-eye-r-xmas").addClass('touch');
+			$("#mc-eye-l-xmas").addClass('touch');
+			clearTimeout(mcEyesTimer);
+			mcEyesTimer = setTimeout(function() {
+        		$("#mc-eye-r-xmas").removeClass('touch');
+				$("#mc-eye-l-xmas").removeClass('touch');
+    		}, 3000)
+		});
 
-		var sheetsTimer = 0;
+		var bellTimer = 0;
 		$("#bell-xmas").bind('mousedown touchstart',function(event){
 			$("#bell-xmas").addClass('touch');
-			clearTimeout(sheetsTimer);
-			sheetsTimer = setTimeout(function() {
+			clearTimeout(bellTimer);
+			bellTimer = setTimeout(function() {
         		$("#bell-xmas").removeClass('touch');
     		}, 6000)
 		});
