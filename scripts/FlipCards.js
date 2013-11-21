@@ -63,8 +63,10 @@ var CardsEngine =
 		if(this.numPairs == this.NUM_PAIR_BEFORE_SUCCESS)
 		{
 			console.log("GREAT SUCCESS! Now let's reset the cards");
+			bravo2.play();
 			$("#present-l").addClass("touch");
 			$("#present-r").addClass("touch");
+			$("#download-gift-xmas").addClass('touch');
 			$("#instructions").replaceWith("<p>The Magic Cat gave you a wallpaper! Check back on Sunday for the next present!</p>");
 			//this.reset();
 		}

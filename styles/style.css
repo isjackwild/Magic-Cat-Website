@@ -128,7 +128,7 @@ p {
 	-o-transform-origin: right top;
 	font-size: 50px;
 	text-align: center;
-	display: none;
+	//display: none;
 }
 
 #loading-r {
@@ -154,7 +154,7 @@ p {
 	-o-transform-origin: left top;
 	font-size: 50px;
 	text-align: center;
-	display: none;
+	//display: none;
 }
 
 #loading-r.touch {
@@ -393,8 +393,8 @@ p {
 	background-repeat: no-repeat;
 	position: relative;
 	z-index: 1;
-	left: 560px;
-	top: -40px;
+	left: 600px;
+	top: -70px;
 	animation: swing 8s infinate ease-in-out;
 	-moz-animation: 8s ease 0s normal none infinite swing;
   	-webkit-animation:swing 8s infinite ease-in-out;
@@ -486,8 +486,8 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 1;
-	left: -200px;
-	top: 710px;
+	left: -215px;
+	top: 790px;
 	animation: handipad 13s infinate ease-in-out;
 	-moz-animation: 13s ease 0s normal none infinite handipad;
   	-webkit-animation:handipad 13s infinite ease-in-out;
@@ -542,8 +542,8 @@ p {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 1;
-	top: 680px;
-	left: 380px;
+	top: 760px;
+	left: 360px;
 	z-index: 5;
 	transition: transform 0.3s;
 	-webkit-transition: -webkit-transform 0.3s;
@@ -662,7 +662,7 @@ p {
 	position: absolute;
 	z-index: 0;
 	left: 2226px;
-	top: 90px;
+	top: 120px;
 	transition: transform 0.5s;
 	-webkit-transition: -webkit-transform 0.5s;
 	-moz-transition: -moz-transform 0.5s;
@@ -842,10 +842,11 @@ p {
 	height: 47px;
 	left: 1350px;
 	top: 950px;
-	animation: note-2 10s infinite 7s linear;
-	-moz-animation: 10s linear 0s normal none infinite 7s note-2;
-	-ms-animation: 10s linear 0s normal none infinite 7s note-2;
-	-o-animation: 10s linear 0s normal none infinite 7s note-2;
+	animation: note-2 10s infinite 4s linear;
+	-webkit-animation: note-2 9s infinite 4s linear;
+	-moz-animation: 10s linear 0s normal none infinite 4s note-2;
+	-ms-animation: 10s linear 0s normal none infinite 4s note-2;
+	-o-animation: 10s linear 0s normal none infinite 4s note-2;
 }
 
 @keyframes note-2{
@@ -1547,11 +1548,11 @@ p {
 	-webkit-transform-origin: centre 92%;
 	-ms-transform-origin: centre 92%;
 	-o-transform-origin: centre 92%;
-	animation: ring 2.5s infinate linear;
-	-moz-animation: 2.5s linear 0s normal none infinite ring;
-  	-webkit-animation: ring 2.5s infinite linear;
-  	-ms-animation: ring 2.5s infinite linear;
-  	-o-animation: ring 2.5s infinite linear;
+	animation: ring 3s infinate linear;
+	-moz-animation: 3s linear 0s normal none infinite ring;
+  	-webkit-animation: ring 3s infinite linear;
+  	-ms-animation: ring 3s infinite linear;
+  	-o-animation: ring 3s infinite linear;
 }
 
 @keyframes ring{
@@ -1710,40 +1711,40 @@ p {
 }
 
 #bird-day.touch {
-	animation: bird 0.6s ease-in-out;
-	-webkit-animation: bird 0.6s ease-in-out;
-	-moz-animation: bird 0.6s ease-in-out;
-	-ms-animation: bird 0.6s ease-in-out;
-	-o-animation: bird 0.6s ease-in-out;
+	animation: bird 1.2s ease-in-out;
+	-webkit-animation: bird 1.2s ease-in-out;
+	-moz-animation: bird 1.2s ease-in-out;
+	-ms-animation: bird 1.2s ease-in-out;
+	-o-animation: bird 1.2s ease-in-out;
 }
 
 @keyframes bird {
 	0%{transform: translate(0,0)}
-	50%{transform: translate(0,-50px)}
+	50%{transform: translate(0,-60px)}
 	100%{transform: translate(0,0)}
 }
 
 @-webkit-keyframes bird {
 	0%{-webkit-transform: translate(0,0)}
-	50%{-webkit-transform: translate(0,-50px)}
+	50%{-webkit-transform: translate(0,-60px)}
 	100%{-webkit-transform: translate(0,0)}
 }
 
 @-moz-keyframes bird {
 	0%{-moz-transform: translate(0,0)}
-	50%{-moz-transform: translate(0,-50px)}
+	50%{-moz-transform: translate(0,-60px)}
 	100%{-moz-transform: translate(0,0)}
 }
 
 @-ms-keyframes bird {
 	0%{-ms-transform: translate(0,0)}
-	50%{-ms-transform: translate(0,-50px)}
+	50%{-ms-transform: translate(0,-60px)}
 	100%{-ms-transform: translate(0,0)}
 }
 
 @-o-keyframes bird {
 	0%{-o-transform: translate(0,0)}
-	50%{-o-transform: translate(0,-50px)}
+	50%{-o-transform: translate(0,-60px)}
 	100%{-o-transform: translate(0,0)}
 }
 
@@ -1855,7 +1856,7 @@ p {
 	background-image: url('../assets/coat-stand-night.png');
 	background-repeat: no-repeat;
 	position: absolute;
-	left: 700px;
+	left: 720px;
 	top: 30px;
 	z-index: 0;
 }
@@ -1866,7 +1867,7 @@ p {
 	background-image: url('../assets/coat-stand-mask-night.png');
 	background-repeat: no-repeat;
 	position: absolute;
-	left: 700px;
+	left: 720px;
 	top: 30px;
 	z-index: 2;
 }
@@ -1877,7 +1878,7 @@ p {
 	background-image: url('../assets/umbrella-night.png');
 	background-repeat: no-repeat;
 	position: absolute;
-	left: 1023px;
+	left: 1043px;
 	top: 141px;
 	z-index: 1;
 	animation: umbrella-night 13s infinate ease;
@@ -2474,7 +2475,7 @@ background-image:url('../assets/z-night-7.png');
 	background-repeat: no-repeat;
 	position: absolute;
 	left: 290px;
-	top: 1315px;
+	top: 1330px;
 	z-index: 3;
 }
 
@@ -2489,8 +2490,8 @@ background-image:url('../assets/z-night-7.png');
 @keyframes teapot {
 	0% {transform: translate(0,0) rotate(0deg)}
 	10% {transform: rotate(0deg)}
-	20% {transform: translate(-45px, -110px) rotate(-30deg)}
-	80% {transform: translate(-45px, -110px) rotate(-30deg)}
+	20% {transform: translate(-45px, -90px) rotate(-30deg)}
+	80% {transform: translate(-45px, -90px) rotate(-30deg)}
 	90% {transform: rotate(deg)}
 	100% {transform: translate(0,0) rotate(deg)}
 }
@@ -2498,8 +2499,8 @@ background-image:url('../assets/z-night-7.png');
 @-webkit-keyframes teapot {
 	0% {-webkit-transform: translate(0,0) rotate(0deg)}
 	10% {-webkit-transform: rotate(0deg)}
-	20% {-webkit-transform: translate(-45px, -110px) rotate(-30deg)}
-	80% {-webkit-transform: translate(-45px, -110px) rotate(-30deg)}
+	20% {-webkit-transform: translate(-45px, -90px) rotate(-30deg)}
+	80% {-webkit-transform: translate(-45px, -90px) rotate(-30deg)}
 	90% {-webkit-transform: rotate(deg)}
 	100% {-webkit-transform: translate(0,0) rotate(deg)}
 }
@@ -2507,8 +2508,8 @@ background-image:url('../assets/z-night-7.png');
 @-moz-keyframes teapot {
 	0% {-moz-transform: translate(0,0) rotate(0deg)}
 	10% {-moz-transform: rotate(0deg)}
-	20% {-moz-transform: translate(-45px, -110px) rotate(-30deg)}
-	80% {-moz-transform: translate(-45px, -110px) rotate(-30deg)}
+	20% {-moz-transform: translate(-45px, -90px) rotate(-30deg)}
+	80% {-moz-transform: translate(-45px, -90px) rotate(-30deg)}
 	90% {-moz-transform: rotate(deg)}
 	100% {-moz-transform: translate(0,0) rotate(deg)}
 }
@@ -2516,8 +2517,8 @@ background-image:url('../assets/z-night-7.png');
 @-ms-keyframes teapot {
 	0% {-ms-transform: translate(0,0) rotate(0deg)}
 	10% {-ms-transform: rotate(0deg)}
-	20% {-ms-transform: translate(-45px, -110px) rotate(-30deg)}
-	80% {-ms-transform: translate(-45px, -110px) rotate(-30deg)}
+	20% {-ms-transform: translate(-45px, -90px) rotate(-30deg)}
+	80% {-ms-transform: translate(-45px, -90px) rotate(-30deg)}
 	90% {-ms-transform: rotate(deg)}
 	100% {-ms-transform: translate(0,0) rotate(deg)}
 }
@@ -2525,8 +2526,8 @@ background-image:url('../assets/z-night-7.png');
 @-o-keyframes teapot {
 	0% {-o-transform: translate(0,0) rotate(0deg)}
 	10% {-o-transform: rotate(0deg)}
-	20% {-o-transform: translate(-45px, -110px) rotate(-30deg)}
-	80% {-o-transform: translate(-45px, -110px) rotate(-30deg)}
+	20% {-o-transform: translate(-45px, -90px) rotate(-30deg)}
+	80% {-o-transform: translate(-45px, -90px) rotate(-30deg)}
 	90% {-o-transform: rotate(deg)}
 	100% {-o-transform: translate(0,0) rotate(deg)}
 }
@@ -2539,7 +2540,7 @@ background-image:url('../assets/z-night-7.png');
 	background-repeat: no-repeat;
 	position: absolute;
 	left: 180px;
-	top: 1380px;
+	top: 1390px;
 	z-index: 3;
 }
 
@@ -2619,7 +2620,7 @@ background-image:url('../assets/z-night-7.png');
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
-	left: 750px;
+	left: 770px;
 	top: 20px;
 	transition: transform 3s;
 	-webkit-transition: -webkit-transform 3s;
@@ -2916,8 +2917,8 @@ background-image:url('../assets/z-night-7.png');
 	background-image: url('../assets/lamp-on-xmas.png');
 	background-repeat: no-repeat;
 	position: absolute;
-	left: 230px;
-	top: 1200px;
+	left: 260px;
+	top: 1210px;
 	z-index: 0;
 }
 
