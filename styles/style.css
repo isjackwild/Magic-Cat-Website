@@ -70,6 +70,21 @@ a {
 	background-image: url('../assets/bg-night.jpg');
 }
 
+#mute-audio {
+	width: 120px;
+	height: 80px;
+	background-image: url('../assets/audio.png');
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 8;
+}
+
+#mute-audio.touch {
+	background-image: url('../assets/mute-audio.png');
+}
+
+
 .rslides {
   position: absolute;
   top: 480px;
@@ -132,7 +147,6 @@ a {
 	-o-transform-origin: right top;
 	font-size: 50px;
 	text-align: center;
-	//display: none;
 }
 
 #loading-r {
@@ -158,7 +172,6 @@ a {
 	-o-transform-origin: left top;
 	font-size: 50px;
 	text-align: center;
-	//display: none;
 }
 
 #loading-r.touch {
@@ -383,12 +396,12 @@ a {
 	position: absolute;
 	z-index: 4;
 	left: 0px;
-	top: -60px;
-	transform: rotate(-20deg);
-	-webkit-transform: rotate(-20deg);
-	-moz-transform: rotate(-20deg);
-	-ms-transform: rotate(-20deg);
-	-o-transform: rotate(-20deg);
+	top: 20px;
+	transform: rotate(-100deg);
+	-webkit-transform: rotate(-100deg);
+	-moz-transform: rotate(-100deg);
+	-ms-transform: rotate(-100deg);
+	-o-transform: rotate(-100deg);
 }
 
 #mc-intro {
@@ -718,6 +731,7 @@ a {
 	-moz-transform: scale(1.04);
 	-ms-transform: scale(1.04);
 	-o-transform: scale(1.04);
+	background-image: url('../assets/julie-bg-hover.png');
 }
 
 @keyframes julie {

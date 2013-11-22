@@ -56,11 +56,14 @@
 	-moz-transform-style: preserve-3d;
 	-ms-transform-style: preserve-3d;
 	-o-transform-style: preserve-3d;
-/*	animation: cardwobble 0.5s infinate ease-in-out;
-	-moz-animation: 0.5s ease 0s normal none infinite cardwobble;
-  	-webkit-animation: cardwobble 0.5s infinite ease-in-out;
-  	-ms-animation: cardwobble 0.5s infinite ease-in-out;
-  	-o-animation: cardwobble 0.5s infinite ease-in-out;*/
+}
+
+#cards .card:hover {
+	animation: cardwobble 0.3s infinate ease-in-out;
+	-moz-animation: 0.3s ease 0s normal none infinite cardwobble;
+  	-webkit-animation: cardwobble 0.3s infinite ease-in-out;
+  	-ms-animation: cardwobble 0.3s infinite ease-in-out;
+  	-o-animation: cardwobble 0.3s infinite ease-in-out;
 }
 
 @keyframes cardwobble{
