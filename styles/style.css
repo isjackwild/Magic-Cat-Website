@@ -25,6 +25,10 @@ p {
 	display: none;
 }
 
+a {
+	color: darkblue;
+}
+
 * {
 	-webkit-touch-callout: none !important;
 	touch-callout: none !important;
@@ -200,6 +204,15 @@ p {
 	opacity: 1;
 }
 
+.lt-ie10 #bravo {
+	display: none;
+}
+
+.lt-ie10 #bravo.touch {
+	display: inline;
+	opacity: 1;
+}
+
 #bravo-sprite {
 	height: 481px;
 	width: 270px;
@@ -342,6 +355,10 @@ p {
 
 #starburst.touch {
 	opacity: 1;
+}
+
+.lt-ie10 #starburst {
+	display: none;
 }
 
 #mc-title {
@@ -498,6 +515,26 @@ p {
   	-webkit-transform-origin: bottom;
   	-ms-transform-origin: bottom;
   	-o-transform-origin: bottom;
+}
+
+.lt-ie10 #handipad {
+	display: none;
+}
+
+#handipad-ie {
+	display: none;
+}
+
+.lt-ie10 #handipad-ie {
+	display: inline;
+	width: 579px;
+	height: 280px;
+	background-image: url('../assets/hand-ipad-ie.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	z-index: 1;
+	left: -250px;
+	top: 930px;
 }
 
 @keyframes handipad{
@@ -660,9 +697,14 @@ p {
 	background-image: url('../assets/julie-bg.png');
 	background-repeat: no-repeat;
 	position: absolute;
-	z-index: 0;
+	z-index: 2;
 	left: 2226px;
 	top: 120px;
+	/*animation: julie 13s infinate ease-in-out;
+	-moz-animation: 13s ease 0s normal none infinite julie;
+  	-webkit-animation:julie 13s infinite ease-in-out;
+  	-ms-animation:julie 13s infinite ease-in-out;
+  	-o-animation:julie 13s infinite ease-in-out;*/
 	transition: transform 0.5s;
 	-webkit-transition: -webkit-transform 0.5s;
 	-moz-transition: -moz-transform 0.5s;
@@ -671,6 +713,70 @@ p {
 }
 
 #julie:hover {
+	transform: scale(1.04);
+	-webkit-transform: scale(1.04);
+	-moz-transform: scale(1.04);
+	-ms-transform: scale(1.04);
+	-o-transform: scale(1.04);
+}
+
+@keyframes julie {
+	0% {transform: translate(0,0)}
+	50% {transform: translate(0,-30px)}
+	100% {transform: translate(0,0)}
+}
+
+@-webkit-keyframes julie {
+	0% {-webkit-transform: translate(0,0)}
+	50% {-webkit-transform: translate(0,-30px)}
+	100% {-webkit-transform: translate(0,0)}
+}
+
+@-moz-keyframes julie {
+	0% {-moz-transform: translate(0,0)}
+	50% {-moz-transform: translate(0,-30px)}
+	100% {-moz-transform: translate(0,0)}
+}
+
+@-ms-keyframes julie {
+	0% {-ms-transform: translate(0,0)}
+	50% {-ms-transform: translate(0,-30px)}
+	100% {-ms-transform: translate(0,0)}
+}
+
+@-o-keyframes julie {
+	0% {-o-transform: translate(0,0)}
+	50% {-o-transform: translate(0,-30px)}
+	100% {-o-transform: translate(0,0)}
+}
+
+#shop {
+	height: 240px;
+	width: 180px;
+	background-color: red;
+	z-index: 2;
+	position: absolute;
+	top: 0px;
+	left: 1480px;
+	top: 530px;
+	transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+	-moz-transform: rotate(-5deg);
+	-ms-transform: rotate(-5deg);
+	-o-transform: rotate(-5deg);
+	transition: transform 0.5s;
+	-webkit-transition: -webkit-transform 0.5s;
+	-moz-transition: -moz-transform 0.5s;
+	-ms-transition: -ms-transform 0.5s;
+	-o-transition: -o-transform 0.5s;
+}
+
+.xmas #shop {
+	left: 2140px;
+	top: 560px;
+}
+
+#shop:hover {
 	transform: scale(1.04);
 	-webkit-transform: scale(1.04);
 	-moz-transform: scale(1.04);
@@ -688,6 +794,24 @@ p {
 	z-index: 5;
 	left: 2404px;
 	top: 500px;
+}
+
+#credits ul {
+	font-family: 'IM Fell French Canon', serif;
+	font-size: 1.3em;
+	text-align: center;
+	margin-top: 60px;
+	margin-left: -30px;
+	list-style: none;
+	transform: rotate(-2deg);
+	-webkit-transform: rotate(-2deg);
+	-moz-transform: rotate(-2deg);
+	-ms-transform: rotate(-2deg);
+	-o-transform: rotate(-2deg);
+}
+
+#credits li {
+	margin-bottom: 15px;
 }
 
 #credits-title {
@@ -791,6 +915,10 @@ p {
 	pointer-events: none;
 	background-repeat: no-repeat;
 	position: absolute;
+}
+
+.lt-ie10 .note {
+	display: none;
 }
 
 #note-1 {
@@ -1817,6 +1945,14 @@ p {
 	opacity: 0.95;
 }
 
+.lt-ie10 #light-off-night {
+	display: none;
+}
+
+.lt-ie10 #light-off-night.touch {
+	display: inline;
+}
+
 #moon-night.touch{
 	animation: moon 1.6s ease-in-out;
 	-webkit-animation: moon 1.6s ease-in-out;
@@ -2620,7 +2756,7 @@ background-image:url('../assets/z-night-7.png');
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
-	left: 770px;
+	left: 820px;
 	top: 20px;
 	transition: transform 3s;
 	-webkit-transition: -webkit-transform 3s;
@@ -2919,11 +3055,41 @@ background-image:url('../assets/z-night-7.png');
 	position: absolute;
 	left: 260px;
 	top: 1210px;
-	z-index: 0;
+	z-index: 10;
 }
 
 #lamp-xmas.touch {
 	background-image: url('../assets/lamp-off-xmas.png');
+}
+
+#lamp-off-xmas {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 9;
+	position: fixed;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+	-ms-transition: opacity 0.5s;
+	-o-transition: opacity 0.5s;
+}
+
+#lamp-off-xmas.touch {
+	opacity: 0.8;
+}
+
+.lt-ie10 #lamp-off-xmas {
+	display: none;
+}
+
+.lt-ie10 #lamp-off-xmas.touch {
+	display: inline;
+	opacity: 0.8
 }
 
 #candle-outer {

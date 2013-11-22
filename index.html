@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 9]><!--> <html class="no-js gt-ie9 non-ie" lang="en"> <!--<![endif]-->
   <head>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/cards.css">
@@ -59,6 +64,7 @@
 
 
   <div id="handipad"></div>
+  <div id="handipad-ie"></div>
 
   <a class="ignore-prevent-default" href="https://www.facebook.com/denmagiskekat" alt="The Magic Cat on Facebook" target="blank">
       <div id="friends" class="textdiv ignore-prevent-default button"></div>
@@ -102,14 +108,32 @@
     <div class="ignore-prevent-default" id="julie"></div>
   </a>
 
+  <a class="ignore-prevent-default button" href="http://canstore.tictail.com/" alt="Can Store" target="blank">
+    <div class="ignore-prevent-default" id="shop"></div>
+  </a>
+
   <div id="credits" class="textdiv">
     <img id="credits-title" src="assets/credits.png" alt="Credits">
-      <p>
-        kjaflkjs
-        aslfjsal;fjk
-        lasdjfl;ksaj
-        askdfjljks.
-      </p>
+      <ul>
+        <li>
+          Music by
+            <a class="ignore-prevent-default button" href="http://www.juliemichelsen.dk" alt="Julie Michelsen" target="blank">
+              Julie Michelsen
+            </a>
+        </li>
+        <li>
+          Magic Cat & Magic Weather Apps by <br/>
+            <a class="ignore-prevent-default button" href = "http://www.bacondeczar.com" alt = "Bacon de Czar" target="blank">
+              Stine Hein and Felix Nielsen
+            </a>
+        </li>
+        <li>
+          Illustration and Concept by <br/>
+            <a class="ignore-prevent-default button" href = "http://www.yeswecancan.com" alt = "CAN!" target="blank">
+              Stine Maria Aalykke
+            </a>
+        </li>
+      <ul>
   </div>
 
   <div id = "wallpapers" class="not-xmas">
@@ -199,6 +223,7 @@
   <div id = "lamp-xmas" class="xmas">
     <img src="assets/lamp-xmas.png" id="lamp">
   </div>
+  <div id = "lamp-off-xmas" class="xmas"></div>
 
   <div id="candle-outer" class="xmas">
     <div id="candle-top"></div>

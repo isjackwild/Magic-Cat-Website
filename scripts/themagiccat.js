@@ -34,8 +34,8 @@ $(document).ready(function() {
 
 	var date = new Date();
 	var mins = date.getMinutes();
-	var hours = 19;
-	var month = 10;
+	var hours = 20;
+	var month = 11;
 	var day = date.getDate();
 
 	var minHand = (mins / 60)*360;
@@ -322,6 +322,7 @@ function positionTeddy() {
 		$("#lamp-xmas").bind('mousedown touchstart',function(event){
 			event.preventDefault();
 			$("#lamp-xmas").toggleClass('touch');
+			$("#lamp-off-xmas").toggleClass('touch');
 		});
 
 		// $(window).bind('mousedown touchstart',function(event){

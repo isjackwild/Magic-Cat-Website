@@ -118,6 +118,11 @@
 	-o-transform: rotateY(180deg);
 }
 
+.lt-ie10 .selected .front img
+{
+	display: none;
+}
+
 #cards .card-pos0
 {
 	left:770px;
