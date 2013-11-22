@@ -6,7 +6,7 @@ var CardsEngine =
 {
 	//constants
 	NUM_CARDS: 10,
-	NUM_PAIR_BEFORE_SUCCESS: 1,
+	NUM_PAIR_BEFORE_SUCCESS: 5,
 
 	numPairs: 0,
 
@@ -73,12 +73,16 @@ var CardsEngine =
 
 			if (day >= 1 && day <= 7) {
 				$("#instructions").replaceWith("<p>The Magic Cat gave you a wallpaper! Come back on Sunday for another gift!</p>");
+				$("#present-link").attr("href", "http://www.google.com");
 			} else if (day >= 8 && day <= 14) {
 				$("#instructions").replaceWith("<p>The Magic Cat gave you a cut out present! Come back on Sunday for another gift!</p>");
+				$("#present-link").attr("href", "http://www.bbc.co.uk");
 			} else if (day >= 15 && day <= 21) {
 				$("#instructions").replaceWith("<p>The Magic Cat gave you his special christmas song! Come back on Sunday for another gift!</p>");
+				$("#present-link").attr("href", "http://www.facebook.com");
 			} else {
 				$("#instructions").replaceWith("<p>The Magic Cat gave you a Magic Cat App download! Have a very merry Christmas!</p>");
+				$("#present-link").attr("href", "http://www.twitter.com");
 			}
 			//this.reset();
 		}

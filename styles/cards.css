@@ -66,6 +66,14 @@
   	-o-animation: cardwobble 0.3s infinite ease-in-out;
 }
 
+#cards .card.no-wobble {
+	animation: none;
+	-moz-animation: none;
+  	-webkit-animation: none;
+  	-ms-animation: none;
+  	-o-animation: none;
+}
+
 @keyframes cardwobble{
     0%{transform:rotate(-1.5deg)}
     50%{transform:rotate(1.5deg)}
@@ -287,18 +295,18 @@
 
 #present-r.touch {
 	transform: translate(150px,20px) rotate(4deg);
-	-webkit-transform: translate(150px,0) rotate(4deg);
+	-webkit-transform: translate(150px,20px) rotate(4deg);
 	-moz-transform: translate(150px,20px) rotate(4deg);
-	-ms-transform: translate(150px,0) rotate(4deg);
-	-o-transform: translate(150px,0) rotate(4deg);
+	-ms-transform: translate(150px,20px) rotate(4deg);
+	-o-transform: translate(150px,20px) rotate(4deg);
 }
 
 #present-l.touch {
-	transform: translate(-140px,-20px) rotate(-4deg);
-	-webkit-transform: translate(-140px,0) rotate(-4deg);
+	transform: translate(-140px,20px) rotate(-4deg);
+	-webkit-transform: translate(-140px,20px) rotate(-4deg);
 	-moz-transform: translate(-140px,20px) rotate(-4deg);
-	-ms-transform: translate(-140px,0) rotate(-4deg);
-	-o-transform: translate(-140px,0) rotate(-4deg);
+	-ms-transform: translate(-140px,20px) rotate(-4deg);
+	-o-transform: translate(-140px,20px) rotate(-4deg);
 }
 
 #download-gift-xmas {

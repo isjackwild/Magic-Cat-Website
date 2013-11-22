@@ -19,6 +19,10 @@ $(document).bind('mouseup touchend',function(event){
 		});
 
 
+if (Modernizr.touch) {
+    $('.card').addClass("no-wobble");
+}
+
 // CLOCK & Candle!
 $(document).ready(function() {
 
@@ -35,7 +39,7 @@ $(document).ready(function() {
 	var date = new Date();
 	var mins = date.getMinutes();
 	var hours = date.getHours();
-	var month = date.getMonth();
+	var month = 9;
 	var day = date.getDate();
 
 	var minHand = (mins / 60)*360;
@@ -505,21 +509,21 @@ $(window).load(function() {
 
 	console.log("ON LOAD");
 
-	var date = new Date();
-	var month = 11;
-	var soundtrack;
+	// var date = new Date();
+	// var month = 11;
+	// var soundtrack;
 
-	if (month == 10 || month == 0) {
-		soundtrack = new buzz.sound('../sounds/winter', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	} else if (month == 1 || month == 2 || month == 3) {
-		soundtrack = new buzz.sound('../sounds/spring', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	} else if (month == 4 || month == 5 || month == 6) {
-		soundtrack = new buzz.sound('../sounds/summer', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	} else if (month == 7 || month == 8 || month == 9) {
-		soundtrack = new buzz.sound('../sounds/fall', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	} else if (month == 11) {
-		soundtrack = new buzz.sound('../sounds/xmas', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	}
+	// if (month == 10 || month == 0) {
+	// 	soundtrack = new buzz.sound('../sounds/winter', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+	// } else if (month == 1 || month == 2 || month == 3) {
+	// 	soundtrack = new buzz.sound('../sounds/spring', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+	// } else if (month == 4 || month == 5 || month == 6) {
+	// 	soundtrack = new buzz.sound('../sounds/summer', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+	// } else if (month == 7 || month == 8 || month == 9) {
+	// 	soundtrack = new buzz.sound('../sounds/fall', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+	// } else if (month == 11) {
+	// 	soundtrack = new buzz.sound('../sounds/xmas', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+	// }
 	
 
 	var burp = new buzz.sound('../sounds/burp', {formats: ['wav', 'mp3'], preload:true});
@@ -542,14 +546,14 @@ $(window).load(function() {
 	$(function() {
 
 //CONSTANTS
-		soundtrack.play();
+		//soundtrack.play();
 
 		$("#teddy").bind('mousedown touchstart',function(event){
 				bravo.play();
 			});
 
 		$("#mute-audio").bind('mousedown touchstart',function(event){
-				buzz.all().toggleMute();
+				soundtrack.togglePlay();
 			});
 
 		$("#clock").bind('mouseenter touchstart',function(event){
