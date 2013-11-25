@@ -197,6 +197,12 @@ function positionTeddy() {
 			$("#mute-audio").toggleClass('touch');
 		});
 
+		$("#mc-book").mousedown(function(){
+			$("#mc-book").toggleClass('touch');
+			$("#mc-book-flip").toggleClass('touch');
+			$("#mc-book-front").toggleClass('touch');
+		});
+
 		$("#teddy").bind('mousedown touchstart', function(event){
 			event.preventDefault();
 			positionTeddy(); 

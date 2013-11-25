@@ -391,12 +391,11 @@ a {
 }
 
 #mc-book {
-	width: 480px;
-	height: 670px;
+	width: 522px;
+	height: 700px;
 	position: absolute;
-	top: 90px;
-	left: 100px;
-	background-color: red;
+	top: 80px;
+	left: 90px;
 	transition: transform 2s;
 	-webkit-transition: -webkit-transform 2s;
 	-moz-transition: -moz-transform 2s;
@@ -415,72 +414,72 @@ a {
 }
 
 #mc-book p {
-	font-size: 1.4em;
+	font-size: 1.25em;
 	line-height: 1.4em;
+	margin-bottom: 10px;
 }
 
 #mc-book-spine {
-	width: 26px;
-	height: 670px;
+	width: 69px;
+	height: 720px;
 	position: absolute;
-	top: 0;
-	left: -26px;
-	background-color: darkblue;
+	top: -13px;
+	left: -40px;
+	z-index: 0;
+	background-image: url('../assets/book-spine.png');
 }
 
 #mc-book-right {
-	width: 480px;
-	height: 670px;
-	background-color: white;
+	width: 522px;
+	height: 700px;
+	background-image: url('../assets/book-right.png');
 	padding: 0 30px 0 30px;
 	position: absolute;
 	left: 0;
 	top: 0;
 	padding: 50px;
-	//z-index: 1;
+	z-index: 1;
 
 }
 
 #mc-book-front {
-	width: 480px;
-	height: 670px;
+	width: 522px;
+	height: 700px;
 	position: absolute;
 	left: 0;
 	top: 0;
-	z-index: 3;
-	background-color: green;
+	z-index: 2;
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
 	-o-backface-visibility: hidden;
+	position: absolute;
 }
 
 #mc-book-inside {
-	width: 480px;
-	height: 670px;
+	width: 522px;
+	height: 700px;
 	position: absolute;
 	left: 0;
 	top: 0;
-	z-index: 4;
-	background-color: red;
+	z-index: 1;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
 	transform: rotateY(180deg);
 	-webkit-transform: rotateY(180deg);
 	-moz-transform: rotateY(180deg);
 	-ms-transform: rotateY(180deg);
 	-o-transform: rotateY(180deg);
-	backface-visibility: hidden;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	-ms-backface-visibility: hidden;
-	-o-backface-visibility: hidden;
 }
 
 #mc-book-flip {
 	width: 480px;
 	height: 670px;
-	background-color: blue;
-	//z-index: 2;
+	z-index: 5;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -494,9 +493,15 @@ a {
 	-moz-transition: -moz-transform 2s;
 	-ms-transition: -ms-transform 2s;
 	-o-transition: -o-transform 2s;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+
 }
 
-#mc-book:hover #mc-book-flip{
+#mc-book-flip.touch{
 	transform: rotateY(-160deg);
 	-webkit-transform: rotateY(-160deg);
 	-moz-transform: rotateY(-160deg);
@@ -504,7 +509,8 @@ a {
 	-o-transform: rotateY(-160deg);
 }
 
-#mc-book:hover {
+
+#mc-book.touch {
 	transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
 	-webkit-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
 	-moz-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
