@@ -72,14 +72,14 @@ var CardsEngine =
 			$("#download-gift-xmas").addClass('touch');
 
 			if (day >= 1 && day <= 7) {
-				$("#instructions").replaceWith("<p>The Magic Cat gave you a special christmas card to send to your friends!<br>Come back on Sunday for another gift!</p>");
-				$("#present-link").attr("href", "http://www.google.com");
-			} else if (day >= 8 && day <= 14) {
-				$("#instructions").replaceWith("<p>The Magic Cat gave you a beautiful christmas wallpaper!<br>Come back on Sunday for another gift!</p>");
-				$("#present-link").attr("href", "wallpapers/mc-christmas.zip");
-			} else if (day >= 15 && day <= 21) {
 				$("#instructions").replaceWith("<p>The Magic Cat gave you his Magic Christmas song!<br>Come back on Sunday for another gift!</p>");
 				$("#present-link").attr("href", "sounds/Magic_Christmas_by_Julie_Michelsen.mp3");
+			} else if (day >= 8 && day <= 14) {
+				$("#instructions").replaceWith("<p>The Magic Cat gave you a special christmas card to send to your friends!<br>Come back on Sunday for another gift!</p>");
+				$("#present-link").attr("href", "mc-christmas-card.pdf");
+			} else if (day >= 15 && day <= 21) {
+				$("#instructions").replaceWith("<p>The Magic Cat gave you a beautiful christmas wallpaper!<br>Come back on Sunday for another gift!</p>");
+				$("#present-link").attr("href", "wallpapers/mc-christmas.zip");
 			} else {
 				$("#instructions").replaceWith("<p>The Magic Cat gave you a Magic Cat App free download code!<br>Have a very merry Christmas!</p>");
 				$("#present-link").attr("href", "http://www.twitter.com");

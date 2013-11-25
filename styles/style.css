@@ -362,16 +362,23 @@ a {
 #teddy {
 	width: 63px;
 	height: 202px;
-	background-image: url('../assets/teddy.png');
 	position: absolute;
 	z-index: 4;
 	left: 570px;
 	top: -90px;
-/*	transform: rotate(-100deg);
-	-webkit-transform: rotate(-100deg);
-	-moz-transform: rotate(-100deg);
-	-ms-transform: rotate(-100deg);
-	-o-transform: rotate(-100deg);*/
+}
+
+#teddy img {
+	transition: transform 0.4s;
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	-ms-transition: -ms-transform 0.4s;
+	-o-transition: -o-transform 0.4s;
+}
+
+#teddy:hover img {
+	transform: translate(0,12px);
+	transform: translate(0,12px);
 }
 
 #mc-title {
@@ -395,7 +402,7 @@ a {
 	height: 700px;
 	position: absolute;
 	top: 80px;
-	left: 90px;
+	left: 70px;
 	transition: transform 2s;
 	-webkit-transition: -webkit-transform 2s;
 	-moz-transition: -moz-transform 2s;
@@ -417,6 +424,7 @@ a {
 	font-size: 1.25em;
 	line-height: 1.4em;
 	margin-bottom: 10px;
+	padding: 5px 40px 0px 10px;
 }
 
 #mc-book-spine {
@@ -433,7 +441,6 @@ a {
 	width: 522px;
 	height: 700px;
 	background-image: url('../assets/book-right.png');
-	padding: 0 30px 0 30px;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -509,6 +516,10 @@ a {
 	-o-transform: rotateY(-160deg);
 }
 
+.lt-ie10 #mc-book-flip {
+	display: none;
+}
+
 
 #mc-book.touch {
 	transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
@@ -516,7 +527,14 @@ a {
 	-moz-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
 	-ms-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
 	-o-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
+}
 
+.lt-ie10 #mc-book {
+	transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
+	-webkit-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
+	-moz-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
+	-ms-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
+	-o-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
 }
 
 
@@ -527,7 +545,7 @@ a {
 	background-repeat: no-repeat;
 	position: relative;
 	z-index: 1;
-	left: 600px;
+	left: 615px;
 	top: -70px;
 	animation: swing 8s infinate ease-in-out;
 	-moz-animation: 8s ease 0s normal none infinite swing;
