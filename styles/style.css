@@ -4,12 +4,14 @@
 
 body {
 	margin: 0;
-	font-family: 'IM Fell French Canon', serif;
+	font-family: "Georgia", 'Times New Roman', 'Times' serif;
 	height: 100%;
 	width: 100%;
 	cursor: url('../assets/mouse-up.png'), auto;
 	overflow: hidden;
 	background-color: #434343;
+	-webkit-font-smooth: always;
+	-webkit-text-rendering: geometricPrecision;
 }
 
 body.mouseDown {
@@ -85,44 +87,6 @@ a {
 }
 
 
-.rslides {
-  position: absolute;
-  top: 480px;
-  left: 1750px;
-  list-style: none;
-  overflow: hidden;
-  width: 400px;
-  padding: 0;
-  margin: 0;
-  }
-
-.rslides li {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-  position: absolute;
-  display: none;
-  width: 100%;
-  left: 0;
-  top: 0;
-  }
-
-.rslides li:first-child {
-  position: relative;
-  display: block;
-  float: left;
-  }
-
-.rslides img {
-  display: block;
-  height: auto;
-  float: left;
-  width: 100%;
-  border: 0;
-  }
-
 /*CONSTANTS*/
 
 #loading-l {
@@ -145,8 +109,6 @@ a {
 	-moz-transform-origin: right top;
 	-ms-transform-origin: right top;
 	-o-transform-origin: right top;
-	font-size: 50px;
-	text-align: center;
 }
 
 #loading-r {
@@ -170,8 +132,23 @@ a {
 	-moz-transform-origin: left top;
 	-ms-transform-origin: left top;
 	-o-transform-origin: left top;
-	font-size: 50px;
-	text-align: center;
+}
+
+#loading-wreath-xmas {
+	width: 100%;
+	height: 100%;
+	background-image: url('../assets/loading-wreath-xmas.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 11;
+	transition: transform 2.8s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-webkit-transition: -webkit-transform 2.8s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-moz-transition: -moz-transform 2.8s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-ms-transition: -ms-transform 2.8s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-o-transition: -o-transform 2.8s cubic-bezier(0.230, 0.000, 0.560, 1.000);
 }
 
 #loading-r.touch {
@@ -188,6 +165,14 @@ a {
 	-moz-transform: translate(-100%,0) rotate(10deg);
 	-ms-transform: translate(-100%,0) rotate(10deg);
 	-o-transform: translate(-100%,0) rotate(10deg);
+}
+
+#loading-wreath-xmas.touch {
+	transform: translate(0,-101%);
+	-webkit-transform: translate(0,-101%);
+	-moz-transform: translate(0,-101%);
+	-ms-transform: translate(0,-101%);
+	-o-transform: translate(0,-101%);
 }
 
 #loading.touch {
@@ -374,47 +359,160 @@ a {
 	display: none;
 }
 
-#mc-title {
-	width: 522px;
-	height: 164px;
-	background-image: url('../assets/mc-title.png');
-	position: absolute;
-	z-index: 1;
-	top: 70px;
-	left: 25px;
-	transform: rotate(-7deg);
-	-webkit-transform: rotate(-7deg);
-	-moz-transform: rotate(-7deg);
-	-ms-transform: rotate(-7deg);
-	-o-transform: rotate(-7deg);
-}
-
 #teddy {
 	width: 63px;
 	height: 202px;
 	background-image: url('../assets/teddy.png');
 	position: absolute;
 	z-index: 4;
-	left: 0px;
-	top: 20px;
-	transform: rotate(-100deg);
+	left: 570px;
+	top: -90px;
+/*	transform: rotate(-100deg);
 	-webkit-transform: rotate(-100deg);
 	-moz-transform: rotate(-100deg);
 	-ms-transform: rotate(-100deg);
-	-o-transform: rotate(-100deg);
+	-o-transform: rotate(-100deg);*/
 }
 
-#mc-intro {
-	width: 420px;
+#mc-title {
+	width: 522px;
+	height: 164px;
+	background-image: url('../assets/mc-title.png');
 	position: absolute;
-	top: 230px;
-	left: 100px;
-	transform: rotate(-5deg);
-	-webkit-transform: rotate(-5deg);
-	-moz-transform: rotate(-5deg);
-	-ms-transform: rotate(-5deg);
-	-o-transform: rotate(-5deg);
+	z-index: 1;
+	top: 80px;
+	left: 25px;
+	transform: rotate(-7deg);
+	-webkit-transform: rotate(-7deg);
+	-moz-transform: rotate(-7deg);
+	-ms-transform: rotate(-7deg);
+	-o-transform: rotate(-7deg);
+	display: none;
 }
+
+#mc-book {
+	width: 480px;
+	height: 670px;
+	position: absolute;
+	top: 90px;
+	left: 100px;
+	background-color: red;
+	transition: transform 2s;
+	-webkit-transition: -webkit-transform 2s;
+	-moz-transition: -moz-transform 2s;
+	-ms-transition: -ms-transform 2s;
+	-o-transition: -o-transform 2s;
+	transform: rotate(-6deg) scale(0.93);
+	-webkit-transform: rotate(-6deg) scale(0.93);
+	-moz-transform: rotate(-6deg) scale(0.93);
+	-ms-transform: rotate(-6deg) scale(0.93);
+	-o-transform: rotate(-6deg) scale(0.93);
+	perspective: 2000px;
+	-webkit-perspective: 2000px;
+	-moz-perspective: 2000px;
+	-ms-perspective: 2000px;
+	-o-perspective: 2000px;
+}
+
+#mc-book p {
+	font-size: 1.4em;
+	line-height: 1.4em;
+}
+
+#mc-book-spine {
+	width: 26px;
+	height: 670px;
+	position: absolute;
+	top: 0;
+	left: -26px;
+	background-color: darkblue;
+}
+
+#mc-book-right {
+	width: 480px;
+	height: 670px;
+	background-color: white;
+	padding: 0 30px 0 30px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 50px;
+	//z-index: 1;
+
+}
+
+#mc-book-front {
+	width: 480px;
+	height: 670px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 3;
+	background-color: green;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+}
+
+#mc-book-inside {
+	width: 480px;
+	height: 670px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 4;
+	background-color: red;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+}
+
+#mc-book-flip {
+	width: 480px;
+	height: 670px;
+	background-color: blue;
+	//z-index: 2;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform-origin: left;
+	-webkit-transform-origin: left;
+	-moz-transform-origin: left;
+	-ms-transform-origin: left;
+	-o-transform-origin: left;
+	transition: transform 2s;
+	-webkit-transition: -webkit-transform 2s;
+	-moz-transition: -moz-transform 2s;
+	-ms-transition: -ms-transform 2s;
+	-o-transition: -o-transform 2s;
+}
+
+#mc-book:hover #mc-book-flip{
+	transform: rotateY(-160deg);
+	-webkit-transform: rotateY(-160deg);
+	-moz-transform: rotateY(-160deg);
+	-ms-transform: rotateY(-160deg);
+	-o-transform: rotateY(-160deg);
+}
+
+#mc-book:hover {
+	transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
+	-webkit-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
+	-moz-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
+	-ms-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
+	-o-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
+
+}
+
 
 #clock {
 	width: 181px;
@@ -731,7 +829,14 @@ a {
 	-moz-transform: scale(1.04);
 	-ms-transform: scale(1.04);
 	-o-transform: scale(1.04);
-	background-image: url('../assets/julie-bg-hover.png');
+}
+
+#julie-singing {
+	opacity: 0;
+}
+
+#julie-singing:hover {
+	opacity: 1;
 }
 
 @keyframes julie {
@@ -765,9 +870,9 @@ a {
 }
 
 #shop {
-	height: 240px;
-	width: 180px;
-	background-color: red;
+	height: 300px;
+	width: 208px;
+	background-image: url("../assets/shop.png");
 	z-index: 2;
 	position: absolute;
 	top: 0px;
@@ -786,8 +891,8 @@ a {
 }
 
 .xmas #shop {
-	left: 2140px;
-	top: 560px;
+	left: 2130px;
+	top: 480px;
 }
 
 #shop:hover {
@@ -806,12 +911,12 @@ a {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 5;
-	left: 2404px;
+	left: 2444px;
 	top: 500px;
 }
 
 #credits ul {
-	font-family: 'IM Fell French Canon', serif;
+	font-family: "Georgia", 'Times New Roman', 'Times' serif;
 	font-size: 1.3em;
 	text-align: center;
 	margin-top: 60px;
@@ -896,7 +1001,7 @@ a {
 	width: 507px;
 	height: 424px;
 	position: absolute;
-	left: 1695px;
+	left: 1735px;
 	top: 420px;
 	z-index: 3;
 }
@@ -909,6 +1014,44 @@ a {
 	z-index: 4;
 }
 
+
+.rslides {
+  position: absolute;
+  top: 480px;
+  left: 1790px;
+  list-style: none;
+  overflow: hidden;
+  width: 400px;
+  padding: 0;
+  margin: 0;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  }
 
 
 /*DAYTIME*/
@@ -1690,11 +1833,11 @@ a {
 	-webkit-transform-origin: centre 92%;
 	-ms-transform-origin: centre 92%;
 	-o-transform-origin: centre 92%;
-	animation: ring 3s infinate linear;
-	-moz-animation: 3s linear 0s normal none infinite ring;
-  	-webkit-animation: ring 3s infinite linear;
-  	-ms-animation: ring 3s infinite linear;
-  	-o-animation: ring 3s infinite linear;
+	animation: ring 3.15s infinate linear;
+	-moz-animation: 3.15s linear 0s normal none infinite ring;
+  	-webkit-animation: ring 3.15s infinite linear;
+  	-ms-animation: ring 3.15s infinite linear;
+  	-o-animation: ring 3.15s infinite linear;
 }
 
 @keyframes ring{
@@ -1849,7 +1992,7 @@ a {
 	position: absolute;
 	z-index: 5;
 	left: 1730px;
-	top: 326px;
+	top: 332px;
 }
 
 #bird-day.touch {
@@ -2807,6 +2950,17 @@ background-image:url('../assets/z-night-7.png');
   	-o-animation: mc-xmas 2.5s infinite cubic-bezier(0.220, 0.000, 0.715, 0.995);
 }
 
+#mc-hat-xmas {
+	width: 223px;
+	height: 251px;
+	background-image: url('../assets/mc-xmas-hat.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 164px;
+	top: -155px;
+	z-index: 4;
+}
+
 @keyframes mc-xmas {
 	0%{transform: rotate(-3deg)}
 	50%{transform: rotate(3deg)}
@@ -3067,7 +3221,7 @@ background-image:url('../assets/z-night-7.png');
 	background-image: url('../assets/lamp-on-xmas.png');
 	background-repeat: no-repeat;
 	position: absolute;
-	left: 260px;
+	left: 280px;
 	top: 1210px;
 	z-index: 10;
 }

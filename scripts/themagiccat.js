@@ -31,6 +31,7 @@ $(document).ready(function() {
 
         	$("#loading-l").addClass("touch");
         	$("#loading-r").addClass("touch");
+        	$("#loading-wreath-xmas").addClass("touch");
         	$("#wrapper").addClass("touch");
      	}, 0)
      });
@@ -39,15 +40,15 @@ $(document).ready(function() {
 	var date = new Date();
 	var mins = date.getMinutes();
 	var hours = date.getHours();
-	var month = 9;
+	var month = 11;
 	var day = date.getDate();
 
 	var minHand = (mins / 60)*360;
 	var hourHand = (hours / 12)*360;
-	console.log("hour"+hourHand);
-	console.log("min"+minHand);
-	console.log("month"+month);
-	console.log("day"+day);
+	// console.log("hour"+hours);
+	// console.log("min"+mins);
+	// console.log("month"+month);
+	// console.log("day"+day);
 
 	var clockTime = function() {
 		$('#min').css({
@@ -57,8 +58,6 @@ $(document).ready(function() {
 		$('#hour').css({
 			'transform': "rotate("+hourHand+"deg)"
 		});
-
-		console.log("ClockTime set");
 	}
 
 	clockTime();
@@ -68,7 +67,7 @@ $(document).ready(function() {
 	}, 60000)
 
 	
-	if (month >= 0 && month <= 9) {
+	if (month >= 0 && month <= 10) {
 		$(".xmas").addClass("hide");
 
 		if (hours < 8 || hours > 18) {
@@ -80,9 +79,8 @@ $(document).ready(function() {
 			$("#wrapper").addClass("day");
 		}
 
-	} else if (month == 10 || month == 11){
+	} else if (month == 11){
 
-		console.log("It's November");
 		var candleHeight;
 
 		$("#wrapper").addClass("xmas");
@@ -169,8 +167,8 @@ function positionTeddy() {
 
         currentTeddyPosIndex = ranIndex;
 
-        console.log (positionArray[currentTeddyPosIndex].left)
-        console.log (positionArray[currentTeddyPosIndex].top)
+        // console.log (positionArray[currentTeddyPosIndex].left)
+        // console.log (positionArray[currentTeddyPosIndex].top)
 
         $("#teddy").css({
             top     : positionArray[currentTeddyPosIndex].top,
@@ -192,7 +190,6 @@ function positionTeddy() {
 		});
 
 		$("body").mouseup(function(){
-			console.log("up");
 			$("body").removeClass('mouseDown');
 		});
 
@@ -218,7 +215,6 @@ function positionTeddy() {
 // DAY INTERACTION
 		$("#statue-day").bind('mousedown touchstart', function(event){
 			event.preventDefault();
-			console.log("clickdown");
 			$("#burp").addClass('touch');
 			//$("#stars-small").removeClass('hide');
 		});
@@ -231,7 +227,6 @@ function positionTeddy() {
 
 		$("#phone-day").bind('mouseenter touchstart', function(event){
 			event.preventDefault();
-			console.log("clickdown");
 			$("#phone-day").addClass('touch');
 			//$("#stars-small").removeClass('hide');
 		});
@@ -388,15 +383,15 @@ function positionTeddy() {
 				//prevent spacebar
 				$("html, body, #wrapper").bind("keydown", function(event)
 				{
-					console.log(event.keyCode)
+					//console.log(event.keyCode)
 					if(event.keyCode == 32)
 					{
 						event.preventDefault();
 					}
 				});
 
-				console.log(UTIL)
-				console.log(RenderQue)
+				//console.log(UTIL)
+				//console.log(RenderQue)
 
 				RenderQue.add(this)
 
@@ -432,7 +427,7 @@ function positionTeddy() {
 				this._startY = UTILS.getPositionFromMouseTouchEvent(event).y - this._y
 
 				$(window).bind("mousemove touchmove", UTILS.bind(this, this.onMouseMove));
-				console.log("this._x is " + this._y);
+				//console.log("this._x is " + this._y);
 			},
 			onMouseUp: function(event)
 			{
@@ -507,10 +502,8 @@ function positionTeddy() {
 
 $(window).load(function() {
 
-	console.log("ON LOAD");
-
 	// var date = new Date();
-	// var month = 11;
+	// var month = date.getMonth();
 	// var soundtrack;
 
 	// if (month == 10 || month == 0) {

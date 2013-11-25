@@ -37,6 +37,7 @@
 
 <div id = "loading-l"></div>
 <div id = "loading-r"></div>
+<div id = "loading-wreath-xmas" class="xmas"></div>
 
 <div id="bravo">
   <div id = "bravo-sprite"></div>
@@ -53,10 +54,20 @@
   <div id="mc-title"></div>
   <div id="teddy"></div>
 
-  <div id="mc-intro" class="textdiv">
-      <p>
-        med Den Magiske Kat og Teddy. Gå på opdagelse i alle de spændene og rigt illustrerede verdener. Lille Teddy kan ikke finde sin kludedukke. Den er svær at finde, for den h ar nemlig gemt sig rigtig godt, se om du kan hjælpe Den Magiske Kat og Teddy med at finde kludedukken.
-      </p>
+  <div id="mc-book">
+    <div id="mc-book-right" class="textdiv">
+        <p>
+          med Den Magiske Kat og Teddy. Gå på opdagelse i alle de spændene og rigt illustrerede verdener. Lille Teddy kan ikke finde sin kludedukke. Den er svær at finde, for den h ar nemlig gemt sig rigtig godt, se om du kan hjælpe Den Magiske Kat og Teddy med at finde kludedukken.
+        </p>
+        <p>
+          med Den Magiske Kat og Teddy. Gå på opdagelse i alle de spændene og rigt illustrerede verdener. Lille Teddy kan ikke finde sin kludedukke. Den er svær at finde, for den h ar nemlig gemt sig rigtig godt, se om du kan hjælpe Den Magiske Kat og Teddy med at finde kludedukken.
+        </p>
+    </div>
+    <div id="mc-book-spine"></div>
+    <div id="mc-book-flip">
+        <div id="mc-book-front"></div>
+        <div id="mc-book-inside">lkjalkjs</div>
+    </div>
   </div>
 
   <div id="clock">
@@ -108,7 +119,9 @@
   </div>
 
   <a class="ignore-prevent-default button" href="http://www.juliemichelsen.dk" alt="Julie Michelsen" target="blank">
-    <div class="ignore-prevent-default" id="julie"></div>
+    <div class="ignore-prevent-default" id="julie">
+      <img id="julie-singing" src="assets/julie-bg-hover.png" alt="Julie Michelsen">
+    </div>
   </a>
 
   <a class="ignore-prevent-default button" href="http://canstore.tictail.com/" alt="Can Store" target="blank">
@@ -141,16 +154,16 @@
 
   <div id = "wallpapers" class="not-xmas">
     <div id="wallpaper"></div> 
-    <a class="ignore-prevent-default button" href = "wallpapers/mc-space.zip" alt = "Download wallpaper">
+    <a class="ignore-prevent-default button" href = alt = "Download wallpaper" onclick="return confirm('Click OK to download')">
       <div id="frame1" class="frame"></div>  
     </a>
-    <a class="ignore-prevent-default button" href = "wallpapers/mc-star.zip" alt = "Download wallpaper">
+    <a class="ignore-prevent-default button" href = "wallpapers/mc-star.zip" alt = "Download wallpaper" onclick="return confirm('Click OK to download')">
       <div id="frame2" class="frame"></div>
     </a>
-    <a class="ignore-prevent-default button" href = "wallpapers/mc-fan.zip" alt = "Download wallpaper">
+    <a class="ignore-prevent-default button" href = "wallpapers/mc-fan.zip" alt = "Download wallpaper" onclick="return confirm('Click OK to download')">
       <div id="frame3" class="frame"></div>
     </a>
-    <a class="ignore-prevent-default button" href = "wallpapers/mc-boat.zip" alt = "Download wallpaper">
+    <a class="ignore-prevent-default button" href = "wallpapers/mc-boat.zip" alt = "Download wallpaper" onclick="return confirm('Click OK to download')">
       <div id="frame4" class="frame"></div>
     </a>
   </div>
@@ -224,7 +237,9 @@
   <div id = "mc-xmas" class="xmas">
     <div id = "mc-eye-l-xmas" class="xmas"></div>
     <div id = "mc-eye-r-xmas" class="xmas"></div>
+    <div id = "mc-hat-xmas" class="xmas"></div>
   </div>
+
   <div id = "merry-xmas" class="xmas"></div>
   <div id = "tree-xmas" class="xmas"></div>
   <div id = "tree-star-xmas" class="xmas"></div>
@@ -343,13 +358,13 @@
       <div id = "present-r"></div>
     </div>
 
-    <a id = "present-link" class="ignore-prevent-default button" alt = "Download Present!" target = "blank">
+    <a id = "present-link" class="ignore-prevent-default button" alt = "Download Present!" target = "blank" onclick="return confirm('Click OK to get your Magic present')">
       <div id= "download-gift-xmas" class= "xmas ignore-prevent-default button"></div>
     </a>
 
     <div id = "memory-instructions" class="xmas">
       <p id = "instructions">
-        Match all the cards to get a special Christmas gift from The Magic Cat!
+        Match all the cards to get a special Christmas present from The Magic Cat!
       </p>
     </div>
   </div>
