@@ -43,7 +43,7 @@ $(document).ready(function() {
 
 	var date = new Date();
 	var mins = date.getMinutes();
-	var hours = 20;
+	var hours = date.getHours();
 	var month = 11;
 	var day = date.getDate();
 
