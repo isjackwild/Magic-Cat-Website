@@ -529,12 +529,20 @@ a {
 	display: inline;
 }
 
+#mc-book:hover #mc-book-flip{
+	transform: rotateY(-15deg);
+	-webkit-transform: rotateY(-15deg);
+	-moz-transform: rotateY(-15deg);
+	-ms-transform: rotateY(-15deg);
+	-o-transform: rotateY(-15deg);
+}
+
 #mc-book-flip.touch{
-	transform: rotateY(-160deg);
-	-webkit-transform: rotateY(-160deg);
-	-moz-transform: rotateY(-160deg);
-	-ms-transform: rotateY(-160deg);
-	-o-transform: rotateY(-160deg);
+	transform: rotateY(-160deg) !important;
+	-webkit-transform: rotateY(-160deg) !important;
+	-moz-transform: rotateY(-160deg) !important;
+	-ms-transform: rotateY(-160deg) !important;
+	-o-transform: rotateY(-160deg) !important;
 }
 
 .lt-ie10 #mc-book-flip {
@@ -2136,7 +2144,7 @@ a {
 	height: 100%;
 	background-color: black;
 	z-index: 9;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	opacity: 0;
@@ -3285,7 +3293,7 @@ background-image:url('../assets/z-night-7.png');
 	height: 100%;
 	background-color: black;
 	z-index: 9;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	opacity: 0;
@@ -3393,4 +3401,10 @@ background-image:url('../assets/z-night-7.png');
     to {background-position: -120px; }
 }
 
-
+.no-ani * {
+	animation-play-state: paused !important;
+	-webkit-animation-play-state: paused !important;
+	-moz-animation-play-state: paused !important;
+	-ms-animation-play-state: paused !important;
+	-o-animation-play-state: paused !important;
+}

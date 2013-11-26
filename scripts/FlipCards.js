@@ -24,6 +24,12 @@ var CardsEngine =
 				$("#instructions").replaceWith("<p>Match all the cards to see what<br>The Magic Cat got for Chrismas!</p>");
 				$("#download-gift-xmas").css("background-image", "url('../assets/fish-large.png')");
 			}
+
+		if(Modernizr.touch) {
+					$(".card").addClass("no-wobble");
+				}
+
+
 		this._cards = [];
 		this._positions = [];
 
