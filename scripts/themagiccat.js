@@ -409,6 +409,11 @@ function positionTeddy() {
 				$(document).bind("mouseup touchend", UTILS.bind(this, this.onMouseUp));
 				
 				$(document).mouseleave(UTILS.bind(this, this.onMouseUp));
+				
+				//prevent normal window scroll.
+				$(document).scroll(function(event){event.preventDefault();});
+				$(window).scroll(function(event){event.preventDefault();});
+				$("html, body").scroll(function(event){event.preventDefault();});
 
 				//set fixed position
 				setTimeout(function(){$(document).scrollLeft(0).scrollTop(0); }, 10)

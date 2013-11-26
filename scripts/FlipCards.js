@@ -55,15 +55,11 @@ var CardsEngine =
 		{
 			if(this._cardFlipped.check(card))
 			{
-				this._cardFlipped = null;
 				this.numPairs++;
-
 				this.checkSuccess();
-			}else
-			{
-				console.log("flip cards back to their starting position");
-				this._cardFlipped = null;
 			}
+
+			this._cardFlipped = null;
 		}else
 		{
 			this._cardFlipped = card;
@@ -71,7 +67,6 @@ var CardsEngine =
 	},
 	checkSuccess: function()
 	{
-
 		if(this.numPairs == this.NUM_PAIR_BEFORE_SUCCESS)
 		{
 			console.log("GREAT SUCCESS! Now let's reset the cards");
@@ -102,6 +97,8 @@ var CardsEngine =
 	},
 	reset: function()
 	{
+		this._cardFlipped = null;
+
 		//reset again, so we can start over.
 		this.numPairs = 0;
 		for (var i = 0; i < this._cards.length; i++) {
@@ -127,12 +124,11 @@ function Card(el, posClass, index)
 
 	$(this._el).addClass(String(posClass));
 	//added bind to work on touch
-	$(this._el).bind("mousedown touchstart",(UTILS.bind(this, this.onCardClick)));
+	$(this._el).bind("mouseup touchend",(UTILS.bind(this, this.onCardClick)));
 }
 
 Card.prototype.check = function(matchupCard)
 {
-	clearTimeout(this._flipTimer);
 	success = this.partnerCard == matchupCard;
 	if(success)
 	{
@@ -140,12 +136,8 @@ Card.prototype.check = function(matchupCard)
 		this.partnerCard.disable();
 	}else
 	{
-		that = this;
-		this._flipTimer = setTimeout(function()
-		{
-			matchupCard.flip("back");
-			that.flip("back");
-		}, 1000)
+		matchupCard.flip("back");
+		this.flip("back");
 	}
 
 	return success;
@@ -161,10 +153,20 @@ Card.prototype.reset = function()
 
 Card.prototype.flip = function(state)
 {
+	//if(this._disabled) return;
+	clearTimeout(this._flipTimer);
+
 	if(state == "front")
 		$(this._el).addClass("selected");
 	else
-		$(this._el).removeClass("selected");
+	{
+		this._flipTimer = setTimeout(UTIL.bind(this, this.onFlipBack), 1000);
+	}
+};
+
+Card.prototype.onFlipBack = function()
+{
+	$(this._el).removeClass("selected");
 };
 
 Card.prototype.disable = function()
@@ -181,10 +183,9 @@ Card.prototype.addCardOnFlip = function(callback)
 
 Card.prototype.onCardClick = function(event)
 {
-	if(this._disabled) return;
+	if(this._disabled || $(this._el).hasClass("selected")) return;
 
 	this.flip("front");
-
 	this._flipCallback(this);
 };
 
