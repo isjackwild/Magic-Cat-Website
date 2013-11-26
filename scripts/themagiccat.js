@@ -416,8 +416,10 @@ function positionTeddy() {
 			render: function()
 			{
 				//easing & where to add bounce
-					this._x += (this._xtarget - this._x) * 0.2;
-					this._y += (this._ytarget - this._y) * 0.12;
+					// this._x += (this._xtarget - this._x) * 0.2;
+					// this._y += (this._ytarget - this._y) * 0.12;
+					this._x = this._xtarget;
+					this._y = this._ytarget;
 					
 
 				// if (this._x < -2000) {
@@ -510,154 +512,154 @@ function positionTeddy() {
 
 // SOUNDS
 
-$(window).load(function() {
+// $(window).load(function() {
 
-	var date = new Date();
-	var month = 11;
-	var soundtrack;
+// 	var date = new Date();
+// 	var month = 11;
+// 	var soundtrack;
 
-	if (month == 10 || month == 0) {
-		soundtrack = new buzz.sound('../sounds/winter', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	} else if (month == 1 || month == 2 || month == 3) {
-		soundtrack = new buzz.sound('../sounds/spring', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	} else if (month == 4 || month == 5 || month == 6) {
-		soundtrack = new buzz.sound('../sounds/summer', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	} else if (month == 7 || month == 8 || month == 9) {
-		soundtrack = new buzz.sound('../sounds/fall', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	} else if (month == 11) {
-		soundtrack = new buzz.sound('../sounds/Magic_Christmas_by_Julie_Michelsen', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	}
+// 	if (month == 10 || month == 0) {
+// 		soundtrack = new buzz.sound('../sounds/winter', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+// 	} else if (month == 1 || month == 2 || month == 3) {
+// 		soundtrack = new buzz.sound('../sounds/spring', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+// 	} else if (month == 4 || month == 5 || month == 6) {
+// 		soundtrack = new buzz.sound('../sounds/summer', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+// 	} else if (month == 7 || month == 8 || month == 9) {
+// 		soundtrack = new buzz.sound('../sounds/fall', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+// 	} else if (month == 11) {
+// 		soundtrack = new buzz.sound('../sounds/Magic_Christmas_by_Julie_Michelsen', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+// 	}
 	
-	var curtain = new buzz.sound('sounds/curtain', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var burp = new buzz.sound('sounds/burp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var lamp = new buzz.sound('sounds/lamp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var shimmer = new buzz.sound('sounds/shimmer', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var fanfare = new buzz.sound('sounds/fanfare', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var button = new buzz.sound('sounds/button', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var bravo = new buzz.sound('sounds/bravo', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var bravo2 = new buzz.sound('sounds/bravo2', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var ring = new buzz.sound('sounds/ring', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var harp = new buzz.sound('sounds/harp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var mc = new buzz.sound('sounds/mc', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var tick = new buzz.sound('sounds/tick', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var fire = new buzz.sound('sounds/fire', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var tea = new buzz.sound('sounds/tea', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var snore = new buzz.sound('sounds/snore', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var yahoo = new buzz.sound('sounds/yahoo', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var whistle = new buzz.sound('sounds/whistle', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var bell = new buzz.sound('sounds/bell', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var curtain = new buzz.sound('sounds/curtain', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var burp = new buzz.sound('sounds/burp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var lamp = new buzz.sound('sounds/lamp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var shimmer = new buzz.sound('sounds/shimmer', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var fanfare = new buzz.sound('sounds/fanfare', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var button = new buzz.sound('sounds/button', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var bravo = new buzz.sound('sounds/bravo', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var bravo2 = new buzz.sound('sounds/bravo2', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var ring = new buzz.sound('sounds/ring', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var harp = new buzz.sound('sounds/harp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var mc = new buzz.sound('sounds/mc', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var tick = new buzz.sound('sounds/tick', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var fire = new buzz.sound('sounds/fire', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var tea = new buzz.sound('sounds/tea', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var snore = new buzz.sound('sounds/snore', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var yahoo = new buzz.sound('sounds/yahoo', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var whistle = new buzz.sound('sounds/whistle', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+// 	var bell = new buzz.sound('sounds/bell', {formats: ['wav', 'mp3', 'ogg'], preload:true});
 
-	$(function() {
+// 	$(function() {
 
-//CONSTANTS
-		//soundtrack.play();
-		soundtrack.setVolume(60);
-		curtain.play();
+// //CONSTANTS
+// 		//soundtrack.play();
+// 		soundtrack.setVolume(60);
+// 		curtain.play();
 
-		$("#mute-audio").bind('mousedown touchstart',function(event){
-				buzz.all().toggleMute();
-			});
+// 		$("#mute-audio").bind('mousedown touchstart',function(event){
+// 				buzz.all().toggleMute();
+// 			});
 
-		$("#teddy").bind('mousedown touchstart',function(event){
-				bravo.play();
-			});
+// 		$("#teddy").bind('mousedown touchstart',function(event){
+// 				bravo.play();
+// 			});
 
-		$("#mc-book").bind('mousedown touchstart',function(event){
-				fanfare.play();
-			});
+// 		$("#mc-book").bind('mousedown touchstart',function(event){
+// 				fanfare.play();
+// 			});
 
-		$("#clock").bind('mouseenter touchstart',function(event){
-				tick.play();
-				tick.loop();
-			});
+// 		$("#clock").bind('mouseenter touchstart',function(event){
+// 				tick.play();
+// 				tick.loop();
+// 			});
 
-		$("#clock").bind('mouseleave touchend',function(event){
-				tick.stop();
-			});
+// 		$("#clock").bind('mouseleave touchend',function(event){
+// 				tick.stop();
+// 			});
 
-//DAY
+// //DAY
 
-		$("#statue-day").bind('mousedown touchstart',function(event){
-				burp.play();
-			});
+// 		$("#statue-day").bind('mousedown touchstart',function(event){
+// 				burp.play();
+// 			});
 
-		$("#bird-day").bind('mousedown touchstart',function(event){
-				whistle.play();
-			});
+// 		$("#bird-day").bind('mousedown touchstart',function(event){
+// 				whistle.play();
+// 			});
 
-		$("#phone-day").bind('mouseenter touchstart',function(event){
-				ring.play();
-				ring.loop();
-			});
+// 		$("#phone-day").bind('mouseenter touchstart',function(event){
+// 				ring.play();
+// 				ring.loop();
+// 			});
 
-		$("#phone-day").bind('mouseleave touchend',function(event){
-				ring.stop();
-			});
+// 		$("#phone-day").bind('mouseleave touchend',function(event){
+// 				ring.stop();
+// 			});
 
-		$("#mc-day").bind('mousedown touchstart',function(event){
-				mc.play();
-			});
+// 		$("#mc-day").bind('mousedown touchstart',function(event){
+// 				mc.play();
+// 			});
 
-		$("#sheets-day").bind('mousedown touchstart',function(event){
-				shimmer.play();
-			});
+// 		$("#sheets-day").bind('mousedown touchstart',function(event){
+// 				shimmer.play();
+// 			});
 
-//NIGHT
-		$("#tea-pot-night").bind('mousedown touchstart',function(event){
-				tea.play();
-			});
+// //NIGHT
+// 		$("#tea-pot-night").bind('mousedown touchstart',function(event){
+// 				tea.play();
+// 			});
 
-		$("#mc-night").bind('mouseenter touchstart',function(event){
-				snore.play();
-				snore.loop();
-			});
+// 		$("#mc-night").bind('mouseenter touchstart',function(event){
+// 				snore.play();
+// 				snore.loop();
+// 			});
 
-		$("#mc-night").bind('mouseleave touchend',function(event){
-				snore.stop();
-			});
+// 		$("#mc-night").bind('mouseleave touchend',function(event){
+// 				snore.stop();
+// 			});
 
-		$("#lamps-night").bind('mousedown touchstart',function(event){
-				lamp.play();
-			});
+// 		$("#lamps-night").bind('mousedown touchstart',function(event){
+// 				lamp.play();
+// 			});
 
-		$("#moon-night").bind('mousedown touchstart',function(event){
-				shimmer.play();
-			});
+// 		$("#moon-night").bind('mousedown touchstart',function(event){
+// 				shimmer.play();
+// 			});
 
-		$("#teddy-pj-night").bind('mousedown touchstart',function(event){
-				yahoo.play();
-			});
+// 		$("#teddy-pj-night").bind('mousedown touchstart',function(event){
+// 				yahoo.play();
+// 			});
 
-//XMAS
+// //XMAS
 
-		$("#lamp-xmas").bind('mousedown touchstart',function(event){
-				lamp.play();
-			});
+// 		$("#lamp-xmas").bind('mousedown touchstart',function(event){
+// 				lamp.play();
+// 			});
 
-		$("#bell-xmas").bind('mousedown touchstart',function(event){
-				bell.play();
-			});
+// 		$("#bell-xmas").bind('mousedown touchstart',function(event){
+// 				bell.play();
+// 			});
 
-		$("#santa-xmas").bind('mousedown touchstart',function(event){
-				shimmer.play();
-			});
+// 		$("#santa-xmas").bind('mousedown touchstart',function(event){
+// 				shimmer.play();
+// 			});
 
-		$("#mc-xmas").bind('mousenter touchstart',function(event){
-				harp.play();
-			});
+// 		$("#mc-xmas").bind('mousenter touchstart',function(event){
+// 				harp.play();
+// 			});
 
-		$("#mc-xmas").bind('mousedown touchstart',function(event){
-				harp.play();
-			});
+// 		$("#mc-xmas").bind('mousedown touchstart',function(event){
+// 				harp.play();
+// 			});
 
-		$("#candle-outer").bind('mouseenter touchstart',function(event){
-				fire.play();
-				fire.loop();
-			});
+// 		$("#candle-outer").bind('mouseenter touchstart',function(event){
+// 				fire.play();
+// 				fire.loop();
+// 			});
 
-		$("#candle-outer").bind('mouseleave touchend',function(event){
-				fire.stop();
-			});
+// 		$("#candle-outer").bind('mouseleave touchend',function(event){
+// 				fire.stop();
+// 			});
 
-	});
-});
+// 	});
+// });
