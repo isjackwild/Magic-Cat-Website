@@ -39,6 +39,12 @@ a {
 	-o-touch-callout: none !important;
 }
 
+.lt-ie10 * {
+	border: 0px;
+	border-style: none;
+	text-decoration: none;
+}
+
 
 #wrapper {
 	width: 3000px;
@@ -364,7 +370,7 @@ a {
 	height: 202px;
 	position: absolute;
 	z-index: 4;
-	left: 570px;
+	left: 580px;
 	top: -90px;
 }
 
@@ -377,8 +383,8 @@ a {
 }
 
 #teddy:hover img {
-	transform: translate(0,12px);
-	transform: translate(0,12px);
+	transform: translate(0,-12px);
+	transform: translate(0,-12px);
 }
 
 #mc-title {
@@ -409,11 +415,11 @@ a {
 	-moz-transition: -moz-transform 2s;
 	-ms-transition: -ms-transform 2s;
 	-o-transition: -o-transform 2s;
-	transform: rotate(-6deg) scale(0.93);
-	-webkit-transform: rotate(-6deg) scale(0.93);
-	-moz-transform: rotate(-6deg) scale(0.93);
-	-ms-transform: rotate(-6deg) scale(0.93);
-	-o-transform: rotate(-6deg) scale(0.93);
+	transform: rotate(-6deg) scale(0.9);
+	-webkit-transform: rotate(-6deg) scale(0.85);
+	-moz-transform: rotate(-6deg) scale(0.85);
+	-ms-transform: rotate(-6deg) scale(0.85);
+	-o-transform: rotate(-6deg) scale(0.85);
 	perspective: 2000px;
 	-webkit-perspective: 2000px;
 	-moz-perspective: 2000px;
@@ -429,10 +435,10 @@ a {
 }
 
 #mc-book-spine {
-	width: 69px;
-	height: 720px;
+	width: 58px;
+	height: 710px;
 	position: absolute;
-	top: -13px;
+	top: -5px;
 	left: -40px;
 	z-index: 0;
 	background-image: url('../assets/book-spine.png');
@@ -509,6 +515,20 @@ a {
 
 }
 
+#mc-book-left-ie {
+	width: 522px;
+	height: 700px;
+	position: absolute;
+	left: -526px;
+	top: 0;
+	z-index: 5;
+	display: none;
+}
+
+.lt-ie10 #mc-book-left-ie {
+	display: inline;
+}
+
 #mc-book-flip.touch{
 	transform: rotateY(-160deg);
 	-webkit-transform: rotateY(-160deg);
@@ -523,11 +543,11 @@ a {
 
 
 #mc-book.touch {
-	transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
-	-webkit-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
-	-moz-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
-	-ms-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
-	-o-transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
+	transform: rotate(-3deg) scale(1.0) translate(10px,0px);
+	-webkit-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
+	-moz-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
+	-ms-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
+	-o-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
 }
 
 .lt-ie10 #mc-book {
@@ -600,7 +620,7 @@ a {
 	background-image: url("../assets/clock-min.png");
 	background-repeat: no-repeat;
 	position: absolute;
-	left: 90px;
+	left: 88px;
 	top: 335px;
 	z-index: 10;
 	transform-origin: center bottom;
@@ -631,7 +651,7 @@ a {
 	background-image: url("../assets/clock-middle.png");
 	background-repeat: no-repeat;
 	position: absolute;
-	left: 86px;
+	left: 84px;
 	top: 394px;
 	z-index: 11;
 }
@@ -645,11 +665,11 @@ a {
 	z-index: 1;
 	left: -215px;
 	top: 790px;
-	animation: handipad 13s infinate ease-in-out;
-	-moz-animation: 13s ease 0s normal none infinite handipad;
-  	-webkit-animation:handipad 13s infinite ease-in-out;
-  	-ms-animation:handipad 13s infinite ease-in-out;
-  	-o-animation:handipad 13s infinite ease-in-out;
+	animation: handipad 13s infinate cubic-bezier(0.260, 0.000, 0.695, 0.995);
+	-moz-animation: 13s cubic-bezier(0.260, 0.000, 0.695, 0.995) 0s normal none infinite handipad;
+  	-webkit-animation:handipad 13s infinite cubic-bezier(0.260, 0.000, 0.695, 0.995);
+  	-ms-animation:handipad 13s infinite cubic-bezier(0.260, 0.000, 0.695, 0.995);
+  	-o-animation:handipad 13s infinite cubic-bezier(0.260, 0.000, 0.695, 0.995);
   	transform-origin: bottom;
   	-moz-transform-origin: bottom;
   	-webkit-transform-origin: bottom;
@@ -1801,8 +1821,9 @@ a {
 	height: 68px;
 	background-repeat: no-repeat;
 	position: absolute;
-	left: 2020px;
-	top: 1070px;
+	left: 2055px;
+	top: 1035px;
+	z-index: 7;
 	transform-origin: right;
 	-moz-transform-origin: right;
 	-webkit-transform-origin: right;
@@ -2714,11 +2735,11 @@ background-image:url('../assets/z-night-7.png');
 }
 
 #teddy-eye-r-night.touch {
-	animation: teddy-eye-r-night 3s 1 ease-in-out;
-	-webkit-animation: teddy-eye-r-night 3s 1 ease-in-out;
-	-moz-animation: teddy-eye-r-night 3s 1 ease-in-out;
-	-ms-animation: teddy-eye-r-night 3s 1 ease-in-out;
-	-o-animation: teddy-eye-r-night 3s 1 ease-in-out;
+	animation: teddy-eye-r-night 3s 1 cubic-bezier(0.155, 0.000, 0.465, 1.005)
+	-webkit-animation: teddy-eye-r-night 3s 1 cubic-bezier(0.155, 0.000, 0.465, 1.005);
+	-moz-animation: teddy-eye-r-night 3s 1 cubic-bezier(0.155, 0.000, 0.465, 1.005);
+	-ms-animation: teddy-eye-r-night 3s 1 cubic-bezier(0.155, 0.000, 0.465, 1.005);
+	-o-animation: teddy-eye-r-night 3s 1 cubic-bezier(0.155, 0.000, 0.465, 1.005);
 }
 
 @keyframes teddy-eye-r-night {
@@ -2758,11 +2779,11 @@ background-image:url('../assets/z-night-7.png');
 }
 
 #teddy-eye-l-night.touch {
-	animation: teddy-eye-l-night 3s 1 ease-in-out;
-	-webkit-animation: teddy-eye-l-night 3s 1 ease-in-out;
-	-moz-animation: teddy-eye-l-night 3s 1 ease-in-out;
-	-ms-animation: teddy-eye-l-night 3s 1 ease-in-out;
-	-o-animation: teddy-eye-l-night 3s 1 ease-in-out;
+	animation: teddy-eye-l-night 3s 1 cubic-bezier(0.115, 0.005, 0.465, 1.005);
+	-webkit-animation: teddy-eye-l-night 3s 1 cubic-bezier(0.115, 0.005, 0.465, 1.005);
+	-moz-animation: teddy-eye-l-night 3s 1 cubic-bezier(0.115, 0.005, 0.465, 1.005);
+	-ms-animation: teddy-eye-l-night 3s 1 cubic-bezier(0.115, 0.005, 0.465, 1.005);
+	-o-animation: teddy-eye-l-night 3s 1 cubic-bezier(0.115, 0.005, 0.465, 1.005);
 }
 
 @keyframes teddy-eye-l-night {
@@ -2944,11 +2965,11 @@ background-image:url('../assets/z-night-7.png');
 	z-index: 0;
 	left: 820px;
 	top: 20px;
-	transition: transform 3s;
-	-webkit-transition: -webkit-transform 3s;
-	-moz-transition: -moz-transform 3s;
-	-ms-transition: -ms-transform 3s;
-	-o-transition: -o-transform 3s;
+	transition: transform 3s cubic-bezier(0.155, 0.000, 0.385, 1.000);
+	-webkit-transition: -webkit-transform 3s cubic-bezier(0.155, 0.000, 0.385, 1.000);
+	-moz-transition: -moz-transform 3s cubic-bezier(0.155, 0.000, 0.385, 1.000);
+	-ms-transition: -ms-transform 3s cubic-bezier(0.155, 0.000, 0.385, 1.000);
+	-o-transition: -o-transform 3s cubic-bezier(0.155, 0.000, 0.385, 1.000);
 }
 
 #santa-xmas.touch {

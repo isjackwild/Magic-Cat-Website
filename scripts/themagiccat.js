@@ -37,7 +37,7 @@ $(document).ready(function() {
         	$("#mc-book").toggleClass('touch');
 			$("#mc-book-flip").toggleClass('touch');
 			$("#mc-book-front").toggleClass('touch');
-     	}, 1900)
+     	}, 2300)
      });
 
 
@@ -512,55 +512,58 @@ function positionTeddy() {
 
 $(window).load(function() {
 
-	// var date = new Date();
-	// var month = date.getMonth();
-	// var soundtrack;
+	var date = new Date();
+	var month = 11;
+	var soundtrack;
 
-	// if (month == 10 || month == 0) {
-	// 	soundtrack = new buzz.sound('../sounds/winter', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	// } else if (month == 1 || month == 2 || month == 3) {
-	// 	soundtrack = new buzz.sound('../sounds/spring', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	// } else if (month == 4 || month == 5 || month == 6) {
-	// 	soundtrack = new buzz.sound('../sounds/summer', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	// } else if (month == 7 || month == 8 || month == 9) {
-	// 	soundtrack = new buzz.sound('../sounds/fall', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	// } else if (month == 11) {
-	// 	soundtrack = new buzz.sound('../sounds/xmas', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-	// }
+	if (month == 10 || month == 0) {
+		soundtrack = new buzz.sound('../sounds/winter', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+	} else if (month == 1 || month == 2 || month == 3) {
+		soundtrack = new buzz.sound('../sounds/spring', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+	} else if (month == 4 || month == 5 || month == 6) {
+		soundtrack = new buzz.sound('../sounds/summer', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+	} else if (month == 7 || month == 8 || month == 9) {
+		soundtrack = new buzz.sound('../sounds/fall', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+	} else if (month == 11) {
+		soundtrack = new buzz.sound('../sounds/Magic_Christmas_by_Julie_Michelsen', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+	}
 	
-
-	var burp = new buzz.sound('../sounds/burp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var lamp = new buzz.sound('../sounds/lamp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var shimmer = new buzz.sound('../sounds/shimmer', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var button = new buzz.sound('../sounds/button', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var bravo = new buzz.sound('../sounds/bravo', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var bravo2 = new buzz.sound('../sounds/bravo2', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var ring = new buzz.sound('../sounds/ring', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var harp = new buzz.sound('../sounds/harp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var mc = new buzz.sound('../sounds/mc', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var tick = new buzz.sound('../sounds/tick', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var fire = new buzz.sound('../sounds/fire', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var tea = new buzz.sound('../sounds/tea', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var snore = new buzz.sound('../sounds/snore', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var yahoo = new buzz.sound('../sounds/yahoo', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var whistle = new buzz.sound('../sounds/whistle', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-	var bell = new buzz.sound('../sounds/bell', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var curtain = new buzz.sound('sounds/curtain', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var burp = new buzz.sound('sounds/burp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var lamp = new buzz.sound('sounds/lamp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var shimmer = new buzz.sound('sounds/shimmer', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var fanfare = new buzz.sound('sounds/fanfare', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var button = new buzz.sound('sounds/button', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var bravo = new buzz.sound('sounds/bravo', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var bravo2 = new buzz.sound('sounds/bravo2', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var ring = new buzz.sound('sounds/ring', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var harp = new buzz.sound('sounds/harp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var mc = new buzz.sound('sounds/mc', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var tick = new buzz.sound('sounds/tick', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var fire = new buzz.sound('sounds/fire', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var tea = new buzz.sound('sounds/tea', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var snore = new buzz.sound('sounds/snore', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var yahoo = new buzz.sound('sounds/yahoo', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var whistle = new buzz.sound('sounds/whistle', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var bell = new buzz.sound('sounds/bell', {formats: ['wav', 'mp3', 'ogg'], preload:true});
 
 	$(function() {
 
 //CONSTANTS
 		//soundtrack.play();
+		soundtrack.setVolume(60);
+		curtain.play();
+
+		$("#mute-audio").bind('mousedown touchstart',function(event){
+				buzz.all().toggleMute();
+			});
 
 		$("#teddy").bind('mousedown touchstart',function(event){
 				bravo.play();
 			});
 
 		$("#mc-book").bind('mousedown touchstart',function(event){
-				shimmer.play();
-			});
-
-		$("#mute-audio").bind('mousedown touchstart',function(event){
-				soundtrack.togglePlay();
+				fanfare.play();
 			});
 
 		$("#clock").bind('mouseenter touchstart',function(event){
