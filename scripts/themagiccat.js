@@ -414,13 +414,24 @@ function positionTeddy() {
 			},
 			onMouseMove: function(event)
 			{
-				if(Modernizr.touch) {
-					$('body').addClass('no-ani');
-					timer = setTimeout(function() {
-						$('body').removeClass('no-ani');
-					}, 500);
-				}
-					
+				// if(Modernizr.touch) {
+				// 	// clearTimeout(aniTimer);
+				// 	// $('body').addClass('no-ani');
+				// 	// aniTimer = setTimeout(function() {
+				// 	// 	$('body').removeClass('no-ani');
+				// 	// }, 500);
+				// 	var body = document.body,
+    // 					timer;
+
+  		// 			clearTimeout(timer);
+				// 	  if(!body.classList.contains('no-ani')) {
+				// 	    body.classList.add('no-ani')
+				// 	  }
+					  
+				// 	  timer = setTimeout(function(){
+				// 	    body.classList.remove('no-ani')
+				// 	  },2000);
+				// }
 				
 
 				event.preventDefault();

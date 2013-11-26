@@ -3402,6 +3402,7 @@ background-image:url('../assets/z-night-7.png');
 }
 
 .no-ani * {
+	//-webkit-animation: none !important;
 	animation-play-state: paused !important;
 	-webkit-animation-play-state: paused !important;
 	-moz-animation-play-state: paused !important;
