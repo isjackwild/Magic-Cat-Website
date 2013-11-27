@@ -2844,6 +2844,27 @@ background-image:url('../assets/z-night-7.png');
 	-o-animation: teapot 5s 1 linear;
 }
 
+#tea-night {
+	width: 28px;
+	height: 80px;
+	background-image: url('../assets/tea-night.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 226px;
+	top: 1316px;
+	z-index: 4;
+	opacity: 0;
+	transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+}
+
+#tea-night.touch {
+	opacity: 1;
+}
+
 @keyframes teapot {
 	0% {transform: translate(0,0) rotate(0deg)}
 	10% {transform: rotate(0deg)}
@@ -3408,7 +3429,6 @@ background-image:url('../assets/z-night-7.png');
 }
 
 .no-ani * {
-	//-webkit-animation: none !important;
 	animation-play-state: paused !important;
 	-webkit-animation-play-state: paused !important;
 	-moz-animation-play-state: paused !important;

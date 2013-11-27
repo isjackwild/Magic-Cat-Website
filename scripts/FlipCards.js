@@ -1,6 +1,14 @@
 var date = new Date();
-var day = 30;
+var day = date.getDay();
 var bravo2 = new buzz.sound('sounds/bravo2', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+
+$(document).ready(function(){
+
+	if (day > 26) {
+					$("#instructions").replaceWith("<p>Match all the cards to see what<br>The Magic Cat got for Chrismas!</p>");
+					$("#download-gift-xmas").css("background-image", "url('assets/fish-large.png')");
+				}
+});
 
 //Cards engine
 var CardsEngine =
@@ -8,7 +16,7 @@ var CardsEngine =
 
 	//constants
 	NUM_CARDS: 10,
-	NUM_PAIR_BEFORE_SUCCESS: 1,
+	NUM_PAIR_BEFORE_SUCCESS: 5,
 
 	numPairs: 0,
 
@@ -20,10 +28,6 @@ var CardsEngine =
 
 	init: function()
 	{
-		if (day > 26) {
-				$("#instructions").replaceWith("<p>Match all the cards to see what<br>The Magic Cat got for Chrismas!</p>");
-				$("#download-gift-xmas").css("background-image", "url('../assets/fish-large.png')");
-			}
 
 		if(Modernizr.touch) {
 					$(".card").addClass("no-wobble");
@@ -84,7 +88,7 @@ var CardsEngine =
 
 			if (day >= 1 && day <= 7) {
 				$("#instructions").replaceWith("<p>The Magic Cat gave you his Magic Christmas song!<br>Come back on Sunday for another gift!</p>");
-				$("#present-link").attr("href", "sounds/Magic_Christmas_by_Julie_Michelsen.mp3");
+				$("#present-link").attr("href", "sounds/Magic_Christmas_by_Julie_Michelsen.mp3.zip");
 			} else if (day >= 8 && day <= 14) {
 				$("#instructions").replaceWith("<p>The Magic Cat gave you a special christmas card to send to your friends!<br>Come back on Sunday for another gift!</p>");
 				$("#present-link").attr("href", "mc-christmas-card.pdf");
@@ -92,9 +96,9 @@ var CardsEngine =
 				$("#instructions").replaceWith("<p>The Magic Cat gave you a beautiful christmas wallpaper!<br>Come back on Sunday for another gift!</p>");
 				$("#present-link").attr("href", "wallpapers/mc-christmas.zip");
 			} else if (day >= 22 && day <= 26) {
-				$("#instructions").replaceWith("<p>The Magic Cat gave you a Magic Cat App free download code!<br>Have a very merry Christmas!</p>");
+				$("#instructions").replaceWith("<p>The Magic Cat App is free specially for christmas!<br>Have a very merry Christmas!</p>");
 				$("#present-link").attr("href", "https://itunes.apple.com/app/magic-cat/id518982604?ls=1%26mt=8");
-			} else {
+			} else if (day > 26) {
 				$("#instructions").replaceWith("<p>A fish! The Magic Cat's favourite kind of present!</p>");
 				$("#present-link a").remove();
 			}

@@ -1,11 +1,20 @@
 //TRACKING
 function track(id, action)
 {
-try
-{
-	ga('send', 'event', id, action);
-}catch(e){}
+	console.log(id, action, ga)
+	try
+	{
+		ga('send', 'event', id, action);
+	}catch(e){
+		console.log("error", e)
+	}
 }
+
+var date = new Date();
+	var mins = date.getMinutes();
+	var hours = date.getHours();
+	var month = date.getMonth();
+	var day = date.getDate();
 
 
 //STARBURST
@@ -65,12 +74,6 @@ $(window).load(function(){
 $(document).ready(function() {
 
 	console.log("Doc Ready");
-
-	var date = new Date();
-	var mins = date.getMinutes();
-	var hours = date.getHours();
-	var month = date.getMonth();
-	var day = date.getDate();
 
 	var minHand = (mins / 60)*360;
 	var hourHand = (hours / 12)*360;
@@ -221,9 +224,10 @@ function positionTeddy() {
 			$("#mc-book").toggleClass('touch');
 			$("#mc-book-flip").toggleClass('touch');
 			$("#mc-book-front").toggleClass('touch');
+			track('mc-book', 'click');
 		});
 
-		track('#mc-book', 'click');
+
 
 		$("#teddy").bind('mousedown touchstart', function(event){
 			event.preventDefault();
@@ -231,6 +235,7 @@ function positionTeddy() {
 			$("#bravo").addClass('touch');
 			$("#bravo-star").addClass('touch');
 			$("#bravo-sprite").addClass('touch');
+			track('teddy', 'click');
 			setTimeout(function() {
         		$("#bravo").removeClass('touch');
         		$("#bravo-star").removeClass('touch');
@@ -238,21 +243,20 @@ function positionTeddy() {
     		}, 3000)
 		});
 
-		track('#teddy', 'click');
+		
 
 
 // DAY INTERACTION
 		$("#statue-day").bind('mousedown touchstart', function(event){
 			event.preventDefault();
 			$("#burp").addClass('touch');
+			track('statue-day', 'click');
 		});
 
 		$("#statue-day").bind('mouseup touchend',function(event){
 			event.preventDefault();
 			$("#burp").removeClass('touch');
 		});
-
-		track('#statue-day', 'click');
 
 		$("#phone-day").bind('mouseenter touchstart', function(event){
 			event.preventDefault();
@@ -267,48 +271,47 @@ function positionTeddy() {
 		var fishTimer = 0;
 		$("#fish-day").bind('mousedown touchstart',function(event){
 			$("#fish").addClass('touch');
+			track('fish-day', 'click');
 			clearTimeout(fishTimer);
 			fishTimer = setTimeout(function() {
         		$("#fish").removeClass('touch');
-    		}, 20000)
+    		}, 10000)
 		});
 
-		track('#fish-day', 'click');
 
 		var birdTimer = 0;
 		$("#bird-day").bind('mousedown touchstart',function(event){
 			$("#bird-day").addClass('touch');
+			track('bird-day', 'click');
 			clearTimeout(birdTimer);
 			birdTimer = setTimeout(function() {
         		$("#bird-day").removeClass('touch');
     		}, 1300)
 		});
 
-		track('#bird-day', 'click');
 
 		var sheetsTimer = 0;
 		$("#sheets-day").bind('mousedown touchstart',function(event){
 			$("#sheets-day").addClass('touch');
+			track('sheets-day', 'click');
 			clearTimeout(sheetsTimer);
 			sheetsTimer = setTimeout(function() {
         		$("#sheets-day").removeClass('touch');
     		}, 13500)
 		});
 
-		track('#sheets-day', 'click');
 
 //NIGHT INTERACTION
 		
 		var moonTimer = 0;
 		$("#moon-night").bind('mousedown touchstart',function(event){
 			$("#moon-night").addClass('touch');
+			track('moon-night', 'click');
 			clearTimeout(moonTimer);
 			moonTimer = setTimeout(function() {
         		$("#moon-night").removeClass('touch');
     		}, 1600)
 		});
-
-		track('#moon-night', 'click');
 
 		$("#mc-hat-night").bind('mouseenter touchstart', function(event){
 			event.preventDefault();
@@ -324,26 +327,36 @@ function positionTeddy() {
 			event.preventDefault();
 			$("#light-off-night").toggleClass('touch');
 			$("#lamps-night").toggleClass('touch');
+			track('lamps-night', 'click');
 		});
-
-		track('#lamps-night', 'click');
 
 		var teaTimer = 0;
 		$("#tea-pot-night").bind('mousedown touchstart',function(event){
 			$("#tea-pot-night").addClass('touch');
+			track('tea-pot-night', 'click');
+			
+			setTimeout(function() {
+        		$("#tea-night").addClass('touch');
+    		}, 1000)
+
+			setTimeout(function() {
+        		$("#tea-night").removeClass('touch');
+    		}, 4000)
+			
 			clearTimeout(teaTimer);
 			teaTimer = setTimeout(function() {
         		$("#tea-pot-night").removeClass('touch');
+        		$("#tea-night").removeClass('touch');
     		}, 5000)
 		});
 
-		track('#tea-pot-night', 'click');
 
 		var teddyPjTimer = 0;
 		$("#teddy-pj-night").bind('mousedown touchstart',function(event){
 			$("#teddy-pj-night").addClass('touch');
 			$("#teddy-eye-r-night").addClass('touch');
 			$("#teddy-eye-l-night").addClass('touch');
+			track('teddy-pj-night', 'click');
 			clearTimeout(teddyPjTimer);
 			teddyPjTimer = setTimeout(function() {
         		$("#teddy-pj-night").removeClass('touch');
@@ -352,7 +365,6 @@ function positionTeddy() {
     		}, 3000)
 		});
 
-		track('#teddy-pj-night', 'click');
 
 
 
@@ -361,17 +373,15 @@ function positionTeddy() {
 			event.preventDefault();
 			$("#lamp-xmas").toggleClass('touch');
 			$("#lamp-off-xmas").toggleClass('touch');
+			track('lamp-xmas', 'click');
 		});
-
-		track('#lamp-xmas', 'click');
 
 		$("#santa-xmas").bind('mousedown touchend',function(event){
 			event.preventDefault();
 			$("#santa-xmas").addClass('touch');
 			$("#merry-xmas").addClass('touch');
+			track('santa-xmas', 'click');
 		});
-
-		track('#santa-xmas', 'click');
 
 		$("#tree-star-xmas").bind('mouseenter touchstart',function(event){
 			$("#tree-star-xmas").addClass('touch');
@@ -385,6 +395,7 @@ function positionTeddy() {
 		$("#mc-xmas").bind('mousedown touchstart',function(event){
 			$("#mc-eye-r-xmas").addClass('touch');
 			$("#mc-eye-l-xmas").addClass('touch');
+			track('mc-xmas', 'click');
 			clearTimeout(mcEyesTimer);
 			mcEyesTimer = setTimeout(function() {
         		$("#mc-eye-r-xmas").removeClass('touch');
@@ -392,18 +403,16 @@ function positionTeddy() {
     		}, 3000)
 		});
 
-		track('#mc-xmas', 'click');
 
 		var bellTimer = 0;
 		$("#bell-xmas").bind('mousedown touchstart',function(event){
 			$("#bell-xmas").addClass('touch');
+			track('bell-xmas', 'click');
 			clearTimeout(bellTimer);
 			bellTimer = setTimeout(function() {
         		$("#bell-xmas").removeClass('touch');
     		}, 4200)
 		});
-
-		track('#bell-xmas', 'click');
 
 
 
@@ -541,8 +550,6 @@ function positionTeddy() {
 // SOUNDS
 $(window).load(function() {
 
-	var date = new Date();
-	var month = date.getMonth();
 	var soundtrack;
 
 	if (month == 10 || month == 0) {
