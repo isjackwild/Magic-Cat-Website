@@ -173,7 +173,7 @@ function Position(left, top, deg) {
 }
 
 var positionArray = [
-      new Position(570, -90, 0) 
+      new Position(580, -90, 0) 
     , new Position(1100, -70, 0)
     , new Position(2000, 1380, 180)
     , new Position(2840, 600, -90)
@@ -546,15 +546,15 @@ $(window).load(function() {
 	var soundtrack;
 
 	if (month == 10 || month == 0) {
-		soundtrack = new buzz.sound('../sounds/winter', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
+		soundtrack = new buzz.sound('sounds/winter', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
 	} else if (month == 1 || month == 2 || month == 3) {
-		soundtrack = new buzz.sound('../sounds/spring', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
+		soundtrack = new buzz.sound('sounds/spring', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
 	} else if (month == 4 || month == 5 || month == 6) {
-		soundtrack = new buzz.sound('../sounds/summer', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
+		soundtrack = new buzz.sound('sounds/summer', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
 	} else if (month == 7 || month == 8 || month == 9) {
-		soundtrack = new buzz.sound('../sounds/fall', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
+		soundtrack = new buzz.sound('sounds/fall', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
 	} else if (month == 11) {
-		soundtrack = new buzz.sound('../sounds/Magic_Christmas_by_Julie_Michelsen', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
+		soundtrack = new buzz.sound('sounds/Magic_Christmas_by_Julie_Michelsen', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
 	}
 	
 	var curtain = new buzz.sound('sounds/curtain', {formats: ['wav', 'mp3', 'ogg'], preload:true});
@@ -579,8 +579,8 @@ $(window).load(function() {
 	$(function() {
 
 //CONSTANTS
-		//soundtrack.play();
-		soundtrack.setVolume(60);
+		soundtrack.play();
+		soundtrack.setVolume(50);
 		curtain.play();
 		//buzz.all().toggleMute();
 
