@@ -1,3 +1,14 @@
+//TRACKING
+function track(id, action)
+{
+try
+{
+	ga('send', 'event', id, action);
+}catch(e){}
+}
+
+
+//STARBURST
 function moveStars(event)
 {
 	$('#starburst').css({
@@ -23,28 +34,42 @@ if (Modernizr.touch) {
     $('.card').addClass("no-wobble");
 }
 
-// CLOCK & Candle!
-$(document).ready(function() {
+//work here
 
-    $(window).load(function(){
+//LOADING & WINDOW LOAD
+$(window).load(function(){
 
+
+	if (Modernizr.touch === false) {
+		$("body").addClass("no-touch");
+	}	
+
+	setTimeout(function() {
     	$("#loading-l").addClass("touch");
     	$("#loading-r").addClass("touch");
     	$("#loading-wreath-xmas").addClass("touch");
     	$("#wrapper").addClass("touch");
+    }, 1000)
 
-   //   	setTimeout(function() {
-   //      	$("#mc-book").toggleClass('touch');
-			// $("#mc-book-flip").toggleClass('touch');
-			// $("#mc-book-front").toggleClass('touch');
-   //   	}, 2300)
-     });
 
+	$("#loading-l").bind('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
+    	$("#loading-l").addClass("hide");
+    	$("#loading-r").addClass("hide");
+    	$("#loading-wreath-xmas").addClass("hide");
+	 });
+
+});
+
+
+// CLOCK & Candle!
+$(document).ready(function() {
+
+	console.log("Doc Ready");
 
 	var date = new Date();
 	var mins = date.getMinutes();
 	var hours = date.getHours();
-	var month = 11;
+	var month = date.getMonth();
 	var day = date.getDate();
 
 	var minHand = (mins / 60)*360;
@@ -87,6 +112,7 @@ $(document).ready(function() {
 		$(".not-xmas").addClass("hide");
 		$(".day").addClass("hide");
 		$(".night").addClass("hide");
+		$("#loading-wreath-xmas").removeClass("hide");
 
 		for (var i=1; i <= 24; i++){
 			if (day == i){
@@ -197,6 +223,8 @@ function positionTeddy() {
 			$("#mc-book-front").toggleClass('touch');
 		});
 
+		track('#mc-book', 'click');
+
 		$("#teddy").bind('mousedown touchstart', function(event){
 			event.preventDefault();
 			positionTeddy(); 
@@ -210,6 +238,7 @@ function positionTeddy() {
     		}, 3000)
 		});
 
+		track('#teddy', 'click');
 
 
 // DAY INTERACTION
@@ -222,6 +251,8 @@ function positionTeddy() {
 			event.preventDefault();
 			$("#burp").removeClass('touch');
 		});
+
+		track('#statue-day', 'click');
 
 		$("#phone-day").bind('mouseenter touchstart', function(event){
 			event.preventDefault();
@@ -242,6 +273,7 @@ function positionTeddy() {
     		}, 20000)
 		});
 
+		track('#fish-day', 'click');
 
 		var birdTimer = 0;
 		$("#bird-day").bind('mousedown touchstart',function(event){
@@ -252,6 +284,8 @@ function positionTeddy() {
     		}, 1300)
 		});
 
+		track('#bird-day', 'click');
+
 		var sheetsTimer = 0;
 		$("#sheets-day").bind('mousedown touchstart',function(event){
 			$("#sheets-day").addClass('touch');
@@ -260,6 +294,8 @@ function positionTeddy() {
         		$("#sheets-day").removeClass('touch');
     		}, 13500)
 		});
+
+		track('#sheets-day', 'click');
 
 //NIGHT INTERACTION
 		
@@ -271,6 +307,8 @@ function positionTeddy() {
         		$("#moon-night").removeClass('touch');
     		}, 1600)
 		});
+
+		track('#moon-night', 'click');
 
 		$("#mc-hat-night").bind('mouseenter touchstart', function(event){
 			event.preventDefault();
@@ -288,6 +326,8 @@ function positionTeddy() {
 			$("#lamps-night").toggleClass('touch');
 		});
 
+		track('#lamps-night', 'click');
+
 		var teaTimer = 0;
 		$("#tea-pot-night").bind('mousedown touchstart',function(event){
 			$("#tea-pot-night").addClass('touch');
@@ -296,6 +336,8 @@ function positionTeddy() {
         		$("#tea-pot-night").removeClass('touch');
     		}, 5000)
 		});
+
+		track('#tea-pot-night', 'click');
 
 		var teddyPjTimer = 0;
 		$("#teddy-pj-night").bind('mousedown touchstart',function(event){
@@ -310,6 +352,8 @@ function positionTeddy() {
     		}, 3000)
 		});
 
+		track('#teddy-pj-night', 'click');
+
 
 
 // XMAS INTERACTION
@@ -319,11 +363,15 @@ function positionTeddy() {
 			$("#lamp-off-xmas").toggleClass('touch');
 		});
 
+		track('#lamp-xmas', 'click');
+
 		$("#santa-xmas").bind('mousedown touchend',function(event){
 			event.preventDefault();
 			$("#santa-xmas").addClass('touch');
 			$("#merry-xmas").addClass('touch');
 		});
+
+		track('#santa-xmas', 'click');
 
 		$("#tree-star-xmas").bind('mouseenter touchstart',function(event){
 			$("#tree-star-xmas").addClass('touch');
@@ -344,6 +392,8 @@ function positionTeddy() {
     		}, 3000)
 		});
 
+		track('#mc-xmas', 'click');
+
 		var bellTimer = 0;
 		$("#bell-xmas").bind('mousedown touchstart',function(event){
 			$("#bell-xmas").addClass('touch');
@@ -352,6 +402,8 @@ function positionTeddy() {
         		$("#bell-xmas").removeClass('touch');
     		}, 4200)
 		});
+
+		track('#bell-xmas', 'click');
 
 
 
@@ -412,26 +464,21 @@ function positionTeddy() {
 				this._mousedown = false;
 				$(window).unbind("mousemove touchmove");
 			},
+
+			touchTimer: 0,
+
 			onMouseMove: function(event)
 			{
-				// if(Modernizr.touch) {
-				// 	// clearTimeout(aniTimer);
-				// 	// $('body').addClass('no-ani');
-				// 	// aniTimer = setTimeout(function() {
-				// 	// 	$('body').removeClass('no-ani');
-				// 	// }, 500);
-				// 	var body = document.body,
-    // 					timer;
+				if(Modernizr.touch) {
+					clearTimeout(this.touchTimer);
+					if(!$("body").hasClass('no-ani')) {
+						$("body").addClass('no-ani')
+					}
 
-  		// 			clearTimeout(timer);
-				// 	  if(!body.classList.contains('no-ani')) {
-				// 	    body.classList.add('no-ani')
-				// 	  }
-					  
-				// 	  timer = setTimeout(function(){
-				// 	    body.classList.remove('no-ani')
-				// 	  },2000);
-				// }
+					this.touchTimer = setTimeout(function(){
+						$("body").removeClass('no-ani')
+					},500);
+				}
 				
 
 				event.preventDefault();
@@ -490,24 +537,24 @@ function positionTeddy() {
 
 }); //end doc.ready
 
-// SOUNDS
 
+// SOUNDS
 $(window).load(function() {
 
 	var date = new Date();
-	var month = 11;
+	var month = date.getMonth();
 	var soundtrack;
 
 	if (month == 10 || month == 0) {
-		soundtrack = new buzz.sound('../sounds/winter', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+		soundtrack = new buzz.sound('../sounds/winter', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
 	} else if (month == 1 || month == 2 || month == 3) {
-		soundtrack = new buzz.sound('../sounds/spring', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+		soundtrack = new buzz.sound('../sounds/spring', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
 	} else if (month == 4 || month == 5 || month == 6) {
-		soundtrack = new buzz.sound('../sounds/summer', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+		soundtrack = new buzz.sound('../sounds/summer', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
 	} else if (month == 7 || month == 8 || month == 9) {
-		soundtrack = new buzz.sound('../sounds/fall', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+		soundtrack = new buzz.sound('../sounds/fall', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
 	} else if (month == 11) {
-		soundtrack = new buzz.sound('../sounds/Magic_Christmas_by_Julie_Michelsen', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
+		soundtrack = new buzz.sound('../sounds/Magic_Christmas_by_Julie_Michelsen', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
 	}
 	
 	var curtain = new buzz.sound('sounds/curtain', {formats: ['wav', 'mp3', 'ogg'], preload:true});
@@ -535,10 +582,13 @@ $(window).load(function() {
 		//soundtrack.play();
 		soundtrack.setVolume(60);
 		curtain.play();
+		//buzz.all().toggleMute();
 
 		$("#mute-audio").bind('mousedown touchstart',function(event){
 				buzz.all().toggleMute();
 			});
+
+		track('#mute-audio', 'click');
 
 		$("#teddy").bind('mousedown touchstart',function(event){
 				bravo.play();

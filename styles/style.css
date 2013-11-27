@@ -1,5 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=IM+Fell+French+Canon:400,400italic);
-@import url(http://fonts.googleapis.com/css?family=IM+Fell+Double+Pica+SC);
+/*@import url(http://fonts.googleapis.com/css?family=IM+Fell+French+Canon:400,400italic);
+@import url(http://fonts.googleapis.com/css?family=IM+Fell+Double+Pica+SC);*/
 
 
 body {
@@ -326,7 +326,6 @@ a {
 	font-size: 2.3em;
 	text-align: center;
 	line-height: 1.1em;
-	font-family: 'IM Fell Double Pica SC', serif;
 }
 
 .hide {
@@ -384,7 +383,10 @@ a {
 
 #teddy:hover img {
 	transform: translate(0,-12px);
-	transform: translate(0,-12px);
+	-webkit-transform: translate(0,-12px);
+	-moz-transform: translate(0,-12px);
+	-ms-transform: translate(0,-12px);
+	-o-transform: translate(0,-12px);
 }
 
 #mc-title {
@@ -411,7 +413,7 @@ a {
 	left: 70px;
 	z-index: 1;
 	transition: transform 2s;
-	-webkit-transition: -webkit-transform 2s;
+	-webkit-transition: -webkit-transform 2s, -webkit-filter 2s;
 	-moz-transition: -moz-transform 2s;
 	-ms-transition: -ms-transform 2s;
 	-o-transition: -o-transform 2s;
@@ -432,6 +434,7 @@ a {
 	line-height: 1.4em;
 	margin-bottom: 10px;
 	padding: 5px 35px 0px 10px;
+	font-family: "Georgia", 'Times New Roman', 'Times' serif;
 }
 
 #mc-book-spine {
@@ -453,7 +456,6 @@ a {
 	top: 0;
 	padding: 50px;
 	z-index: 1;
-
 }
 
 #mc-book-front {
@@ -552,10 +554,14 @@ a {
 
 #mc-book.touch {
 	transform: rotate(-3deg) scale(1.0) translate(10px,0px);
-	-webkit-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
+	-webkit-transform: rotate(0deg) scale(1.0) translate(10px,0px);
 	-moz-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
 	-ms-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
 	-o-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
+}
+
+.no-touch #mc-book.touch {
+	-webkit-filter: drop-shadow(3px 3px 7px grey);
 }
 
 .lt-ie10 #mc-book {
