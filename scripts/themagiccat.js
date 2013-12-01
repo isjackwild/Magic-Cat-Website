@@ -73,6 +73,12 @@ $(window).load(function(){
 // CLOCK & Candle!
 $(document).ready(function() {
 
+	var date = new Date();
+	var mins = date.getMinutes();
+	var hours = date.getHours();
+	var month = date.getMonth();
+	var day = date.getDate();
+
 	console.log("Doc Ready");
 
 	var minHand = (mins / 60)*360;
@@ -117,7 +123,7 @@ $(document).ready(function() {
 		$(".night").addClass("hide");
 		$("#loading-wreath-xmas").removeClass("hide");
 
-		for (var i=1; i <= 24; i++){
+		for (var i=0; i <= 24; i++){
 			if (day == i){
 				candleHeight = 403-(14.58*i);
 				console.log("Candle Height = "+ candleHeight);
