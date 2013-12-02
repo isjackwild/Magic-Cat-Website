@@ -409,11 +409,6 @@ function positionTeddy() {
 				$(document).bind("mouseup touchend", UTILS.bind(this, this.onMouseUp));
 				
 				$(document).mouseleave(UTILS.bind(this, this.onMouseUp));
-				
-				//prevent normal window scroll.
-				$(document).scroll(function(event){event.preventDefault();});
-				$(window).scroll(function(event){event.preventDefault();});
-				$("html, body").scroll(function(event){event.preventDefault();});
 
 				//set fixed position
 				setTimeout(function(){$(document).scrollLeft(0).scrollTop(0); }, 10)
@@ -453,8 +448,8 @@ function positionTeddy() {
 			},
 			onMouseMove: function(event)
 			{
-				if(!$(event.target).hasClass("ignore-prevent-default"))
-					event.preventDefault();
+				//if(!$(event.target).hasClass("ignore-prevent-default"))
+				event.preventDefault();
 
 				var x = UTILS.getPositionFromMouseTouchEvent(event).x - this._x
 				var y = UTILS.getPositionFromMouseTouchEvent(event).y - this._y
