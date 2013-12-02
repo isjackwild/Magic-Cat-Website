@@ -1,5 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=IM+Fell+French+Canon:400,400italic);
-@import url(http://fonts.googleapis.com/css?family=IM+Fell+Double+Pica+SC);
+/*@import url(http://fonts.googleapis.com/css?family=IM+Fell+French+Canon:400,400italic);
+@import url(http://fonts.googleapis.com/css?family=IM+Fell+Double+Pica+SC);*/
 
 
 body {
@@ -10,6 +10,14 @@ body {
 	cursor: url('../assets/mouse-up.png'), auto;
 	overflow: hidden;
 	background-color: #434343;
+	background: #3a3a3a; /* Old browsers */
+	background: -moz-linear-gradient(top,  #3a3a3a 0%, #7a7a7a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3a3a3a), color-stop(100%,#7a7a7a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #3a3a3a 0%,#7a7a7a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #3a3a3a 0%,#7a7a7a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #3a3a3a 0%,#7a7a7a 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #3a3a3a 0%,#7a7a7a 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3a3a3a', endColorstr='#7a7a7a',GradientType=0 ); /* IE6-9 */
 	-webkit-font-smooth: always;
 	-webkit-text-rendering: geometricPrecision;
 }
@@ -326,7 +334,6 @@ a {
 	font-size: 2.3em;
 	text-align: center;
 	line-height: 1.1em;
-	font-family: 'IM Fell Double Pica SC', serif;
 }
 
 .hide {
@@ -384,7 +391,10 @@ a {
 
 #teddy:hover img {
 	transform: translate(0,-12px);
-	transform: translate(0,-12px);
+	-webkit-transform: translate(0,-12px);
+	-moz-transform: translate(0,-12px);
+	-ms-transform: translate(0,-12px);
+	-o-transform: translate(0,-12px);
 }
 
 #mc-title {
@@ -411,7 +421,7 @@ a {
 	left: 70px;
 	z-index: 1;
 	transition: transform 2s;
-	-webkit-transition: -webkit-transform 2s;
+	-webkit-transition: -webkit-transform 2s, -webkit-filter 2s;
 	-moz-transition: -moz-transform 2s;
 	-ms-transition: -ms-transform 2s;
 	-o-transition: -o-transform 2s;
@@ -432,6 +442,7 @@ a {
 	line-height: 1.4em;
 	margin-bottom: 10px;
 	padding: 5px 35px 0px 10px;
+	font-family: "Georgia", 'Times New Roman', 'Times' serif;
 }
 
 #mc-book-spine {
@@ -453,7 +464,6 @@ a {
 	top: 0;
 	padding: 50px;
 	z-index: 1;
-
 }
 
 #mc-book-front {
@@ -529,12 +539,20 @@ a {
 	display: inline;
 }
 
+#mc-book:hover #mc-book-flip{
+	transform: rotateY(-15deg);
+	-webkit-transform: rotateY(-15deg);
+	-moz-transform: rotateY(-15deg);
+	-ms-transform: rotateY(-15deg);
+	-o-transform: rotateY(-15deg);
+}
+
 #mc-book-flip.touch{
-	transform: rotateY(-160deg);
-	-webkit-transform: rotateY(-160deg);
-	-moz-transform: rotateY(-160deg);
-	-ms-transform: rotateY(-160deg);
-	-o-transform: rotateY(-160deg);
+	transform: rotateY(-160deg) !important;
+	-webkit-transform: rotateY(-160deg) !important;
+	-moz-transform: rotateY(-160deg) !important;
+	-ms-transform: rotateY(-160deg) !important;
+	-o-transform: rotateY(-160deg) !important;
 }
 
 .lt-ie10 #mc-book-flip {
@@ -544,10 +562,14 @@ a {
 
 #mc-book.touch {
 	transform: rotate(-3deg) scale(1.0) translate(10px,0px);
-	-webkit-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
+	-webkit-transform: rotate(0deg) scale(1.0) translate(10px,0px);
 	-moz-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
 	-ms-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
 	-o-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
+}
+
+.no-touch #mc-book.touch {
+	-webkit-filter: drop-shadow(3px 3px 7px grey);
 }
 
 .lt-ie10 #mc-book {
@@ -2136,7 +2158,7 @@ a {
 	height: 100%;
 	background-color: black;
 	z-index: 9;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	opacity: 0;
@@ -2830,6 +2852,27 @@ background-image:url('../assets/z-night-7.png');
 	-o-animation: teapot 5s 1 linear;
 }
 
+#tea-night {
+	width: 28px;
+	height: 80px;
+	background-image: url('../assets/tea-night.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 226px;
+	top: 1316px;
+	z-index: 4;
+	opacity: 0;
+	transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+}
+
+#tea-night.touch {
+	opacity: 1;
+}
+
 @keyframes teapot {
 	0% {transform: translate(0,0) rotate(0deg)}
 	10% {transform: rotate(0deg)}
@@ -3285,7 +3328,7 @@ background-image:url('../assets/z-night-7.png');
 	height: 100%;
 	background-color: black;
 	z-index: 9;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	opacity: 0;
@@ -3393,4 +3436,10 @@ background-image:url('../assets/z-night-7.png');
     to {background-position: -120px; }
 }
 
-
+.no-ani * {
+	animation-play-state: paused !important;
+	-webkit-animation-play-state: paused !important;
+	-moz-animation-play-state: paused !important;
+	-ms-animation-play-state: paused !important;
+	-o-animation-play-state: paused !important;
+}

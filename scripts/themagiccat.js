@@ -1,3 +1,23 @@
+//TRACKING
+function track(id, action)
+{
+	console.log(id, action, ga)
+	try
+	{
+		ga('send', 'event', id, action);
+	}catch(e){
+		console.log("error", e)
+	}
+}
+
+var date = new Date();
+	var mins = date.getMinutes();
+	var hours = date.getHours();
+	var month = date.getMonth();
+	var day = date.getDate();
+
+
+//STARBURST
 function moveStars(event)
 {
 	$('#starburst').css({
@@ -23,36 +43,46 @@ if (Modernizr.touch) {
     $('.card').addClass("no-wobble");
 }
 
-// CLOCK & Candle!
-$(document).ready(function() {
+//work here
 
-    $(window).load(function(){
+//LOADING & WINDOW LOAD
+$(window).load(function(){
 
+
+	if (Modernizr.touch === false) {
+		$("body").addClass("no-touch");
+	}	
+
+	setTimeout(function() {
     	$("#loading-l").addClass("touch");
     	$("#loading-r").addClass("touch");
     	$("#loading-wreath-xmas").addClass("touch");
     	$("#wrapper").addClass("touch");
+    }, 1000)
 
-     	setTimeout(function() {
-        	$("#mc-book").toggleClass('touch');
-			$("#mc-book-flip").toggleClass('touch');
-			$("#mc-book-front").toggleClass('touch');
-     	}, 2300)
-     });
 
+	$("#loading-l").bind('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
+    	$("#loading-l").addClass("hide");
+    	$("#loading-r").addClass("hide");
+    	$("#loading-wreath-xmas").addClass("hide");
+	 });
+
+});
+
+
+// CLOCK & Candle!
+$(document).ready(function() {
 
 	var date = new Date();
 	var mins = date.getMinutes();
 	var hours = date.getHours();
-	var month = 11;
+	var month = date.getMonth();
 	var day = date.getDate();
+
+	console.log("Doc Ready");
 
 	var minHand = (mins / 60)*360;
 	var hourHand = (hours / 12)*360;
-	// console.log("hour"+hours);
-	// console.log("min"+mins);
-	// console.log("month"+month);
-	// console.log("day"+day);
 
 	var clockTime = function() {
 		$('#min').css({
@@ -91,8 +121,9 @@ $(document).ready(function() {
 		$(".not-xmas").addClass("hide");
 		$(".day").addClass("hide");
 		$(".night").addClass("hide");
+		$("#loading-wreath-xmas").removeClass("hide");
 
-		for (var i=1; i <= 24; i++){
+		for (var i=0; i <= 24; i++){
 			if (day == i){
 				candleHeight = 403-(14.58*i);
 				console.log("Candle Height = "+ candleHeight);
@@ -140,7 +171,6 @@ var UTILS = {
 }
 
 
-
 // POSITION VARIABLE TEDDY
 
 var positionArray = [], currentTeddyPosIndex = -1
@@ -152,7 +182,7 @@ function Position(left, top, deg) {
 }
 
 var positionArray = [
-      new Position(570, -90, 0) 
+      new Position(580, -90, 0) 
     , new Position(1100, -70, 0)
     , new Position(2000, 1380, 180)
     , new Position(2840, 600, -90)
@@ -171,17 +201,12 @@ function positionTeddy() {
 
         currentTeddyPosIndex = ranIndex;
 
-        // console.log (positionArray[currentTeddyPosIndex].left)
-        // console.log (positionArray[currentTeddyPosIndex].top)
-
         $("#teddy").css({
             top     : positionArray[currentTeddyPosIndex].top,
             left    : positionArray[currentTeddyPosIndex].left,
             transform    : "rotate(" + positionArray[currentTeddyPosIndex].deg + "deg)",
         });
 };
-
-
 
 
 // INTERACTION
@@ -205,7 +230,10 @@ function positionTeddy() {
 			$("#mc-book").toggleClass('touch');
 			$("#mc-book-flip").toggleClass('touch');
 			$("#mc-book-front").toggleClass('touch');
+			track('mc-book', 'click');
 		});
+
+
 
 		$("#teddy").bind('mousedown touchstart', function(event){
 			event.preventDefault();
@@ -213,6 +241,7 @@ function positionTeddy() {
 			$("#bravo").addClass('touch');
 			$("#bravo-star").addClass('touch');
 			$("#bravo-sprite").addClass('touch');
+			track('teddy', 'click');
 			setTimeout(function() {
         		$("#bravo").removeClass('touch');
         		$("#bravo-star").removeClass('touch');
@@ -220,66 +249,70 @@ function positionTeddy() {
     		}, 3000)
 		});
 
+		
 
 
 // DAY INTERACTION
 		$("#statue-day").bind('mousedown touchstart', function(event){
 			event.preventDefault();
 			$("#burp").addClass('touch');
-			//$("#stars-small").removeClass('hide');
+			track('statue-day', 'click');
 		});
 
 		$("#statue-day").bind('mouseup touchend',function(event){
 			event.preventDefault();
 			$("#burp").removeClass('touch');
-			//$("#stars-small").addClass('hide');
 		});
 
 		$("#phone-day").bind('mouseenter touchstart', function(event){
 			event.preventDefault();
 			$("#phone-day").addClass('touch');
-			//$("#stars-small").removeClass('hide');
 		});
 
 		$("#phone-day").bind('mouseleave touchend',function(event){
 			event.preventDefault();
 			$("#phone-day").removeClass('touch');
-			//$("#stars-small").addClass('hide');
 		});
 
 		var fishTimer = 0;
 		$("#fish-day").bind('mousedown touchstart',function(event){
 			$("#fish").addClass('touch');
+			track('fish-day', 'click');
 			clearTimeout(fishTimer);
 			fishTimer = setTimeout(function() {
         		$("#fish").removeClass('touch');
-    		}, 20000)
+    		}, 10000)
 		});
 
 
 		var birdTimer = 0;
 		$("#bird-day").bind('mousedown touchstart',function(event){
 			$("#bird-day").addClass('touch');
+			track('bird-day', 'click');
 			clearTimeout(birdTimer);
 			birdTimer = setTimeout(function() {
         		$("#bird-day").removeClass('touch');
     		}, 1300)
 		});
 
+
 		var sheetsTimer = 0;
 		$("#sheets-day").bind('mousedown touchstart',function(event){
 			$("#sheets-day").addClass('touch');
+			track('sheets-day', 'click');
 			clearTimeout(sheetsTimer);
 			sheetsTimer = setTimeout(function() {
         		$("#sheets-day").removeClass('touch');
     		}, 13500)
 		});
 
+
 //NIGHT INTERACTION
 		
 		var moonTimer = 0;
 		$("#moon-night").bind('mousedown touchstart',function(event){
 			$("#moon-night").addClass('touch');
+			track('moon-night', 'click');
 			clearTimeout(moonTimer);
 			moonTimer = setTimeout(function() {
         		$("#moon-night").removeClass('touch');
@@ -289,35 +322,47 @@ function positionTeddy() {
 		$("#mc-hat-night").bind('mouseenter touchstart', function(event){
 			event.preventDefault();
 			$("#mc-hat-night").addClass('touch');
-			//$("#stars-small").removeClass('hide');
 		});
 
 		$("#mc-hat-night").bind('mouseleave touchend',function(event){
 			event.preventDefault();
 			$("#mc-hat-night").removeClass('touch');
-			//$("#stars-small").addClass('hide');
 		});
 
 		$("#lamps-night").bind('mousedown touchstart', function(event){
 			event.preventDefault();
 			$("#light-off-night").toggleClass('touch');
 			$("#lamps-night").toggleClass('touch');
+			track('lamps-night', 'click');
 		});
 
 		var teaTimer = 0;
 		$("#tea-pot-night").bind('mousedown touchstart',function(event){
 			$("#tea-pot-night").addClass('touch');
+			track('tea-pot-night', 'click');
+			
+			setTimeout(function() {
+        		$("#tea-night").addClass('touch');
+    		}, 1000)
+
+			setTimeout(function() {
+        		$("#tea-night").removeClass('touch');
+    		}, 4000)
+			
 			clearTimeout(teaTimer);
 			teaTimer = setTimeout(function() {
         		$("#tea-pot-night").removeClass('touch');
+        		$("#tea-night").removeClass('touch');
     		}, 5000)
 		});
+
 
 		var teddyPjTimer = 0;
 		$("#teddy-pj-night").bind('mousedown touchstart',function(event){
 			$("#teddy-pj-night").addClass('touch');
 			$("#teddy-eye-r-night").addClass('touch');
 			$("#teddy-eye-l-night").addClass('touch');
+			track('teddy-pj-night', 'click');
 			clearTimeout(teddyPjTimer);
 			teddyPjTimer = setTimeout(function() {
         		$("#teddy-pj-night").removeClass('touch');
@@ -328,22 +373,20 @@ function positionTeddy() {
 
 
 
+
 // XMAS INTERACTION
 		$("#lamp-xmas").bind('mousedown touchstart',function(event){
 			event.preventDefault();
 			$("#lamp-xmas").toggleClass('touch');
 			$("#lamp-off-xmas").toggleClass('touch');
+			track('lamp-xmas', 'click');
 		});
-
-		// $(window).bind('mousedown touchstart',function(event){
-		// 	event.preventDefault();
-		// 	$("#download-gift-xmas").toggleClass('touch');
-		// });
 
 		$("#santa-xmas").bind('mousedown touchend',function(event){
 			event.preventDefault();
 			$("#santa-xmas").addClass('touch');
 			$("#merry-xmas").addClass('touch');
+			track('santa-xmas', 'click');
 		});
 
 		$("#tree-star-xmas").bind('mouseenter touchstart',function(event){
@@ -358,6 +401,7 @@ function positionTeddy() {
 		$("#mc-xmas").bind('mousedown touchstart',function(event){
 			$("#mc-eye-r-xmas").addClass('touch');
 			$("#mc-eye-l-xmas").addClass('touch');
+			track('mc-xmas', 'click');
 			clearTimeout(mcEyesTimer);
 			mcEyesTimer = setTimeout(function() {
         		$("#mc-eye-r-xmas").removeClass('touch');
@@ -365,9 +409,11 @@ function positionTeddy() {
     		}, 3000)
 		});
 
+
 		var bellTimer = 0;
 		$("#bell-xmas").bind('mousedown touchstart',function(event){
 			$("#bell-xmas").addClass('touch');
+			track('bell-xmas', 'click');
 			clearTimeout(bellTimer);
 			bellTimer = setTimeout(function() {
         		$("#bell-xmas").removeClass('touch');
@@ -393,21 +439,16 @@ function positionTeddy() {
 				//prevent spacebar
 				$("html, body, #wrapper").bind("keydown", function(event)
 				{
-					//console.log(event.keyCode)
 					if(event.keyCode == 32)
 					{
 						event.preventDefault();
 					}
 				});
 
-				//console.log(UTIL)
-				//console.log(RenderQue)
-
 				RenderQue.add(this)
 
 				$(document).bind("mousedown touchstart", UTILS.bind(this, this.onMouseDown));
 				$(document).bind("mouseup touchend", UTILS.bind(this, this.onMouseUp));
-				
 				$(document).mouseleave(UTILS.bind(this, this.onMouseUp));
 
 				//set fixed position
@@ -420,13 +461,6 @@ function positionTeddy() {
 					// this._y += (this._ytarget - this._y) * 0.12;
 					this._x = this._xtarget;
 					this._y = this._ytarget;
-					
-
-				// if (this._x < -2000) {
-				// 	this._x -= (this._x) * 0.12;
-				// } else {
-				// 	this._x += (this._xtarget - this._x) * 0.12;
-				// }
 
 				this.setXY(this._x, this._y);
 			},
@@ -439,16 +473,29 @@ function positionTeddy() {
 				this._startY = UTILS.getPositionFromMouseTouchEvent(event).y - this._y
 
 				$(window).bind("mousemove touchmove", UTILS.bind(this, this.onMouseMove));
-				//console.log("this._x is " + this._y);
 			},
 			onMouseUp: function(event)
 			{
 				this._mousedown = false;
 				$(window).unbind("mousemove touchmove");
 			},
+
+			touchTimer: 0,
+
 			onMouseMove: function(event)
 			{
-				//if(!$(event.target).hasClass("ignore-prevent-default"))
+				if(Modernizr.touch) {
+					clearTimeout(this.touchTimer);
+					if(!$("body").hasClass('no-ani')) {
+						$("body").addClass('no-ani')
+					}
+
+					this.touchTimer = setTimeout(function(){
+						$("body").removeClass('no-ani')
+					},500);
+				}
+				
+
 				event.preventDefault();
 
 				var x = UTILS.getPositionFromMouseTouchEvent(event).x - this._x
@@ -459,11 +506,6 @@ function positionTeddy() {
 
 				this._xtarget = x;
 				this._ytarget = y;
-
-				// $('#starburst').css({
-    //    				left:  -x + 90,
-    //    				top:   -y + 60,
-    // 			});
 
 				var workingWidth= $(window).width() - 3000;
 				var workingHeight= $(window).height() - 1500;
@@ -510,156 +552,157 @@ function positionTeddy() {
 
 }); //end doc.ready
 
+
 // SOUNDS
+$(window).load(function() {
 
-// $(window).load(function() {
+	var soundtrack;
 
-// 	var date = new Date();
-// 	var month = 11;
-// 	var soundtrack;
-
-// 	if (month == 10 || month == 0) {
-// 		soundtrack = new buzz.sound('../sounds/winter', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-// 	} else if (month == 1 || month == 2 || month == 3) {
-// 		soundtrack = new buzz.sound('../sounds/spring', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-// 	} else if (month == 4 || month == 5 || month == 6) {
-// 		soundtrack = new buzz.sound('../sounds/summer', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-// 	} else if (month == 7 || month == 8 || month == 9) {
-// 		soundtrack = new buzz.sound('../sounds/fall', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-// 	} else if (month == 11) {
-// 		soundtrack = new buzz.sound('../sounds/Magic_Christmas_by_Julie_Michelsen', {formats: ['wav', 'mp3'], preload:true, autoplay:true, loop:true});
-// 	}
+	if (month == 10 || month == 0) {
+		soundtrack = new buzz.sound('sounds/winter', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
+	} else if (month == 1 || month == 2 || month == 3) {
+		soundtrack = new buzz.sound('sounds/spring', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
+	} else if (month == 4 || month == 5 || month == 6) {
+		soundtrack = new buzz.sound('sounds/summer', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
+	} else if (month == 7 || month == 8 || month == 9) {
+		soundtrack = new buzz.sound('sounds/fall', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
+	} else if (month == 11) {
+		soundtrack = new buzz.sound('sounds/Magic_Christmas_by_Julie_Michelsen', {formats: ['wav', 'mp3', 'ogg'], preload:true, autoplay:true, loop:true});
+	}
 	
-// 	var curtain = new buzz.sound('sounds/curtain', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var burp = new buzz.sound('sounds/burp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var lamp = new buzz.sound('sounds/lamp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var shimmer = new buzz.sound('sounds/shimmer', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var fanfare = new buzz.sound('sounds/fanfare', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var button = new buzz.sound('sounds/button', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var bravo = new buzz.sound('sounds/bravo', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var bravo2 = new buzz.sound('sounds/bravo2', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var ring = new buzz.sound('sounds/ring', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var harp = new buzz.sound('sounds/harp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var mc = new buzz.sound('sounds/mc', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var tick = new buzz.sound('sounds/tick', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var fire = new buzz.sound('sounds/fire', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var tea = new buzz.sound('sounds/tea', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var snore = new buzz.sound('sounds/snore', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var yahoo = new buzz.sound('sounds/yahoo', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var whistle = new buzz.sound('sounds/whistle', {formats: ['wav', 'mp3', 'ogg'], preload:true});
-// 	var bell = new buzz.sound('sounds/bell', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var curtain = new buzz.sound('sounds/curtain', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var burp = new buzz.sound('sounds/burp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var lamp = new buzz.sound('sounds/lamp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var shimmer = new buzz.sound('sounds/shimmer', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var fanfare = new buzz.sound('sounds/fanfare', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var button = new buzz.sound('sounds/button', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var bravo = new buzz.sound('sounds/bravo', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var bravo2 = new buzz.sound('sounds/bravo2', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var ring = new buzz.sound('sounds/ring', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var harp = new buzz.sound('sounds/harp', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var mc = new buzz.sound('sounds/mc', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var tick = new buzz.sound('sounds/tick', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var fire = new buzz.sound('sounds/fire', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var tea = new buzz.sound('sounds/tea', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var snore = new buzz.sound('sounds/snore', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var yahoo = new buzz.sound('sounds/yahoo', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var whistle = new buzz.sound('sounds/whistle', {formats: ['wav', 'mp3', 'ogg'], preload:true});
+	var bell = new buzz.sound('sounds/bell', {formats: ['wav', 'mp3', 'ogg'], preload:true});
 
-// 	$(function() {
+	$(function() {
 
-// //CONSTANTS
-// 		//soundtrack.play();
-// 		soundtrack.setVolume(60);
-// 		curtain.play();
+//CONSTANTS
+		soundtrack.play();
+		soundtrack.setVolume(50);
+		curtain.play();
+		//buzz.all().toggleMute();
 
-// 		$("#mute-audio").bind('mousedown touchstart',function(event){
-// 				buzz.all().toggleMute();
-// 			});
+		$("#mute-audio").bind('mousedown touchstart',function(event){
+				buzz.all().toggleMute();
+			});
 
-// 		$("#teddy").bind('mousedown touchstart',function(event){
-// 				bravo.play();
-// 			});
+		track('#mute-audio', 'click');
 
-// 		$("#mc-book").bind('mousedown touchstart',function(event){
-// 				fanfare.play();
-// 			});
+		$("#teddy").bind('mousedown touchstart',function(event){
+				bravo.play();
+			});
 
-// 		$("#clock").bind('mouseenter touchstart',function(event){
-// 				tick.play();
-// 				tick.loop();
-// 			});
+		$("#mc-book").bind('mousedown touchstart',function(event){
+				fanfare.play();
+			});
 
-// 		$("#clock").bind('mouseleave touchend',function(event){
-// 				tick.stop();
-// 			});
+		$("#clock").bind('mouseenter touchstart',function(event){
+				tick.play();
+				tick.loop();
+			});
 
-// //DAY
+		$("#clock").bind('mouseleave touchend',function(event){
+				tick.stop();
+			});
 
-// 		$("#statue-day").bind('mousedown touchstart',function(event){
-// 				burp.play();
-// 			});
+//DAY
 
-// 		$("#bird-day").bind('mousedown touchstart',function(event){
-// 				whistle.play();
-// 			});
+		$("#statue-day").bind('mousedown touchstart',function(event){
+				burp.play();
+			});
 
-// 		$("#phone-day").bind('mouseenter touchstart',function(event){
-// 				ring.play();
-// 				ring.loop();
-// 			});
+		$("#bird-day").bind('mousedown touchstart',function(event){
+				whistle.play();
+			});
 
-// 		$("#phone-day").bind('mouseleave touchend',function(event){
-// 				ring.stop();
-// 			});
+		$("#phone-day").bind('mouseenter touchstart',function(event){
+				ring.play();
+				ring.loop();
+			});
 
-// 		$("#mc-day").bind('mousedown touchstart',function(event){
-// 				mc.play();
-// 			});
+		$("#phone-day").bind('mouseleave touchend',function(event){
+				ring.stop();
+			});
 
-// 		$("#sheets-day").bind('mousedown touchstart',function(event){
-// 				shimmer.play();
-// 			});
+		$("#mc-day").bind('mousedown touchstart',function(event){
+				mc.play();
+			});
 
-// //NIGHT
-// 		$("#tea-pot-night").bind('mousedown touchstart',function(event){
-// 				tea.play();
-// 			});
+		$("#sheets-day").bind('mousedown touchstart',function(event){
+				shimmer.play();
+			});
 
-// 		$("#mc-night").bind('mouseenter touchstart',function(event){
-// 				snore.play();
-// 				snore.loop();
-// 			});
+//NIGHT
+		$("#tea-pot-night").bind('mousedown touchstart',function(event){
+				tea.play();
+			});
 
-// 		$("#mc-night").bind('mouseleave touchend',function(event){
-// 				snore.stop();
-// 			});
+		$("#mc-night").bind('mouseenter touchstart',function(event){
+				snore.play();
+				snore.loop();
+			});
 
-// 		$("#lamps-night").bind('mousedown touchstart',function(event){
-// 				lamp.play();
-// 			});
+		$("#mc-night").bind('mouseleave touchend',function(event){
+				snore.stop();
+			});
 
-// 		$("#moon-night").bind('mousedown touchstart',function(event){
-// 				shimmer.play();
-// 			});
+		$("#lamps-night").bind('mousedown touchstart',function(event){
+				lamp.play();
+			});
 
-// 		$("#teddy-pj-night").bind('mousedown touchstart',function(event){
-// 				yahoo.play();
-// 			});
+		$("#moon-night").bind('mousedown touchstart',function(event){
+				shimmer.play();
+			});
 
-// //XMAS
+		$("#teddy-pj-night").bind('mousedown touchstart',function(event){
+				yahoo.play();
+			});
 
-// 		$("#lamp-xmas").bind('mousedown touchstart',function(event){
-// 				lamp.play();
-// 			});
+//XMAS
 
-// 		$("#bell-xmas").bind('mousedown touchstart',function(event){
-// 				bell.play();
-// 			});
+		$("#lamp-xmas").bind('mousedown touchstart',function(event){
+				lamp.play();
+			});
 
-// 		$("#santa-xmas").bind('mousedown touchstart',function(event){
-// 				shimmer.play();
-// 			});
+		$("#bell-xmas").bind('mousedown touchstart',function(event){
+				bell.play();
+			});
 
-// 		$("#mc-xmas").bind('mousenter touchstart',function(event){
-// 				harp.play();
-// 			});
+		$("#santa-xmas").bind('mousedown touchstart',function(event){
+				shimmer.play();
+			});
 
-// 		$("#mc-xmas").bind('mousedown touchstart',function(event){
-// 				harp.play();
-// 			});
+		$("#mc-xmas").bind('mousenter touchstart',function(event){
+				harp.play();
+			});
 
-// 		$("#candle-outer").bind('mouseenter touchstart',function(event){
-// 				fire.play();
-// 				fire.loop();
-// 			});
+		$("#mc-xmas").bind('mousedown touchstart',function(event){
+				harp.play();
+			});
 
-// 		$("#candle-outer").bind('mouseleave touchend',function(event){
-// 				fire.stop();
-// 			});
+		$("#candle-outer").bind('mouseenter touchstart',function(event){
+				fire.play();
+				fire.loop();
+			});
 
-// 	});
-// });
+		$("#candle-outer").bind('mouseleave touchend',function(event){
+				fire.stop();
+			});
+
+	});
+});
