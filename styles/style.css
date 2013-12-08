@@ -421,7 +421,7 @@ a {
 	left: 70px;
 	z-index: 1;
 	transition: transform 2s;
-	-webkit-transition: -webkit-transform 2s, -webkit-filter 2s;
+	-webkit-transition: -webkit-transform 2s;
 	-moz-transition: -moz-transform 2s;
 	-ms-transition: -ms-transform 2s;
 	-o-transition: -o-transform 2s;
@@ -568,9 +568,9 @@ a {
 	-o-transform: rotate(-3deg) scale(1.0) translate(10px,0px);
 }
 
-.no-touch #mc-book.touch {
+/*.no-touch #mc-book.touch {
 	-webkit-filter: drop-shadow(3px 3px 7px grey);
-}
+}*/
 
 .lt-ie10 #mc-book {
 	transform: rotate(-3deg) scale(1.0) translate(-20px,0px);
