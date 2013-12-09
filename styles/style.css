@@ -392,10 +392,10 @@ a {
 	top: 152px;
 	left: 13px;
 	animation: ear-l 5s infinate ease-in-out;
-	-webkit-animation: ear-l 5s infinate ease-in-out;
 	-moz-animation: 5s ease 0s normal none infinite ear-l;
-	-ms-animation: ear-l 5s infinate ease-in-out;
-	-o-animation: ear-l 5s infinate ease-in-out;
+  	-webkit-animation:ear-l 5s infinite ease-in-out;
+  	-ms-animation:ear-l 5s infinite ease-in-out;
+  	-o-animation:ear-l 5s infinite ease-in-out;
 }
 
 @keyframes ear-l {
@@ -444,10 +444,10 @@ a {
 	top: 154px;
 	left: 33px;
 	animation: ear-r 5s infinate ease-in-out;
-	-webkit-animation: ear-r 5s infinate ease-in-out;
 	-moz-animation: 5s ease 0s normal none infinite ear-r;
-	-ms-animation: ear-r 5s infinate ease-in-out;
-	-o-animation: ear-r 5s infinate ease-in-out;
+  	-webkit-animation:ear-r 5s infinite ease-in-out;
+  	-ms-animation:ear-r 5s infinite ease-in-out;
+  	-o-animation:ear-r 5s infinite ease-in-out;
 }
 
 @keyframes ear-r {
@@ -459,11 +459,11 @@ a {
 }
 
 @-webkit-keyframes ear-r {
-	0% {-webkit-transform: rotate(0deg);}
-	10% {-webkit-transform: rotate(6deg);}
-	30% {-webkit-transform: rotate(-6deg);}
-	40% {-webkit-transform: rotate(0deg);}
-	100% {-webkit-transform: rotate(0deg);}
+	0% {-webkit-transform: rotate(0deg)}
+	10% {-webkit-transform: rotate(6deg)}
+	30% {-webkit-transform: rotate(-6deg)}
+	40% {-webkit-transform: rotate(0deg)}
+	100% {-webkit-transform: rotate(0deg)}
 }
 
 @-moz-keyframes ear-r {
