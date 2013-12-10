@@ -90,14 +90,14 @@ var CardsEngine =
 
 
 			if (day1 >= 1 && day1 <= 7) {
-				$("#instructions").replaceWith("<p>The Magic Cat gave you his Christmas song!<br>Come back on Sunday1 for another gift!</p>");
+				$("#instructions").replaceWith("<p>The Magic Cat gave you his Christmas song!<br>Come back on Sunday for another gift!</p>");
 				$("#present-link").attr("href", "sounds/Magic_Christmas_by_Julie_Michelsen.mp3.zip");
 			} else if (day1 >= 8 && day1 <= 14) {
-				$("#instructions").replaceWith("<p>The Magic Cat gave you a special christmas card to send to your friends!<br>Come back on Sunday1 for another gift!</p>");
+				$("#instructions").replaceWith("<p>The Magic Cat gave you a special christmas card to send to your friends!<br>Come back on Sunday for another gift!</p>");
 				$("#present-link").attr("href", "mc-christmas-card.pdf");
 				console.log("test");
 			} else if (day1 >= 15 && day1 <= 21) {
-				$("#instructions").replaceWith("<p>The Magic Cat gave you a beautiful christmas wallpaper!<br>Come back on Sunday1 for another gift!</p>");
+				$("#instructions").replaceWith("<p>The Magic Cat gave you a beautiful christmas wallpaper!<br>Come back on Sunday for another gift!</p>");
 				$("#present-link").attr("href", "wallpapers/mc-christmas.zip");
 			} else if (day1 >= 22 && day1 <= 26) {
 				$("#instructions").replaceWith("<p>The Magic Cat App is free specially for christmas!<br>Have a very merry Christmas!</p>");

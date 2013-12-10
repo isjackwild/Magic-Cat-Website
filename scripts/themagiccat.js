@@ -445,6 +445,12 @@ function positionTeddy() {
 					}
 				});
 
+				//prevent scrollwheel
+				$("html, body, #wrapper").bind("wheel", function(event)
+				{
+					event.preventDefault();
+				});
+
 				RenderQue.add(this)
 
 				$(document).bind("mousedown touchstart", UTILS.bind(this, this.onMouseDown));
