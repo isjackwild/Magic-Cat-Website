@@ -10,11 +10,19 @@ function track(id, action)
 	}
 }
 
-var date = new Date();
-	var mins = date.getMinutes();
-	var hours = date.getHours();
-	var month = date.getMonth();
-	var day = date.getDate();
+var searched = window.location.search;
+var forcedStates = ["christmas", "nighttime", "daytime"];
+var forcedState = false;
+
+for (var i = 0; i < forcedStates.length; i++) {
+	if(searched.indexOf(forcedStates[i]) != -1)
+	{
+		forcedState = forcedStates[i];
+		break;
+	}
+};
+
+
 
 
 //STARBURST
@@ -43,11 +51,16 @@ if (Modernizr.touch) {
     $('.card').addClass("no-wobble");
 }
 
+var date = new Date();
+var mins = date.getMinutes();
+var hours = date.getHours();
+var month = date.getMonth();
+var day = date.getDate();
+
 //work here
 
 //LOADING & WINDOW LOAD
 $(window).load(function(){
-
 
 	if (Modernizr.touch === false) {
 		$("body").addClass("no-touch");
@@ -72,13 +85,6 @@ $(window).load(function(){
 
 // CLOCK & Candle!
 $(document).ready(function() {
-
-	var date = new Date();
-	var mins = date.getMinutes();
-	var hours = date.getHours();
-	var month = date.getMonth();
-	var day = date.getDate();
-
 	console.log("Doc Ready");
 
 	var minHand = (mins / 60)*360;
@@ -101,19 +107,21 @@ $(document).ready(function() {
 	}, 60000)
 
 	
-	if (month >= 0 && month <= 10) {
+	if ((month >= 0 && month <= 10) || (forcedState !== false && forcedState !== "christmas")) {
 		$(".xmas").addClass("hide");
 
-		if (hours < 8 || hours > 18) {
+		if (hours < 8 || hours > 18 || forcedState == "nighttime") {
+			//nighttime
 			$(".day").addClass("hide");
 			$(".note").addClass("hide");
 			$("#wrapper").addClass("night");
 		} else {
+			//daytime
 			$(".night").addClass("hide");
 			$("#wrapper").addClass("day");
 		}
 
-	} else if (month == 11){
+	} else if (month == 11 || forcedState == "christmas"){
 
 		var candleHeight;
 
@@ -124,7 +132,7 @@ $(document).ready(function() {
 		$("#loading-wreath-xmas").removeClass("hide");
 
 		for (var i=0; i <= 24; i++){
-			if (day == i){
+			if (date.getDate() == i){
 				candleHeight = 403-(14.58*i);
 				console.log("Candle Height = "+ candleHeight);
 				$("#candle-main").height(candleHeight);
@@ -134,7 +142,7 @@ $(document).ready(function() {
 				$("#candle-flame").css({
 					'bottom': candleHeight+84
 				});
-			} else if (day > 24) {
+			} else if (date.getDate() > 24) {
 				$("#candle-main").height(40);
 				$("#candle-top").css({
 					'bottom': 78
