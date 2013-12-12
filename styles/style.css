@@ -1104,8 +1104,8 @@ a {
 	font-family: "Georgia", 'Times New Roman', 'Times' serif;
 	font-size: 1.3em;
 	text-align: center;
-	margin-top: 60px;
-	margin-left: -30px;
+	margin-top: 52px;
+	margin-left: -35px;
 	list-style: none;
 	transform: rotate(-2deg);
 	-webkit-transform: rotate(-2deg);
@@ -1707,6 +1707,185 @@ a {
     100%{-o-transform:rotate(4deg)}
 }
 
+#raindrops {
+	height: 50px;
+	width: 500px;
+	background-color: red;
+	position: absolute;
+	left: 720px;
+	top: -50px;
+	opacity: 0;
+	transition: opacity 2.5s;
+	-webkit-transition: opacity 2.5s;
+	-moz-transition: opacity 2.5s;
+	-ms-transition: opacity 2.5s;
+	-o-transition: opacity 2.5s;
+}
+
+#raindrops.touch {
+	opacity: 1;
+	transition: opacity 1.5s;
+	-webkit-transition: opacity 1.5s;
+	-moz-transition: opacity 1.5s;
+	-ms-transition: opacity 1.5s;
+	-o-transition: opacity 1.5s;
+}
+
+.rain {
+	width: 32px;
+	height: 50px;
+	top: 0;
+	background-repeat: no-repeat;
+	position: absolute;
+	z-index: 0;
+	animation: rain 3s infinate linear;
+	-moz-animation: 3s linear 0s normal none infinite rain;
+  	-webkit-animation: rain 3s infinite linear;
+  	-ms-animation: rain 3s infinite linear;
+  	-o-animation: rain 3s infinite linear;
+}
+
+.rain.touch {
+
+}
+
+#raindrop-1 {
+	left: 0px;
+	animation-delay: 2.5s;
+	-webkit-animation-delay: 2.5s;
+	-moz-animation-delay: 2.5s;
+	-ms-animation-delay: 2.5s;
+	-o-animation-delay: 2.5s;
+	background-image: url('../assets/raindrop-day-1.png');
+}
+
+#raindrop-2 {
+	left: 50px;
+	animation-delay: 1s;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	-ms-animation-delay: 1s;
+	-o-animation-delay: 1s;
+	background-image: url('../assets/raindrop-day-2.png');
+}
+
+#raindrop-3 {
+	animation-delay: 0.2s;
+	-webkit-animation-delay: 0.2s;
+	-moz-animation-delay: 0.2s;
+	-ms-animation-delay: 0.2s;
+	-o-animation-delay: 0.2s;
+	//top: 50px;
+	left: 90px;
+	background-image: url('../assets/raindrop-day-3.png');
+}
+
+#raindrop-4 {
+	animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	-ms-animation-delay: 2s;
+	-o-animation-delay: 2s;
+	//top: 100px;
+	left: 150px;
+	background-image: url('../assets/raindrop-day-4.png');
+}
+
+#raindrop-5 {
+	animation-delay: 2.7s;
+	-webkit-animation-delay: 2.7s;
+	-moz-animation-delay: 2.7s;
+	-ms-animation-delay: 2.7s;
+	-o-animation-delay: 2.7s;
+	//top: 10px;
+	left: 200px;
+	background-image: url('../assets/raindrop-day-5.png');
+}
+
+#raindrop-6 {
+	animation-delay: 0.2s;
+	-webkit-animation-delay: 0.2s;
+	-moz-animation-delay: 0.2s;
+	-ms-animation-delay: 0.2s;
+	-o-animation-delay: 0.2s;
+	//top: 150px;
+	left: 240px;
+	background-image: url('../assets/raindrop-day-6.png');
+}
+
+#raindrop-7 {
+	animation-delay: 1s;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	-ms-animation-delay: 1s;
+	-o-animation-delay: 1s;
+	//top: 70px;
+	left: 290px;
+	background-image: url('../assets/raindrop-day-7.png');
+}
+
+#raindrop-8 {
+	animation-delay: 1.5s;
+	-webkit-animation-delay: 1.5s;
+	-moz-animation-delay: 1.5s;
+	-ms-animation-delay: 1.5s;
+	-o-animation-delay: 1.5s;
+	//top: 0px;
+	left: 340px;
+	background-image: url('../assets/raindrop-day-8.png');
+}
+
+#raindrop-9 {
+	animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	-ms-animation-delay: 0.5s;
+	-o-animation-delay: 0.5s;
+	//top: 130px;
+	left: 390px;
+	background-image: url('../assets/raindrop-day-9.png');
+}
+
+#raindrop-10 {
+	animation-delay: 1.7s;
+	-webkit-animation-delay: 1.7s;
+	-moz-animation-delay: 1.7s;
+	-ms-animation-delay: 1.7s;
+	-o-animation-delay: 1.7s;
+	//top: 30px;
+	left: 450px;
+	background-image: url('../assets/raindrop-day-10.png');
+}
+
+@keyframes rain{
+    0%{transform:translate(0,0)}
+    90%{opacity: 1;}
+    100%{transform:translate(0,600px); opacity: 0;}
+}
+
+@-webkit-keyframes rain{
+    0%{-webkit-transform:translate(0,0)}
+    90%{opacity: 1;}
+    100%{-webkit-transform:translate(0,600px); opacity: 0;}
+}
+
+@-moz-keyframes rain{
+    0%{-moz-transform:translate(0,0)}
+    90%{opacity: 1;}
+    100%{-moz-transform:translate(0,600px); opacity: 0;}
+}
+
+@-ms-keyframes rain{
+    0%{-ms-transform:translate(0,0)}
+    90%{opacity: 1;}
+    100%{-ms-transform:translate(0,600px); opacity: 0;}
+}
+
+@-o-keyframes rain{
+    0%{-o-transform:translate(0,0)}
+    90%{opacity: 1;}
+    100%{-o-transform:translate(0,600px); opacity: 0;}
+}
 
 #cloud-day {
 	width: 316px;
@@ -1715,13 +1894,21 @@ a {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 0;
-	left: 805px;
+	left: 790px;
 	top: 25px;
 	animation: cloud 25s infinate linear;
 	-moz-animation: 25s linear 0s normal none infinite cloud;
   	-webkit-animation: cloud 25s infinite linear;
   	-ms-animation: cloud 25s infinite linear;
   	-o-animation: cloud 25s infinite linear;
+}
+
+@keyframes cloud{
+    0%{transform:translate(0,0)}
+    25%{transform:translate(60px,20px)}
+    50%{transform:translate(120px,10px)}
+    75%{transform:translate(60px,20px)}
+    100%{transform:translate(0,0)}
 }
 
 @-webkit-keyframes cloud{

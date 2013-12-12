@@ -21,7 +21,17 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+    <?php
+      require_once 'php/Mobile_Detect.php';
+      $detect = new Mobile_Detect;
+      if($detect->isMobile())
+      {
+        echo '<meta name="viewport" content="width=device-width; initial-scale=0.5; maximum-scale=0.5;" />';
+      }else
+      {
+        echo '<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />';
+      }
+    ?>
     <title>The Magic Cat!</title>
   </head>
   
@@ -160,6 +170,12 @@
               Stine Maria Aalykke
             </a>
         </li>
+        <li>
+          Website by
+            <a class="ignore-prevent-default button" href = "http://www.isjackwild.com" target="blank">
+              Jack Wild
+            </a>
+        </li>
       </ul>
   </div>
 
@@ -216,6 +232,19 @@
   <div id = "bird-day" class="day"></div>
   <div id = "fish-day" class="day">
     <img id="fish" src="assets/fish-body-day.png" alt="fish">
+  </div>
+
+  <div id = "raindrops" class="day">
+    <div id = "raindrop-1" class="rain day"></div>
+    <div id = "raindrop-2" class="rain day"></div>
+    <div id = "raindrop-3" class="rain day"></div>
+    <div id = "raindrop-4" class="rain day"></div>
+    <div id = "raindrop-5" class="rain day"></div>
+    <div id = "raindrop-6" class="rain day"></div>
+    <div id = "raindrop-7" class="rain day"></div>
+    <div id = "raindrop-8" class="rain day"></div>
+    <div id = "raindrop-9" class="rain day"></div>
+    <div id = "raindrop-10" class="rain day"></div>
   </div>
 
 

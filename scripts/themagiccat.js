@@ -292,6 +292,18 @@ function positionTeddy() {
     		}, 10000)
 		});
 
+		var rainTimer = 0;
+		$("#umbrella-day").bind('mousedown touchstart',function(event){
+			$(".rain").addClass('touch');
+			$("#raindrops").addClass('touch');
+			track('rain', 'click');
+			clearTimeout(rainTimer);
+			rainTimer = setTimeout(function() {
+        		$(".rain").removeClass('touch');
+        		$("#raindrops").removeClass('touch');
+    		},5000)
+		});
+
 
 		var birdTimer = 0;
 		$("#bird-day").bind('mousedown touchstart',function(event){
