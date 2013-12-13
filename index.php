@@ -24,7 +24,7 @@
     <?php
       require_once 'php/Mobile_Detect.php';
       $detect = new Mobile_Detect;
-      if($detect->isMobile())
+      if($detect->isMobile() && !$detect->isTablet())
       {
         echo '<meta name="viewport" content="width=device-width; initial-scale=0.5; maximum-scale=0.5;" />';
       }else
@@ -37,10 +37,11 @@
   
 <body>
 
-<div id = "loading-wreath-xmas" class="xmas hide"></div>
-<div id = "loading-l"></div>
-<div id = "loading-r"></div>
-
+<div id = "loading-both">
+  <div id = "loading-wreath-xmas" class="xmas hide"></div>
+  <div id = "loading-l"></div>
+  <div id = "loading-r"></div>
+</div>
 
 <div id="bravo">
   <div id = "bravo-sprite"></div>
@@ -49,7 +50,7 @@
 
 <div id="starburst"></div>
 
-<div id="mute-audio" class="ignore-prevent-default"></div>
+<div id="mute-audio" class="ignore-prevent-default hide"></div>
 
 <div id="wrapper">
 
@@ -208,7 +209,10 @@
   </ul> 
 
 
-  <div id = "mc-day" class="day"></div>
+  <div id = "mc-day" class="day">
+    <div id = "mc-eye-l-day" class="day"></div>
+    <div id = "mc-eye-r-day" class="day"></div>
+  </div>
   <div id = "note-1" class="note"></div>
   <div id = "note-2" class="day note"></div>
   <div id = "note-3" class="note"></div>

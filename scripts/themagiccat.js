@@ -66,12 +66,16 @@ $(window).load(function(){
 		$("body").addClass("no-touch");
 	}	
 
+
+	$("#loading-both").addClass("touch");
+
 	setTimeout(function() {
     	$("#loading-l").addClass("touch");
     	$("#loading-r").addClass("touch");
     	$("#loading-wreath-xmas").addClass("touch");
     	$("#wrapper").addClass("touch");
-    }, 1000)
+    	$("#mute-audio").removeClass("hide");
+    }, 2200)
 
 
 	$("#loading-l").bind('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
@@ -280,6 +284,17 @@ function positionTeddy() {
 		$("#phone-day").bind('mouseleave touchend',function(event){
 			event.preventDefault();
 			$("#phone-day").removeClass('touch');
+		});
+
+		var mcEyesTimer1 = 0;
+		$("#mc-day").bind('mousedown touchstart',function(event){
+			$("#mc-eye-r-day").addClass('touch');
+			$("#mc-eye-l-day").addClass('touch');
+			clearTimeout(mcEyesTimer1);
+			mcEyesTimer1 = setTimeout(function() {
+        		$("#mc-eye-r-day").removeClass('touch');
+				$("#mc-eye-l-day").removeClass('touch');
+    		}, 3000)
 		});
 
 		var fishTimer = 0;

@@ -95,6 +95,31 @@ a {
 
 /*CONSTANTS*/
 
+#loading-both {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	pointer-events: none;
+	transition: transform 1.5s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-webkit-transition: -webkit-transform 1.5s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-moz-transition: -moz-transform 1.5s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-ms-transition: -ms-transform 1.5s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	-o-transition: -o-transform 1.5s cubic-bezier(0.230, 0.000, 0.560, 1.000);
+	transform-origin: top;
+	-webkit-transform-origin: top;
+	-moz-transform-origin: top;
+	-ms-transform-origin: top;
+	-o-transform-origin: top;
+	transform: translate(0,-100%);
+}
+
+#loading-both.touch {
+	transform: translate(0,0);
+}
+
 #loading-l {
 	width: 52%;
 	height: 101%;
@@ -1252,6 +1277,106 @@ a {
 	top: 848px;
 }
 
+#mc-eye-l-day {
+	width: 67px;
+	height: 74px;
+	background-image: url('../assets/mc-eye-l-day.png');
+	//background-color: red;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 1018px;
+	top: 232px;
+	z-index: 3;
+	transform-origin: 46% 50%;
+  	-moz-transform-origin: 46% 50%;
+  	-webkit-transform-origin: 46% 50%;
+  	-ms-transform-origin: 46% 50%;
+  	-o-transform-origin: 46% 50%;
+}
+
+#mc-eye-l-day.touch {
+	animation: mc-eye-l-xmas 3s 1 ease-in-out;
+	-webkit-animation: mc-eye-l-xmas 3s 1 ease-in-out;
+	-moz-animation: mc-eye-l-xmas 3s 1 ease-in-out;
+	-ms-animation: mc-eye-l-xmas 3s 1 ease-in-out;
+	-o-animation: mc-eye-l-xmas 3s 1 ease-in-out;
+}
+
+@keyframes mc-eye-l-day {
+	0% {transform: rotate(0deg)}
+	100% {transform: rotate(-1080deg)}
+}
+
+@-webkit-keyframes mc-eye-l-day {
+	0% {-webkit-transform: rotate(0deg)}
+	100% {-webkit-transform: rotate(-1080deg)}
+}
+
+@-moz-keyframes mc-eye-l-day {
+	0% {-moz-transform: rotate(0deg)}
+	100% {-moz-transform: rotate(-1080deg)}
+}
+
+@-ms-keyframes mc-eye-l-day {
+	0% {-ms-transform: rotate(0deg)}
+	100% {-ms-transform: rotate(-1080deg)}
+}
+
+@-o-keyframes mc-eye-l-day {
+	0% {-o-transform: rotate(0deg)}
+	100% {-o-transform: rotate(-1080deg)}
+}
+
+#mc-eye-r-day {
+	width: 50px;
+	height: 50px;
+	background-image: url('../assets/mc-eye-r-day.png');
+	//background-color: red;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 1093px;
+	top: 272px;
+	z-index: 3;
+	transform-origin: 50% 45%;
+  	-moz-transform-origin: 50% 45%;
+  	-webkit-transform-origin: 50% 45%;
+  	-ms-transform-origin: 50% 45%;
+  	-o-transform-origin: 50% 45%;
+}
+
+#mc-eye-r-day.touch {
+	animation: mc-eye-r-xmas 3s 1 ease-in-out;
+	-webkit-animation: mc-eye-r-xmas 3s 1 ease-in-out;
+	-moz-animation: mc-eye-r-xmas 3s 1 ease-in-out;
+	-ms-animation: mc-eye-r-xmas 3s 1 ease-in-out;
+	-o-animation: mc-eye-r-xmas 3s 1 ease-in-out;
+}
+
+@keyframes mc-eye-r-day {
+	0% {transform: rotate(0deg)}
+	100% {transform: rotate(1080deg)}
+}
+
+@-webkit-keyframes mc-eye-r-day {
+	0% {-webkit-transform: rotate(0deg)}
+	100% {-webkit-transform: rotate(1080deg)}
+}
+
+@-moz-keyframes mc-eye-r-day {
+	0% {-moz-transform: rotate(0deg)}
+	100% {-moz-transform: rotate(1080deg)}
+}
+
+@-ms-keyframes mc-eye-r-day {
+	0% {-ms-transform: rotate(0deg)}
+	100% {-ms-transform: rotate(1080deg)}
+}
+
+@-o-keyframes mc-eye-r-day {
+	0% {-o-transform: rotate(0deg)}
+	100% {-o-transform: rotate(1080deg)}
+}
+
 .note {
 	z-index: 0;
 	pointer-events: none;
@@ -1756,6 +1881,8 @@ a {
 	-moz-animation-delay: 2.5s;
 	-ms-animation-delay: 2.5s;
 	-o-animation-delay: 2.5s;
+	animation-duration:2.5s;
+	-webkit-animation-duration:2.5s;
 	background-image: url('../assets/raindrop-day-1.png');
 }
 
@@ -1775,6 +1902,8 @@ a {
 	-moz-animation-delay: 0.2s;
 	-ms-animation-delay: 0.2s;
 	-o-animation-delay: 0.2s;
+	animation-duration:2.7s;
+	-webkit-animation-duration:2.7s;
 	//top: 50px;
 	left: 90px;
 	background-image: url('../assets/raindrop-day-3.png');
@@ -1786,6 +1915,8 @@ a {
 	-moz-animation-delay: 2s;
 	-ms-animation-delay: 2s;
 	-o-animation-delay: 2s;
+	animation-duration:2.6s;
+	-webkit-animation-duration:2.6s;
 	//top: 100px;
 	left: 150px;
 	background-image: url('../assets/raindrop-day-4.png');
@@ -1797,6 +1928,8 @@ a {
 	-moz-animation-delay: 2.7s;
 	-ms-animation-delay: 2.7s;
 	-o-animation-delay: 2.7s;
+	animation-duration:2.5s;
+	-webkit-animation-duration:2.5s;
 	//top: 10px;
 	left: 200px;
 	background-image: url('../assets/raindrop-day-5.png');
@@ -1819,6 +1952,8 @@ a {
 	-moz-animation-delay: 1s;
 	-ms-animation-delay: 1s;
 	-o-animation-delay: 1s;
+	animation-duration:2.8s;
+	-webkit-animation-duration:2.8s;
 	//top: 70px;
 	left: 290px;
 	background-image: url('../assets/raindrop-day-7.png');
@@ -1830,6 +1965,8 @@ a {
 	-moz-animation-delay: 1.5s;
 	-ms-animation-delay: 1.5s;
 	-o-animation-delay: 1.5s;
+	animation-duration:2.9s;
+	-webkit-animation-duration:2.9s;
 	//top: 0px;
 	left: 340px;
 	background-image: url('../assets/raindrop-day-8.png');
@@ -1841,6 +1978,8 @@ a {
 	-moz-animation-delay: 0.5s;
 	-ms-animation-delay: 0.5s;
 	-o-animation-delay: 0.5s;
+	animation-duration:2.6s;
+	-webkit-animation-duration:2.6s;
 	//top: 130px;
 	left: 390px;
 	background-image: url('../assets/raindrop-day-9.png');
@@ -1852,6 +1991,8 @@ a {
 	-moz-animation-delay: 1.7s;
 	-ms-animation-delay: 1.7s;
 	-o-animation-delay: 1.7s;
+	animation-duration:2.8s;
+	-webkit-animation-duration:2.8s;
 	//top: 30px;
 	left: 450px;
 	background-image: url('../assets/raindrop-day-10.png');
