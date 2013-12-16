@@ -70,12 +70,16 @@ $(window).load(function(){
 	$("#loading-both").addClass("touch");
 
 	setTimeout(function() {
+    	$("#loading-message").addClass("touch");
+    }, 1000)
+
+	setTimeout(function() {
     	$("#loading-l").addClass("touch");
     	$("#loading-r").addClass("touch");
     	$("#loading-wreath-xmas").addClass("touch");
     	$("#wrapper").addClass("touch");
     	$("#mute-audio").removeClass("hide");
-    }, 2200)
+    }, 1800)
 
 
 	$("#loading-l").bind('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
